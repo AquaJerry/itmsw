@@ -8,3 +8,7 @@ a {
 	font-size: 20px;
 	text-decoration: none;
 }
+
+a:link {
+	color: blue;
+}
