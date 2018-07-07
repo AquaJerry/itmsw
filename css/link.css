@@ -12,3 +12,7 @@ a {
 a:link {
 	color: blue;
 }
+
+a:visited {
+	color: red;
+}
