@@ -3,5 +3,5 @@
 /* CSS Document */
 
 ul {
-	list-style: url(../images/list.png);
+	list-style: url(../images/list.png) inside;
 }
