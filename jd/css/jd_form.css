@@ -2,7 +2,7 @@
 /* CSS Document */
 
 div {
-	border-left-style: dotted;
+	border-left-style: double;
 	display: inline-block;
 	width: 100px;
 }
