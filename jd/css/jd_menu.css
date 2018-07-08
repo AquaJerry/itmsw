@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* CSS Document */
 
 a {
@@ -13,12 +12,12 @@ a:hover {
 	text-decoration: underline;
 }
 
-ul {
-	list-style: none;
-}
-
 li {
 	float: left;
 	font-size: 13px;
 	margin-left: 15px;
+}
+
+ul {
+	list-style: none;
 }
