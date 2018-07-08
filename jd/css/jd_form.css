@@ -2,6 +2,7 @@
 /* CSS Document */
 
 div {
+	border-top-style: dotted;
 	display: inline-block;
 	width: 100px;
 }
