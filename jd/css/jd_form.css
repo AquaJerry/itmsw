@@ -3,6 +3,7 @@
 
 div {
 	border: 1px solid red;
+	display: inline-block;
 	width: 100px;
 }
 
