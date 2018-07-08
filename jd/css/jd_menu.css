@@ -9,6 +9,7 @@ a {
 }
 
 a:hover {
+	color: red;
 	text-decoration: underline;
 }
 
@@ -18,5 +19,6 @@ ul {
 
 li {
 	float: left;
+	font-size: 13px;
 	margin-left: 15px;
 }
