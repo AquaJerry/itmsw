@@ -2,9 +2,7 @@
 /* CSS Document */
 
 div {
-	border-color: red blue yellow green;
-	border-style: double solid dotted groove;
-	border-width: 5px 1px 2px 10px;
+	border-top: red solid 5px;
 	display: inline-block;
 	width: 100px;
 }
