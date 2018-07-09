@@ -12,6 +12,11 @@ form {
 	font: 14px MicrosoftYahei;
 }
 
+input {
+	height: 25px;
+	width: 250px;
+}
+
 input[type=button] {
 	background: #e5e5e5;
 	border: none;
