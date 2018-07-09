@@ -10,7 +10,7 @@ div {
 li {
 	border: 1px solid gray;
 	height: 46px;
-	margin-bottom: 30px;
+	margin: 0 0 30px;
 	padding: 2px;
 	width: 400px;
 }
