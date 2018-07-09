@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Universal Selector */
+* {
+	margin: 0;
+	padding: 0;
+}
