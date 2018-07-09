@@ -10,6 +10,7 @@ div {
 li {
 	border: 1px solid gray;
 	height: 50px;
+	margin-bottom: 30px;
 	width: 400px;
 }
 
