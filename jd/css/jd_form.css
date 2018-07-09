@@ -8,6 +8,11 @@ div {
 	width: 100px;
 }
 
+form {
+	color: gray;
+	font: 14px MicrosoftYahei;
+}
+
 input[type=button] {
 	background: #e5e5e5;
 	border: none;
