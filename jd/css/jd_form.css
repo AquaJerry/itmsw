@@ -8,6 +8,21 @@ div {
 	width: 100px;
 }
 
+input[type=button] {
+	background: #e5e5e5;
+	border: none;
+	height: 46px;
+	width: 120px;
+}
+
+input[type=submit] {
+	background: #f0282c;
+	border: none;
+	color: #fff;
+	height: 50px;
+	width: 400px;
+}
+
 .li01 {
 	border: 1px solid gray;
 	height: 46px;
