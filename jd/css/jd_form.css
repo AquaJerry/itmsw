@@ -51,3 +51,7 @@ ul {
 #userDiv {
 	letter-spacing: 11px;
 }
+
+#vcInput {
+	width: 150px;
+}
