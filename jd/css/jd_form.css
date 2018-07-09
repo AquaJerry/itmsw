@@ -13,6 +13,7 @@ form {
 }
 
 input {
+	border: none;
 	height: 30px;
 	width: 250px;
 }
