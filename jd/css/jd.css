@@ -7,6 +7,11 @@
 	padding: 0;
 }
 
+body {
+	color: #636060;
+	font: 12px/1.5 MicrosoftYahei;
+}
+
 .page {
 	width: 100%;
 }
