@@ -35,6 +35,7 @@ body {
 .header_content .title {
 	float: left;
 	font-size: 26px;
+	margin: 35px 0 0 40px;
 }
 
 .main {
