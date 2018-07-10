@@ -22,3 +22,14 @@
 	margin: 0 auto;
 	width: 1200px;
 }
+
+.main {
+	width: 100%;
+}
+
+.main_content {
+	border: 1px solid blue;
+	height: 400px;
+	margin: 0 auto;
+	width: 1200px;
+}
