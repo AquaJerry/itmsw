@@ -10,3 +10,8 @@
 .page {
 	width: 100%;
 }
+
+.header {
+	background: #ccc;
+	width: 100%;
+}
