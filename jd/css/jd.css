@@ -33,3 +33,15 @@
 	margin: 0 auto;
 	width: 1200px;
 }
+
+.footer {
+	background: #ccc;
+	width: 100%;
+}
+
+.footer_content {
+	border: 1px solid green;
+	height: 100px;
+	margin: 0 auto;
+	width: 1200px;
+}
