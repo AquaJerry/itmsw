@@ -42,7 +42,31 @@
 			</div>
 			<div class="main">
 				<div class="main_content">
-					<div id="form_div"></div>
+					<div id="form_div">
+						<form action="register_success.html" target="_blank">
+							<ul>
+								<li class="li01">
+									<div id="userDiv">用户名</div><input autofocus name="userName" placeholder="您的账户名和登录名">
+								</li>
+								<li class="li01">
+									<div class="passwordDiv">设置密码</div><input type="password" name="password" placeholder="建议至少使用两种字符组合">
+								</li>
+								<li class="li01">
+									<div class="passwordDiv">确认密码</div><input type="password" name="repassword" placeholder="请再次输入密码">
+								</li>
+								<li class="li01">
+									<div>中国 0086</div><input name="phone" placeholder="建议使用常用手机">
+								</li>
+								<li class="li01">
+									<div>手机验证码</div><input id="vcInput" name="validateCode" placeholder="手机验证码">
+									<input type="button" value="获取验证码">
+								</li>
+								<li>
+									<input type="submit" value="立即注册">
+								</li>
+							</ul>
+						</form>
+					</div>
 					<ul id="enterprise_ul">
 						<li>
 							<img src="images/enterprise.png">
