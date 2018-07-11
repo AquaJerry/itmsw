@@ -47,8 +47,8 @@ body {
 
 .main_content {
 	border: 1px solid blue;
-	height: 400px;
 	margin: 0 auto;
+	overflow: hidden;
 	width: 1200px;
 }
 
