@@ -89,3 +89,10 @@ a {
 .jd_link_login:hover {
 	text-decoration: underline;
 }
+
+
+/* List Style */
+
+ul {
+	list-style: none;
+}
