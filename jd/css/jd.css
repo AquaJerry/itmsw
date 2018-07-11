@@ -64,6 +64,7 @@ body {
 
 .menu_ul {
 	border: 1px solid red;
+	margin: 30px auto 10px;
 	overflow: hidden;
 	width: 960px;
 }
