@@ -95,6 +95,11 @@ a {
 	font-size: 14px;
 }
 
+.jd_link_enterprise:hover {
+	color: #363636;
+	text-decoration: underline;
+}
+
 
 /* List Style */
 
