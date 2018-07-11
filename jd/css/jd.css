@@ -75,6 +75,17 @@ body {
 	margin-left: 15px;
 }
 
+.menu_ul a {
+	color: gray;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.menu_ul a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
 
 /* Font Style */
 
