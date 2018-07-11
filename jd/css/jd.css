@@ -75,3 +75,18 @@ body {
 .jd_font_have_account {
 	font-size: 16px;
 }
+
+
+/* Link Style */
+
+a {
+	text-decoration: none;
+}
+
+.jd_link_login {
+	color: red;
+}
+
+.jd_link_login:hover {
+	text-decoration: underline;
+}
