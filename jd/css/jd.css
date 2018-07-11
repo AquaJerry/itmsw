@@ -63,6 +63,11 @@ body {
 	width: 1200px;
 }
 
+.menu_ul {
+	border: 1px solid red;
+	width: 1000px;
+}
+
 
 /* Font Style */
 
