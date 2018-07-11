@@ -67,6 +67,12 @@ body {
 	width: 1000px;
 }
 
+.menu_ul li {
+	float: left;
+	font-size: 13px;
+	margin-left: 15px;
+}
+
 
 /* Font Style */
 
