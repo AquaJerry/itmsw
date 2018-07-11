@@ -17,6 +17,7 @@ body {
 }
 
 .header {
+	background: linear-gradient(#fff 90%, #ddd, #fff);
 	width: 100%;
 }
 
