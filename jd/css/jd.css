@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* Universal Selector */
+/* Universal Style */
+
 * {
 	margin: 0;
 	padding: 0;
@@ -11,6 +12,9 @@ body {
 	color: #636060;
 	font: 12px/1.5 MicrosoftYahei;
 }
+
+
+/* Style of Page Structure */
 
 .page {
 	width: 100%;
