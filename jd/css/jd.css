@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Universal Style */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #767676;
+	font: 12px/1.5 MicrosoftYahei;
+}
+
+
+/* Style of Page Structure */
+
+.page {
+	width: 100%;
+}
+
+.header {
+	background: linear-gradient(#fff 92%, #ddd, #fff);
+	width: 100%;
+}
+
+.header_content {
+	margin: 0 auto;
+	overflow: hidden;
+	width: 1200px;
+}
+
+.header_content img {
+	float: left;
+	margin: 30px 0;
+}
+
+.header_content .title {
+	float: left;
+	margin: 35px 0 0 40px;
+}
+
+.main {
+	width: 100%;
+}
+
+.main_content {
+	margin: 0 auto;
+	overflow: hidden;
+	width: 1200px;
+}
+
+.footer {
+	width: 100%;
+}
+
+.footer_content {
+	border-top: 1px solid #ccc;
+	height: 100px;
+	margin: 0 auto;
+	width: 1200px;
+}
+
+.menu_ul {
+	margin: 30px auto 10px;
+	overflow: hidden;
+	width: 960px;
+}
+
+.menu_ul li {
+	float: left;
+	font-size: 13px;
+	margin-left: 15px;
+}
+
+.menu_ul a {
+	color: gray;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.menu_ul a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+.copyright_div {
+	margin: 10px 0 40px;
+	text-align: center;
+}
+
+
+/* Font Style */
+
+.jd_font_title {
+	color: #363636;
+	font-size: 26px;
+}
+
+.jd_font_have_account {
+	font-size: 16px;
+}
+
+
+/* Link Style */
+
+a {
+	text-decoration: none;
+}
+
+.jd_link_login {
+	color: red;
+}
+
+.jd_link_login:hover {
+	text-decoration: underline;
+}
+
+.jd_link_enterprise {
+	color: #767676;
+	font-size: 14px;
+}
+
+.jd_link_enterprise:hover {
+	color: #363636;
+	text-decoration: underline;
+}
+
+
+/* List Style */
+
+ul {
+	list-style: none;
+}
