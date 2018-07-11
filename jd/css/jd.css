@@ -9,7 +9,7 @@
 }
 
 body {
-	color: #636060;
+	color: #767676;
 	font: 12px/1.5 MicrosoftYahei;
 }
 
@@ -68,5 +68,10 @@ body {
 /* Font Style */
 
 .jd_font_title {
+	color: #363636;
 	font-size: 26px;
+}
+
+.jd_font_have_account {
+	font-size: 16px;
 }
