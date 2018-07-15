@@ -4,119 +4,79 @@
 		<meta charset="utf-8">
 		<title>Log In Jingdong</title>
 		<link rel="stylesheet" href="css/jd.css">
-		<style>
-
-			#menu_ul {
-				margin-top: 18.5px;
-				text-align: center;
-			}
-
-			#menu_ul a {
-				font-size: 12px;
-			}
-
-			#menu_ul li {
-				display: inline;
-				float: none;
-				margin: 0 4.7px;
-			}
-
-			#form_ul {
-				background: #fff;
-				float: right;
-				margin: 57px 0;
-				width: 350px;
-			}
-
-			#form_ul li {
-				margin-bottom: 20px;
-			}
-
-			#form_ul .cell {
-				margin-left: 20px;
-			}
-
-			#form_ul .cell div {
-				border: 1px solid #ccc;
-				display: inline-block;
-				height: 38px;
-				margin-left: -4px;
-				vertical-align: top;
-				width: 270px;
-			}
-
-			#form_ul .cell img {
-				border: 1px solid #ccc;
-			}
-
-			#form_ul input {
-				border: none;
-				height: 18px;
-				margin: 10px;
-				width: 250px;
-			}
-
-		</style>
 	</head>
 	<body>
 		<div class="page">
-			<div class="header" style="background: none">
-				<div class="header_content" style="width: 990px">
-					<img src="images/logo-170x60.png" style="margin: 10px 0">
-					<div class="title jd_font_title" style="font-size: 22px; margin: 30px 0 0 25px">Welcome Log In</div>
+			<div class="header">
+				<div class="header__content header__content--login">
+					<img class="header__logo header__logo--login" src="images/jd_logo_170x60.png">
+					<div class="header__title header__title--login">Welcome Log In</div>
 				</div>
 			</div>
-			<div class="main" style="background: #2aa8f3">
-				<div class="main_content" style="background: url(images/jd_bg_cool.jpg) center no-repeat; height: 475px; width: 990px">
-					<ul id="form_ul">
-						<li class="jd_font_navbar_item" style="margin: 30px 0 0 50px">Account</li>
-						<li class="jd_li_separator"></li>
-						<li class="cell">
-							<img src="images/jd_icon_account.png">
-							<div>
-								<input name="userName" placeholder="User Name">
-							</div>
-						</li>
-						<li class="cell">
-							<img src="images/jd_icon_password.png">
-							<div>
-								<input name="password" placeholder="Password" type="password">
-							</div>
-						</li>
-						<li class="cell">
-							<input type="submit" value="Log In">
-						</li>
-						<li class="jd_li_separator"></li>
-						<li style="margin: 0 0 10px">Join free now!</li>
-					</ul>
+			<div class="main main--login">
+				<div class="main__content main__content--login">
+					<div class="main__wrap main__wrap--login">
+
+						<img class="main__photo main__photo--login" src="images/jd_bg_cool.jpg">
+						<div class="main__form-box main__form-box--login">
+							<form class="form form--login" action="login_success.html" method="post">
+								<ul class="form__list form__list--login">
+									<li class="form__navbar">
+										<div class="form__navitem">Account</div>
+									</li>
+									<li class="form__cell form__cell--login">
+										<img class="form__icon form__icon--left" src="images/jd_icon_account.png">
+										<div class="form__input-box form__input-box--login">
+											<input class="form__input form__input--login" name="userName" placeholder="User Name" autofocus>
+										</div>
+									</li>
+									<li class="form__cell form__cell--login">
+										<img class="form__icon form__icon--left" src="images/jd_icon_password.png">
+										<div class="form__input-box form__input-box--login">
+											<input class="form__input form__input--login" name="password" placeholder="Password" type="password">
+										</div>
+									</li>
+									<li class="form__submit-box form__submit-box--login">
+										<input class="form__submit form__submit--login" type="submit" value="Log In">
+									</li>
+									<li class="form__footer">
+										<a class="form__link form__link--login" href="register.html">
+											<img class="form__icon" src="images/jd_icon_register.png">
+											<span class="form__link-body">Join free now!</span>
+										</a>
+									</li>
+								</ul>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="footer">
-				<div class="footer_content" style="border: none">
-					<ul class="menu_ul" id="menu_ul">
-						<li><a href="http://jd.com">关于我们</a></li>
-						<li>|</li>
-						<li><a href="#">联系我们</a></li>
-						<li>|</li>
-						<li><a href="#">人才招聘</a></li>
-						<li>|</li>
-						<li><a href="#">商家入驻</a></li>
-						<li>|</li>
-						<li><a href="#">广告服务</a></li>
-						<li>|</li>
-						<li><a href="#">手机京东</a></li>
-						<li>|</li>
-						<li><a href="#">友情链接</a></li>
-						<li>|</li>
-						<li><a href="#">销售联盟</a></li>
-						<li>|</li>
-						<li><a href="#">京东社区</a></li>
-						<li>|</li>
-						<li><a href="#">京东公益</a></li>
-						<li>|</li>
-						<li><a href="#">English Site</a></li>
+				<div class="footer__content footer__content--login">
+					<ul class="footer__menu-bar footer__menu-bar--login">
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--login" href="http://jd.com">关于我们</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">联系我们</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">人才招聘</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">商家入驻</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">广告服务</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">手机京东</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">友情链接</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">销售联盟</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">京东社区</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">京东公益</a></li>
+						<li class="footer__menu footer__menu--login">|</li>
+						<li class="footer__menu footer__menu--login"><a class="footer__link footer__link--register" href="#">English Site</a></li>
 					</ul>
-					<div class="copyright_div">Copyright &copy; 2016-2018 Jd.com, Inc. or its affiliates. All Rights Reserved</div>
+					<div class="footer__copyright">Copyright &copy; 2016-2018 Jd.com, Inc. or its affiliates. All Rights Reserved</div>
 				</div>
 			</div>
 		</div>
