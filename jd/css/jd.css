@@ -482,5 +482,6 @@ body {
 
 .dialog--terms {
 	height: 400px;
+	margin: -200px 0 0 -500px;
 	width: 1000px;
 }
