@@ -475,7 +475,9 @@ body {
 
 .dialog {
 	border: 1px solid red;
+	left: 50%;
 	position: fixed;
+	top: 50%;
 }
 
 .dialog--terms {
