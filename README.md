@@ -7,6 +7,7 @@ Web Frontend Projects For itmsw.com
 - Jingdong Menu
 - Jingdong Form
 - Jingdong Register Page
+- Jingdong Login Page
 - License
 
 
@@ -38,6 +39,23 @@ Jingdong register page consists of:
   - Copyright
 
 Well, I guess about 90% of webpages around the world these days is like that!
+
+
+## Jingdong Login Page
+
+Jingdong login page is composed of:
+
+- Header
+  - Logo
+  - Title
+- Main
+  - Photo
+  - Jingdong Login Form
+- Footer
+  - Jingdong Menu
+  - Copyright
+
+Jingdong Login Form resembles Jingdong Form.
 
 
 ## License
