@@ -474,13 +474,14 @@ body {
  * */
 
 .dialog {
-	border: 1px solid red;
 	left: 50%;
 	position: fixed;
 	top: 50%;
 }
 
 .dialog--terms {
+	background: #fff;
+	border: 1px solid red;
 	height: 400px;
 	margin: -200px 0 0 -500px;
 	width: 1000px;
