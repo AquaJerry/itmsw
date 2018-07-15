@@ -467,3 +467,17 @@ body {
 .footer__copyright {
 	margin: 10px 0 40px;
 }
+
+
+/*
+ * Block:	dialog
+ * */
+
+.dialog {
+	border: 1px solid red;
+}
+
+.dialog--terms {
+	height: 400px;
+	width: 1000px;
+}
