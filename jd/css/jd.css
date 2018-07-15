@@ -1,135 +1,469 @@
-@charset "utf-8";
-/* CSS Document */
+/*
+ * Name:	jd.css
+ * Since:	Thu Jul 12 22:14:18 HKT 2018
+ * Website:	https://github.com/AuqaJerry/itmsw
+ * Author:	AquaJerry <huopopo_zeyang@163.com>
+ *
+ * This is a BEM-style stylesheet for Jingdong/Joybuy pages.
+ * */
 
-/* Universal Style */
 
-* {
+/* Base Style */
+
+html,
+body {
 	margin: 0;
 	padding: 0;
 }
 
-body {
-	color: #767676;
-	font: 12px/1.5 MicrosoftYahei;
-}
 
-
-/* Style of Page Structure */
+/*
+ * Block:	page
+ * */
 
 .page {
 	width: 100%;
 }
 
+
+/*
+ * Block:	header
+ * Elements:
+ *			content
+ *			title-bar
+ *			logo
+ *			title
+ *			menu
+ *			link
+ * */
+
 .header {
-	background: linear-gradient(#fff 92%, #ddd, #fff);
 	width: 100%;
 }
 
-.header_content {
+.header--register {
+	background: linear-gradient(#fff 92%, #ddd, #fff);
+}
+
+/*
+ * font:	no gaps among words && fake flexbox
+ * margin:	center
+ * */
+.header__content {
+	font: 0 MicrosoftYahei;
 	margin: 0 auto;
-	overflow: hidden;
+}
+
+/* fake flexbox */
+.header__content--flex {
+	text-align: justify;
+	text-align-last: justify;
+}
+.header__content--flex:after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
+.header__content--login {
+	width: 990px;
+}
+
+.header__content--register {
 	width: 1200px;
 }
 
-.header_content img {
-	float: left;
+.header__title-bar,
+.header__logo,
+.header__title,
+.header__menu {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header__logo--login {
+	margin: 10px 0;
+}
+
+.header__logo--register {
 	margin: 30px 0;
 }
 
-.header_content .title {
-	float: left;
-	margin: 35px 0 0 40px;
+.header__title {
+	color: #363636;
+	font-size: 26px;
 }
+
+.header__title--login {
+	margin: 0 20px;
+}
+
+.header__title--register {
+	margin: 0 40px;
+}
+
+.header__menu {
+	color: #767676;
+	font-size: 16px;
+}
+
+.header__link {
+	color: red;
+	text-decoration: none;
+}
+
+.header__link:hover {
+	text-decoration: underline;
+}
+
+
+/*
+ * Block:	main
+ * Elements:
+ *			content
+ *			wrap
+ *			photo
+ *			form-box
+ *			menu-bar
+ *			icon
+ *			link
+ *			spearator
+ * */
 
 .main {
 	width: 100%;
 }
 
-.main_content {
+.main--login {
+	background: #2aa8f3;
+}
+
+/*
+ * font:	no gaps among words && fake flexbox
+ * margin:	center
+ * */
+.main__content {
+	font: 0/1.5 MicrosoftYahei;
 	margin: 0 auto;
-	overflow: hidden;
+}
+
+.main__content--login,
+.main__form-box--login {
+	width: 990px;
+}
+
+.main__content--register {
+	padding: 60px 0;
 	width: 1200px;
 }
+
+.main__wrap {
+	overflow: hidden;
+}
+
+.main__wrap--login {
+	white-space: nowrap;
+}
+
+.main__photo,
+.main__icon,
+.main__link,
+.main__form-box--login {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.main__form-box--login {
+	position: relative;
+	right: 990px;
+	text-align: right;
+}
+
+.main__form-box--register {
+	display: inline-block;
+	border-right: 1px solid #ccc;
+	padding: 0 137px;
+}
+
+.main__menu-bar {
+	display: inline-block;
+	list-style: none;
+	vertical-align: top;
+}
+
+.main__menu-bar--register {
+	padding-left: 100px;
+}
+
+.main__link--register {
+	color: #767676;
+	font-size: 14px;
+	margin: 0 13px;
+	text-decoration: none;
+}
+
+.main__link--register:hover {
+	color: #363636;
+	text-decoration: underline;
+}
+
+.main__separator {
+	border-top: 1px solid #ccc;
+	margin: 20px 0;
+}
+
+
+/*
+ * Block:	form
+ * Elements:
+ * 		list
+ * 		navbar
+ * 		navitem
+ * 		cell
+ * 		icon
+ * 		label
+ * 		input-box
+ * 		input
+ * 		button
+ * 		submit-box
+ * 		submit
+ * 		footer
+ * 		link
+ * 		link-body
+ * */
+
+.form--login {
+	background: #fff;
+	display: inline-block;
+}
+
+.form__list {
+	font: 12px MicrosoftYahei;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.form__list--register {
+	margin: 0 auto;
+}
+
+.form__navbar {
+	border-bottom: 1px solid #ccc;
+	color: #e4393c;
+	margin: 0 0 33px;
+	text-align: center;
+}
+
+.form__navitem {
+	font-size: 18px;
+	line-height: 54px;
+	padding: 0;
+	width: 50%;
+}
+
+.form__cell {
+	border: 1px solid #ccc;
+	font: 0 MicrosoftYahei;
+}
+
+.form__cell--login {
+	margin: 20px;
+	overflow: hidden;
+}
+
+.form__cell--register {
+	color: #767676;
+	margin: 0 0 30px;
+}
+
+.form__icon,
+.form__label,
+.form__input-box,
+.form__button {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.form__icon--left {
+	border-right: 1px solid #ccc;
+}
+
+/* fake flexbox */
+.form__label {
+	text-align: justify;
+	text-align-last: justify;
+}
+.form__label:after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
+.form__label--register {
+	font-size: 14px;
+	height: 48px;
+	line-height: 48px;
+	margin: 0 20px;
+	width: 5em;
+}
+
+.form__input {
+	border: none;
+	padding: 10px;
+}
+
+.form__input--login {
+	height: 18px;
+	width: 245px;
+}
+
+.form__input--register {
+	height: 28px;
+	width: 294px;
+}
+
+.form__input--code {
+	height: 28px;
+	width: 172px;
+}
+
+.form__button {
+	background: #e5e5e5;
+	border: none;
+}
+
+.form__button--register {
+	line-height: 42px;
+	width: 120px;
+}
+
+.form__submit-box--login {
+	margin: 58px 20px 30px;
+}
+
+.form__submit {
+	background: #f0282c;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	width: 100%;
+}
+
+.form__submit--login {
+	height: 33px;
+}
+
+.form__submit--register {
+	height: 50px;
+}
+
+.form__footer {
+	border-top: 1px solid #ccc;
+	overflow: hidden;
+	text-align: right;
+}
+
+.form__link,
+.form__link-body {
+	display: inline;
+	vertical-align: middle;
+}
+
+.form__link {
+	color: #b61d1d;
+	font-size: 14px;
+	margin: 0 20px;
+	text-decoration: none;
+}
+
+.form__link:hover {
+	text-decoration: underline;
+}
+
+.form__link-body {
+	line-height: 50px;
+}
+
+
+/*
+ * Block:	footer
+ * Elements:
+ *			content
+ *			menu-bar
+ *			menu
+ *			link
+ *			copyright
+ * */
 
 .footer {
 	width: 100%;
 }
 
-.footer_content {
-	border-top: 1px solid #ccc;
-	height: 100px;
-	margin: 0 auto;
-	width: 1200px;
-}
-
-.menu_ul {
-	margin: 30px auto 10px;
-	overflow: hidden;
-	width: 960px;
-}
-
-.menu_ul li {
-	float: left;
-	font-size: 13px;
-	margin-left: 15px;
-}
-
-.menu_ul a {
+/*
+ * margin:		center
+ * overflow:	auto height
+ * */
+.footer__content {
 	color: gray;
-	font-size: 13px;
-	text-decoration: none;
-}
-
-.menu_ul a:hover {
-	color: red;
-	text-decoration: underline;
-}
-
-.copyright_div {
-	margin: 10px 0 40px;
+	font: 12px/1.5 MicrosoftYahei;
+	margin: 0 auto;
+	overflow: hidden;
 	text-align: center;
 }
 
-
-/* Font Style */
-
-.jd_font_title {
-	color: #363636;
-	font-size: 26px;
+.footer__content--login {
+	width: 990px;
 }
 
-.jd_font_have_account {
-	font-size: 16px;
+.footer__content--register {
+	border-top: 1px solid #ccc;
+	width: 1200px;
 }
 
+.footer__menu-bar {
+	padding: 0;
+}
 
-/* Link Style */
+.footer__menu-bar--login {
+	margin: 20px 0 10px;
+}
 
-a {
+.footer__menu-bar--register {
+	margin: 30px 0 10px;
+}
+
+.footer__menu {
+	display: inline;
+}
+
+.footer__menu--login {
+	margin: 0 5px;
+}
+
+.footer__menu--register {
+	font-size: 13px;
+	margin: 0 6px;
+}
+
+.footer__link {
 	text-decoration: none;
 }
 
-.jd_link_login {
+.footer__link:hover {
 	color: red;
-}
-
-.jd_link_login:hover {
 	text-decoration: underline;
 }
 
-.jd_link_enterprise {
-	color: #767676;
-	font-size: 14px;
+/*
+ * color:	override userAgent
+ * */
+.footer__link--login,
+.footer__link--register {
+	color: gray;
 }
 
-.jd_link_enterprise:hover {
-	color: #363636;
-	text-decoration: underline;
-}
-
-
-/* List Style */
-
-ul {
-	list-style: none;
+.footer__copyright {
+	margin: 10px 0 40px;
 }

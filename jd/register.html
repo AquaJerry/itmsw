@@ -4,172 +4,101 @@
 		<meta charset="utf-8">
 		<title>Person Register</title>
 		<link rel="stylesheet" href="css/jd.css">
-		<style>
-
-			#enterprise_ul {
-				float: left;
-				margin: 60px 100px;
-				overflow: hidden;
-				width: 170px;
-			}
-
-			#enterprise_ul a {
-				display: inline-block;
-				margin-left: 10px;
-			}
-
-			#enterprise_ul li * {
-				vertical-align: middle;
-			}
-
-			#form_div {
-				border-right: 1px solid #ccc;
-				float: left;
-				margin: 60px 0;
-				overflow: hidden;
-				width: 700px;
-			}
-
-			#form_ul {
-				font-size: 14px;
-				margin: 0 auto;
-				overflow: hidden;
-				width: 426px;
-			}
-
-			#form_ul div {
-				display: inline-block;
-				margin: 10px 0 0 20px;
-				width: 100px;
-			}
-
-
-			#form_ul input {
-				border: none;
-				height: 30px;
-				width: 250px;
-			}
-
-			#form_ul input[type=button] {
-				background: #e5e5e5;
-				border: none;
-				float: right;
-				height: 44px;
-				width: 120px;
-			}
-
-			#form_ul input[type=submit] {
-				background: #f0282c;
-				border: none;
-				color: #fff;
-				font-size: 16px;
-				height: 50px;
-				width: 426px;
-			}
-
-			#form_ul .li01 {
-				border: 1px solid gray;
-				box-sizing: border-box;
-				height: 50px;
-				margin: 0 0 30px;
-				padding: 2px;
-				width: 426px;
-			}
-
-			#form_ul .passwordDiv {
-				letter-spacing: 4.5px;
-			}
-
-			#form_ul #phoneDiv {
-				letter-spacing: 1px;
-			}
-
-			#form_ul #userDiv {
-				letter-spacing: 14px;
-			}
-
-			#form_ul #vcInput {
-				width: 170px;
-			}
-
-		</style>
 	</head>
 	<body>
 		<div class="page">
-			<div class="header">
-				<div class="header_content">
-					<img src="images/logo.png">
-					<div class="title jd_font_title">Welcome Sign Up</div>
-					<div class="jd_font_have_account" style="float: right; margin-top: 50px">Already a Member?
-						<a class="jd_link_login" href="#">Log in ></a></div>
+			<div class="header header--register">
+				<div class="header__content header__content--register header__content--flex">
+					<div class="header__title-bar">
+						<img class="header__logo header__logo--register" src="images/jd_logo_160x50.png">
+						<div class="header__title header__title--register">Welcome Sign Up</div>
+					</div>
+					<div class="header__menu">Already a Member?
+						<a class="header__link" href="login.html">Log in ></a>
+					</div>
 				</div>
 			</div>
 			<div class="main">
-				<div class="main_content">
-					<div id="form_div">
-						<form action="register_success.html" target="_blank">
-							<ul id="form_ul">
-								<li class="li01">
-									<div id="userDiv">用户名</div><input autofocus name="userName" placeholder="您的账户名和登录名">
+				<div class="main__content main__content--register">
+					<div class="main__form-box main__form-box--register">
+						<form class="form form--register" action="register_success.html" target="_blank">
+							<ul class="form__list form__list--register">
+								<li class="form__cell form__cell--register">
+									<div class="form__label form__label--register">用 户 名</div>
+									<div class="form__input-box form__input-box--register">
+										<input class="form__input form__input--register" autofocus name="userName" placeholder="您的账户名和登录名">
+									</div>
 								</li>
-								<li class="li01">
-									<div class="passwordDiv">设置密码</div><input type="password" name="password" placeholder="建议至少使用两种字符组合">
+								<li class="form__cell form__cell--register">
+									<div class="form__label form__label--register">设 置 密 码</div>
+									<div class="form__input-box form__input-box--register">
+										<input class="form__input form__input--register" type="password" name="password" placeholder="建议至少使用两种字符组合">
+									</div>
 								</li>
-								<li class="li01">
-									<div class="passwordDiv">确认密码</div><input type="password" name="repassword" placeholder="请再次输入密码">
+								<li class="form__cell form__cell--register">
+									<div class="form__label form__label--register">确 认 密 码</div>
+									<div class="form__input-box form__input-box--register">
+										<input class="form__input form__input--register" type="password" name="repassword" placeholder="请再次输入密码">
+									</div>
 								</li>
-								<li class="li01">
-									<div id="phoneDiv">中国 0086</div><input name="phone" placeholder="建议使用常用手机">
+								<li class="form__cell form__cell--register">
+									<div class="form__label form__label--register">中 国 0086</div>
+									<div class="form__input-box form__input-box--register">
+										<input class="form__input form__input--register" name="phone" placeholder="建议使用常用手机">
+									</div>
 								</li>
-								<li class="li01">
-									<div>手机验证码</div><input id="vcInput" name="validateCode" placeholder="手机验证码">
-									<input type="button" value="获取验证码">
+								<li class="form__cell form__cell--register">
+									<div class="form__label form__label--register">手机验证码</div>
+									<div class="form__input-box form__input-box--code">
+										<input class="form__input form__input--code" name="validateCode" placeholder="手机验证码">
+									</div>
+									<input class="form__button form__button--register" type="button" value="获取验证码">
 								</li>
-								<li>
-									<input type="submit" value="立即注册">
+								<li class="form__submit-box form__submit-box--register">
+									<input class="form__submit form__submit--register" type="submit" value="立即注册">
 								</li>
 							</ul>
 						</form>
 					</div>
-					<ul id="enterprise_ul">
+					<ul class="main__menu-bar main__menu-bar--register">
 						<li>
-							<img src="images/enterprise.png">
-							<a class="jd_link_enterprise" href="#">ENTERPRISE</a>
+							<img class="main__icon" src="images/jd_icon_enterprise.png">
+							<a class="main__link main__link--register" href="#">ENTERPRISE</a>
 						</li>
-						<li style="border-top: 1px solid #ccc; margin: 20px 0"></li>
+						<li class="main__separator"></li>
 						<li>
-							<img src="images/international-customer.png">
-							<a class="jd_link_enterprise" href="#">INTERNATIONAL<br>CUSTOMER</a>
+							<img class="main__icon" src="images/jd_icon_global-customer.png">
+							<a class="main__link main__link--register" href="#">INTERNATIONAL<br>CUSTOMER</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="footer">
-				<div class="footer_content">
-					<ul class="menu_ul">
-						<li><a href="http://jd.com">关于我们</a></li>
-						<li>|</li>
-						<li><a href="#">联系我们</a></li>
-						<li>|</li>
-						<li><a href="#">合作招商</a></li>
-						<li>|</li>
-						<li><a href="#">商家帮助</a></li>
-						<li>|</li>
-						<li><a href="#">营销中心</a></li>
-						<li>|</li>
-						<li><a href="#">手机京东</a></li>
-						<li>|</li>
-						<li><a href="#">友情链接</a></li>
-						<li>|</li>
-						<li><a href="#">销售联盟</a></li>
-						<li>|</li>
-						<li><a href="#">京东社区</a></li>
-						<li>|</li>
-						<li><a href="#">京东公益</a></li>
-						<li>|</li>
-						<li><a href="#">English Site</a></li>
+				<div class="footer__content footer__content--register">
+					<ul class="footer__menu-bar footer__menu-bar--register">
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="http://jd.com">关于我们</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">联系我们</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">合作招商</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">商家帮助</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">营销中心</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">手机京东</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">友情链接</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">销售联盟</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">京东社区</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">京东公益</a></li>
+						<li class="footer__menu footer__menu--register">|</li>
+						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">English Site</a></li>
 					</ul>
-					<div class="copyright_div">Copyright &copy; 2016-2018 Jd.com, Inc. or its affiliates. All Rights Reserved</div>
+					<div class="footer__copyright">Copyright &copy; 2016-2018 Jd.com, Inc. or its affiliates. All Rights Reserved</div>
 				</div>
 			</div>
 		</div>
