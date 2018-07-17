@@ -1,0 +1,22 @@
+{
+  "name": "jd",
+  "version": "1.0.0",
+  "description": "Web Frontend Projects for itmsw.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aquajerry/itmsw.git"
+  },
+  "author": "AquaJerry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aquajerry/itmsw/issues"
+  },
+  "homepage": "https://github.com/aquajerry/itmsw#readme",
+  "devDependencies": {
+    "stylelint-config-standard": "^18.2.0"
+  }
+}

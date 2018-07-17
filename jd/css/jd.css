@@ -7,7 +7,6 @@
  * This is a BEM-style stylesheet for Jingdong/Joybuy pages.
  * */
 
-
 /* Base Style */
 
 html,
@@ -16,7 +15,6 @@ body {
 	padding: 0;
 }
 
-
 /*
  * Block:	page
  * */
@@ -24,7 +22,6 @@ body {
 .page {
 	width: 100%;
 }
-
 
 /*
  * Block:	header
@@ -50,7 +47,7 @@ body {
  * margin:	center
  * */
 .header__content {
-	font: 0 MicrosoftYahei;
+	font: 0 MicrosoftYahei, serif;
 	margin: 0 auto;
 }
 
@@ -59,7 +56,8 @@ body {
 	text-align: justify;
 	text-align-last: justify;
 }
-.header__content--flex:after {
+
+.header__content--flex::after {
 	content: '';
 	display: inline-block;
 	width: 100%;
@@ -116,7 +114,6 @@ body {
 	text-decoration: underline;
 }
 
-
 /*
  * Block:	main
  * Elements:
@@ -143,7 +140,7 @@ body {
  * margin:	center
  * */
 .main__content {
-	font: 0/1.5 MicrosoftYahei;
+	font: 0/1.5 MicrosoftYahei, serif;
 	margin: 0 auto;
 }
 
@@ -212,7 +209,6 @@ body {
 	margin: 20px 0;
 }
 
-
 /*
  * Block:	form
  * Elements:
@@ -238,7 +234,7 @@ body {
 }
 
 .form__list {
-	font: 12px MicrosoftYahei;
+	font: 12px MicrosoftYahei, serif;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -264,7 +260,7 @@ body {
 
 .form__cell {
 	border: 1px solid #ccc;
-	font: 0 MicrosoftYahei;
+	font: 0 MicrosoftYahei, serif;
 }
 
 .form__cell--login {
@@ -295,7 +291,8 @@ body {
 	text-align: justify;
 	text-align-last: justify;
 }
-.form__label:after {
+
+.form__label::after {
 	content: '';
 	display: inline-block;
 	width: 100%;
@@ -386,7 +383,6 @@ body {
 	line-height: 50px;
 }
 
-
 /*
  * Block:	footer
  * Elements:
@@ -407,7 +403,7 @@ body {
  * */
 .footer__content {
 	color: gray;
-	font: 12px/1.5 MicrosoftYahei;
+	font: 12px/1.5 MicrosoftYahei, serif;
 	margin: 0 auto;
 	overflow: hidden;
 	text-align: center;
@@ -468,7 +464,6 @@ body {
 	margin: 10px 0 40px;
 }
 
-
 /*
  * Block:	dialog
  * */
@@ -481,14 +476,16 @@ body {
 
 .dialog--terms {
 	background: #fff;
-	border: 4px solid #c3c3c3;
 	border-radius: 5px;
-	height: 400px;
+	height: 392px;
 	margin: -200px 0 0 -500px;
-	width: 1000px;
+	width: 992px;
 	z-index: 1001;
 }
 
+.dialog--framed {
+	border: 4px solid #c3c3c3;
+}
 
 /*
  * Block:	mask
@@ -502,7 +499,7 @@ body {
 	bottom: 0;
 	filter: alpha(opacity=15);
 	left: 0;
-	opacity: .15;
+	opacity: 0.15;
 	position: fixed;
 	right: 0;
 	top: 0;
