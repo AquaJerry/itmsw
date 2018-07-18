@@ -278,7 +278,6 @@ body {
 .form__input-box,
 .form__button {
 	display: inline-block;
-	overflow: hidden;
 	vertical-align: middle;
 }
 
@@ -332,7 +331,7 @@ body {
 }
 
 .form__button--register {
-	line-height: 42px;
+	height: 42px;
 	width: 120px;
 }
 
