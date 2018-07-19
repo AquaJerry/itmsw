@@ -468,10 +468,11 @@ body {
  * Elements:
  *			title-bar
  *			title
+ *			content
  * */
 
 .dialog {
-	font: 14px MicrosoftYahei, serif;
+	font: 12px/1.5 MicrosoftYahei, serif;
 	left: 50%;
 	position: fixed;
 	top: 50%;
@@ -480,9 +481,9 @@ body {
 .dialog--terms {
 	background: #fff;
 	border-radius: 5px;
-	height: 392px;
-	margin: -200px 0 0 -500px;
-	width: 992px;
+	height: 596px;
+	margin: -302px 0 0 -477px;
+	width: 946px;
 	z-index: 1001;
 }
 
@@ -497,7 +498,18 @@ body {
 
 .dialog__title--terms {
 	color: #000;
+	font-size: 14px;
 	font-weight: 700;
+}
+
+.dialog__content--terms {
+	margin: 20px;
+	overflow-y: auto;
+}
+
+.dialog__content--terms {
+	border: 1px solid red;
+	height: 426px;
 }
 
 /*
