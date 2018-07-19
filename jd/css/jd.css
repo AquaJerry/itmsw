@@ -470,6 +470,8 @@ body {
  *			title-bar
  *			title
  *			content
+ *			menu
+ *			button
  * */
 
 .dialog {
@@ -484,7 +486,7 @@ body {
 	border-radius: 5px;
 	height: 596px;
 	margin: -302px 0 0 -477px;
-	width: 946px;
+	width: 947px;
 	z-index: 1001;
 }
 
@@ -503,14 +505,39 @@ body {
 	font-weight: 700;
 }
 
-.dialog__content--terms {
-	margin: 20px;
+.dialog__content {
 	overflow-y: auto;
 }
 
 .dialog__content--terms {
-	border: 1px solid red;
-	height: 426px;
+	height: 446px;
+	margin: 10px;
+}
+
+.dialog__menu {
+	font-size: 0;
+	margin: 25px 0;
+	text-align: center;
+}
+
+.dialog__button {
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	height: 54px;
+	margin: 0 15px;
+	width: 200px;
+}
+
+.dialog__button--agree {
+	background: #f0282c;
+	color: #fff;
+}
+
+.dialog__button--cancel {
+	background: #e3e4e5;
+	color: #999;
+	padding: 0;
 }
 
 /*
