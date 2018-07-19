@@ -475,7 +475,7 @@ body {
  * */
 
 .dialog {
-	font: 12px/1.5 MicrosoftYahei, serif;
+	font: 0/1.5 MicrosoftYahei, serif;
 	left: 50%;
 	position: fixed;
 	top: 50%;
@@ -500,7 +500,6 @@ body {
 }
 
 .dialog__title--terms {
-	color: #000;
 	font-size: 14px;
 	font-weight: 700;
 }
@@ -510,12 +509,12 @@ body {
 }
 
 .dialog__content--terms {
+	font-size: 12px;
 	height: 446px;
 	margin: 10px;
 }
 
 .dialog__menu {
-	font-size: 0;
 	margin: 25px 0;
 	text-align: center;
 }
