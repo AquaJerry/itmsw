@@ -465,9 +465,13 @@ body {
 
 /*
  * Block:	dialog
+ * Elements:
+ *			title-bar
+ *			title
  * */
 
 .dialog {
+	font: 14px MicrosoftYahei, serif;
 	left: 50%;
 	position: fixed;
 	top: 50%;
@@ -484,6 +488,16 @@ body {
 
 .dialog--framed {
 	border: 4px solid #c3c3c3;
+}
+
+.dialog__title-bar--terms {
+	background: #f3f3f3;
+	padding: 5px 10px;
+}
+
+.dialog__title--terms {
+	color: #000;
+	font-weight: 700;
 }
 
 /*
