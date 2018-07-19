@@ -213,6 +213,8 @@ body {
  * Block:	form
  * Elements:
  * 		list
+ * 		title-bar
+ * 		title
  * 		navbar
  * 		navitem
  * 		cell
@@ -221,6 +223,7 @@ body {
  * 		input-box
  * 		input
  * 		button
+ * 		textarea
  * 		submit-box
  * 		submit
  * 		footer
@@ -228,13 +231,34 @@ body {
  * 		link-body
  * */
 
-.form--login {
+/*
+ * background:	for --login and --terms
+ * */
+.form {
 	background: #fff;
+	font: 0/1.5 MicrosoftYahei, serif;
+}
+
+.form--dialog {
+	border: 4px solid #c3c3c3;
+	left: 50%;
+	position: fixed;
+	top: 50%;
+}
+
+.form--login {
 	display: inline-block;
 }
 
+.form--terms {
+	border-radius: 5px;
+	height: 596px;
+	margin: -302px 0 0 -477px;
+	width: 947px;
+	z-index: 1001;
+}
+
 .form__list {
-	font: 12px MicrosoftYahei, serif;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -242,6 +266,16 @@ body {
 
 .form__list--register {
 	margin: 0 auto;
+}
+
+.form__title-bar--terms {
+	background: #f3f3f3;
+	padding: 5px 10px;
+}
+
+.form__title--terms {
+	font-size: 14px;
+	font-weight: 700;
 }
 
 .form__navbar {
@@ -260,7 +294,6 @@ body {
 
 .form__cell {
 	border: 1px solid #ccc;
-	font: 0 MicrosoftYahei, serif;
 }
 
 .form__cell--login {
@@ -335,17 +368,53 @@ body {
 	width: 120px;
 }
 
+.form__textarea {
+	overflow-y: auto;
+}
+
+.form__textarea--terms {
+	font-size: 12px;
+	height: 446px;
+	margin: 10px;
+}
+
 .form__submit-box--login {
 	margin: 58px 20px 30px;
 }
 
+.form__submit-box--terms {
+	margin: 25px 0;
+	text-align: center;
+}
+
 .form__submit {
-	background: #f0282c;
 	border: none;
-	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
+}
+
+.form__submit--agree,
+.form__submit--cancel {
+	height: 54px;
+	margin: 0 15px;
+	width: 200px;
+}
+
+.form__submit--agree,
+.form__submit--login,
+.form__submit--register {
+	background: #f0282c;
+	color: #fff;
+}
+
+.form__submit--login,
+.form__submit--register {
 	width: 100%;
+}
+
+.form__submit--cancel {
+	color: #999;
+	padding: 0;
 }
 
 .form__submit--login {
@@ -462,81 +531,6 @@ body {
 
 .footer__copyright {
 	margin: 10px 0 40px;
-}
-
-/*
- * Block:	dialog
- * Elements:
- *			title-bar
- *			title
- *			content
- *			menu
- *			button
- * */
-
-.dialog {
-	font: 0/1.5 MicrosoftYahei, serif;
-	left: 50%;
-	position: fixed;
-	top: 50%;
-}
-
-.dialog--terms {
-	background: #fff;
-	border-radius: 5px;
-	height: 596px;
-	margin: -302px 0 0 -477px;
-	width: 947px;
-	z-index: 1001;
-}
-
-.dialog--framed {
-	border: 4px solid #c3c3c3;
-}
-
-.dialog__title-bar--terms {
-	background: #f3f3f3;
-	padding: 5px 10px;
-}
-
-.dialog__title--terms {
-	font-size: 14px;
-	font-weight: 700;
-}
-
-.dialog__content {
-	overflow-y: auto;
-}
-
-.dialog__content--terms {
-	font-size: 12px;
-	height: 446px;
-	margin: 10px;
-}
-
-.dialog__menu {
-	margin: 25px 0;
-	text-align: center;
-}
-
-.dialog__button {
-	border: none;
-	cursor: pointer;
-	font-size: 16px;
-	height: 54px;
-	margin: 0 15px;
-	width: 200px;
-}
-
-.dialog__button--agree {
-	background: #f0282c;
-	color: #fff;
-}
-
-.dialog__button--cancel {
-	background: #e3e4e5;
-	color: #999;
-	padding: 0;
 }
 
 /*
