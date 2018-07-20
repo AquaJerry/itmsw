@@ -213,6 +213,7 @@ body {
  * Block:	form
  * Elements:
  * 		list
+ * 		sublist
  * 		title-bar
  * 		title
  * 		navbar
@@ -224,6 +225,7 @@ body {
  * 		input
  * 		button
  * 		textarea
+ * 		text
  * 		submit-box
  * 		submit
  * 		footer
@@ -231,12 +233,13 @@ body {
  * 		link-body
  * */
 
-/*
- * background:	for --login and --terms
- * */
 .form {
-	background: #fff;
 	font: 0/1.5 MicrosoftYahei, serif;
+}
+
+.form--login,
+.form--term {
+	background: #fff;
 }
 
 .form--dialog {
@@ -250,7 +253,7 @@ body {
 	display: inline-block;
 }
 
-.form--terms {
+.form--term {
 	border-radius: 5px;
 	height: 596px;
 	margin: -302px 0 0 -477px;
@@ -268,12 +271,18 @@ body {
 	margin: 0 auto;
 }
 
-.form__title-bar--terms {
+.form__sublist {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+
+.form__title-bar--term {
 	background: #f3f3f3;
 	padding: 5px 10px;
 }
 
-.form__title--terms {
+.form__title--term {
 	font-size: 14px;
 	font-weight: 700;
 }
@@ -369,20 +378,40 @@ body {
 }
 
 .form__textarea {
+	font: 0/1.5 simsun, serif;
 	overflow-y: auto;
 }
 
-.form__textarea--terms {
-	font-size: 12px;
-	height: 446px;
+.form__textarea--term {
+	height: 426px;
 	margin: 10px;
+	padding: 10px;
+}
+
+.form__text {
+	font-size: 14px;
+}
+
+.form__text--policy,
+.form__text--term {
+	color: #666;
+}
+
+.form__text--link,
+.form__text--term {
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.form__text--link {
+	color: #f00;
 }
 
 .form__submit-box--login {
 	margin: 58px 20px 30px;
 }
 
-.form__submit-box--terms {
+.form__submit-box--term {
 	margin: 25px 0;
 	text-align: center;
 }
