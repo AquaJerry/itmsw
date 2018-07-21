@@ -1,15 +1,14 @@
 /**
- * @file	register.js
- * @description	What executed after the Jingdong/Joybuy register page loads.
- * @author	AquaJerry <huopopo_zeyang@163.com>
- * @see		<https://github.com/AuqaJerry/itmsw>
+ * @file Jingdong/Joybuy Register Page
+ * @author AquaJerry <huopopo_zeyang@163.com>
+ * @see	https://github.com/AuqaJerry/itmsw
  */
 
 /**
  * Get an element by its ID.
  *
- * @param {string} i - the ID
- * @return {HTMLElement|null} - the element, or null if not found
+ * @param {string} i - The ID
+ * @returns {HTMLElement|null} The element, or null if not found
  */
 function $(i){return document.getElementById(i)}
 
@@ -42,6 +41,32 @@ var $termPopup = $('termPopup')
 var cssTermPopup = $termPopup.style
 
 /**
+ * Set the display css property
+ * of the mask layer and the popup terms & conditions.
+ *
+ * @param {'none'|'block'} display - hide if 'none', or show if 'block'
+ */
+function setDisplay(display) {
+	cssTermPopup.display = cssMask.display = display
+}
+
+/**
+ * Close the popup and stay in the register page.
+ */
+function agreePopup() {
+	setDisplay('none')
+}
+
+/**
+ * Redirect to the login page.
+ */
+function cancelPopup() {
+	location = 'login.html'
+}
+
+/* Initial Script Below */
+
+/**
  * Load the popup.
  */
-cssTermPopup.display = cssMask.display = 'block'
+setDisplay('block')

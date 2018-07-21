@@ -281,9 +281,30 @@ body {
 	width: 50%;
 }
 
+/* fake flexbox */
+.form__title-bar {
+	text-align: justify;
+	text-align-last: justify;
+}
+
+.form__title-bar::after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
 .form__title-bar--term {
 	background: #f3f3f3;
 	padding: 5px 10px;
+}
+
+.form__title,
+.form__icon,
+.form__label,
+.form__input-box,
+.form__button {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .form__title--term {
@@ -319,12 +340,8 @@ body {
 	margin: 0 0 30px;
 }
 
-.form__icon,
-.form__label,
-.form__input-box,
-.form__button {
-	display: inline-block;
-	vertical-align: middle;
+.form__icon--in-title-bar {
+	cursor: pointer;
 }
 
 .form__icon--left {
