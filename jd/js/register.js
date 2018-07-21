@@ -1,7 +1,7 @@
 /**
  * @file Jingdong/Joybuy Register Page
  * @author AquaJerry <huopopo_zeyang@163.com>
- * @see	https://github.com/AuqaJerry/itmsw
+ * @see https://github.com/AuqaJerry/itmsw
  */
 
 /**
@@ -10,35 +10,56 @@
  * @param {string} i - The ID
  * @returns {HTMLElement|null} The element, or null if not found
  */
-function $(i){return document.getElementById(i)}
+function $(i) { return document.getElementById(i); }
+
+/**
+ * The button to agree with terms & conditions.
+ *
+ * @type {HTMLElement}
+ */
+const $agreePopup = $('agreePopup');
+
+/**
+ * The button to disagree against terms & conditions.
+ *
+ * @type {HTMLElement}
+ */
+const $cancelPopup = $('cancelPopup');
+
+/**
+ * The icon in the title bar to disagree against terms & conditions.
+ *
+ * @type {HTMLElement}
+ */
+const $exitPopup = $('exitPopup');
 
 /**
  * The mask layer valid when register page loads.
  *
  * @type {HTMLElement}
  */
-var $mask = $('mask')
+const $mask = $('mask');
 
 /**
  * The style of the mask layer.
  *
  * @type {CSS2Properties}
  */
-var cssMask = $mask.style
+const cssMask = $mask.style;
 
 /**
  * The terms & conditions that popups when register page loads.
  *
  * @type {HTMLElement}
  */
-var $termPopup = $('termPopup')
+const $termPopup = $('termPopup');
 
 /**
  * The style of the popup of terms & conditions.
  *
  * @type {CSS2Properties}
  */
-var cssTermPopup = $termPopup.style
+const cssTermPopup = $termPopup.style;
 
 /**
  * Set the display css property
@@ -47,26 +68,32 @@ var cssTermPopup = $termPopup.style
  * @param {'none'|'block'} display - hide if 'none', or show if 'block'
  */
 function setDisplay(display) {
-	cssTermPopup.display = cssMask.display = display
+  cssTermPopup.display = display;
+  cssMask.display = display;
 }
 
 /**
  * Close the popup and stay in the register page.
  */
 function agreePopup() {
-	setDisplay('none')
+  setDisplay('none');
 }
 
 /**
  * Redirect to the login page.
  */
 function cancelPopup() {
-	location = 'login.html'
+  window.location = 'login.html';
 }
 
 /* Initial Script Below */
 
-/**
- * Load the popup.
- */
-setDisplay('block')
+/* Load the popup */
+setDisplay('block');
+
+/* Listen agree button */
+$agreePopup.onclick = agreePopup;
+
+/* Listen cancel buttons */
+$cancelPopup.onclick = cancelPopup;
+$exitPopup.onclick = cancelPopup;
