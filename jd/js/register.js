@@ -62,6 +62,13 @@ const $termPopup = $('termPopup');
 const cssTermPopup = $termPopup.style;
 
 /**
+ * The input for a user name to be used.
+ *
+ * @type {HTMLElement}
+ */
+const $userName = $('userName');
+
+/**
  * Set the display css property
  * of the mask layer and the popup terms & conditions.
  *
@@ -77,6 +84,7 @@ function setDisplay(display) {
  */
 function agreePopup() {
   setDisplay('none');
+  $userName.focus();
 }
 
 /**
