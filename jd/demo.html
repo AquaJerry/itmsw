@@ -6,8 +6,10 @@
 		<script>
 			function sayHello(userName, age) {
 				alert('Name: ' + userName + 'Age: ' + age)
+				return 'Hello ' + userName
 			}
-			sayHello('Tom', 20)
+			var str = sayHello('Tom', 20)
+			alert('str=' + str)
 		</script>
 		<script src="demo.js"></script>
 	</head>
