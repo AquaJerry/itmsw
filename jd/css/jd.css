@@ -249,6 +249,10 @@ body {
 	top: 50%;
 }
 
+.form--hidden {
+	display: none;
+}
+
 .form--login {
 	display: inline-block;
 }
@@ -580,4 +584,8 @@ body {
 	right: 0;
 	top: 0;
 	z-index: 1000;
+}
+
+.mask--hidden {
+	display: none;
 }
