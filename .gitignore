@@ -1,2 +1,5 @@
 # exclude swap file for editing
 **.swp
+
+# Dependency directories
+**/node_modules/

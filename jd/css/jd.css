@@ -7,7 +7,6 @@
  * This is a BEM-style stylesheet for Jingdong/Joybuy pages.
  * */
 
-
 /* Base Style */
 
 html,
@@ -16,7 +15,6 @@ body {
 	padding: 0;
 }
 
-
 /*
  * Block:	page
  * */
@@ -24,7 +22,6 @@ body {
 .page {
 	width: 100%;
 }
-
 
 /*
  * Block:	header
@@ -50,7 +47,7 @@ body {
  * margin:	center
  * */
 .header__content {
-	font: 0 MicrosoftYahei;
+	font: 0 MicrosoftYahei, serif;
 	margin: 0 auto;
 }
 
@@ -59,7 +56,8 @@ body {
 	text-align: justify;
 	text-align-last: justify;
 }
-.header__content--flex:after {
+
+.header__content--flex::after {
 	content: '';
 	display: inline-block;
 	width: 100%;
@@ -116,7 +114,6 @@ body {
 	text-decoration: underline;
 }
 
-
 /*
  * Block:	main
  * Elements:
@@ -143,7 +140,7 @@ body {
  * margin:	center
  * */
 .main__content {
-	font: 0/1.5 MicrosoftYahei;
+	font: 0/1.5 MicrosoftYahei, serif;
 	margin: 0 auto;
 }
 
@@ -180,8 +177,8 @@ body {
 }
 
 .main__form-box--register {
-	display: inline-block;
 	border-right: 1px solid #ccc;
+	display: inline-block;
 	padding: 0 137px;
 }
 
@@ -212,11 +209,13 @@ body {
 	margin: 20px 0;
 }
 
-
 /*
  * Block:	form
  * Elements:
  * 		list
+ * 		sublist
+ * 		title-bar
+ * 		title
  * 		navbar
  * 		navitem
  * 		cell
@@ -225,6 +224,8 @@ body {
  * 		input-box
  * 		input
  * 		button
+ * 		textarea
+ * 		text
  * 		submit-box
  * 		submit
  * 		footer
@@ -232,13 +233,39 @@ body {
  * 		link-body
  * */
 
-.form--login {
+.form {
+	font: 0/1.5 MicrosoftYahei, serif;
+}
+
+.form--login,
+.form--term {
 	background: #fff;
+}
+
+.form--dialog {
+	border: 4px solid #c3c3c3;
+	left: 50%;
+	position: fixed;
+	top: 50%;
+}
+
+.form--hidden {
+	display: none;
+}
+
+.form--login {
 	display: inline-block;
 }
 
+.form--term {
+	border-radius: 5px;
+	height: 596px;
+	margin: -302px 0 0 -477px;
+	width: 947px;
+	z-index: 1001;
+}
+
 .form__list {
-	font: 12px MicrosoftYahei;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -246,6 +273,43 @@ body {
 
 .form__list--register {
 	margin: 0 auto;
+}
+
+.form__sublist {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+
+/* fake flexbox */
+.form__title-bar {
+	text-align: justify;
+	text-align-last: justify;
+}
+
+.form__title-bar::after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
+.form__title-bar--term {
+	background: #f3f3f3;
+	padding: 5px 10px;
+}
+
+.form__title,
+.form__icon,
+.form__label,
+.form__input-box,
+.form__button {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.form__title--term {
+	font-size: 14px;
+	font-weight: 700;
 }
 
 .form__navbar {
@@ -264,7 +328,6 @@ body {
 
 .form__cell {
 	border: 1px solid #ccc;
-	font: 0 MicrosoftYahei;
 }
 
 .form__cell--login {
@@ -277,13 +340,8 @@ body {
 	margin: 0 0 30px;
 }
 
-.form__icon,
-.form__label,
-.form__input-box,
-.form__button {
-	display: inline-block;
-	overflow: hidden;
-	vertical-align: middle;
+.form__icon--in-title-bar {
+	cursor: pointer;
 }
 
 .form__icon--left {
@@ -295,7 +353,8 @@ body {
 	text-align: justify;
 	text-align-last: justify;
 }
-.form__label:after {
+
+.form__label::after {
 	content: '';
 	display: inline-block;
 	width: 100%;
@@ -335,20 +394,78 @@ body {
 }
 
 .form__button--register {
-	line-height: 42px;
+	height: 42px;
 	width: 120px;
+}
+
+.form__textarea {
+	font: 0/1.5 simsun, serif;
+	overflow-y: auto;
+	padding: 10px;
+}
+
+.form__textarea--term {
+	height: 426px;
+	margin: 10px;
+}
+
+.form__text {
+	font-size: 14px;
+}
+
+.form__text--policy,
+.form__text--term {
+	color: #666;
+}
+
+.form__text--link,
+.form__text--term {
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.form__text--link {
+	color: #f00;
 }
 
 .form__submit-box--login {
 	margin: 58px 20px 30px;
 }
 
+.form__submit-box--term {
+	margin: 25px 0;
+	text-align: center;
+}
+
 .form__submit {
-	background: #f0282c;
 	border: none;
-	color: #fff;
+	cursor: pointer;
 	font-size: 16px;
+}
+
+.form__submit--agree,
+.form__submit--cancel {
+	height: 54px;
+	margin: 0 15px;
+	width: 200px;
+}
+
+.form__submit--agree,
+.form__submit--login,
+.form__submit--register {
+	background: #f0282c;
+	color: #fff;
+}
+
+.form__submit--login,
+.form__submit--register {
 	width: 100%;
+}
+
+.form__submit--cancel {
+	background: #e3e4e5;
+	color: #999;
+	padding: 0;
 }
 
 .form__submit--login {
@@ -386,7 +503,6 @@ body {
 	line-height: 50px;
 }
 
-
 /*
  * Block:	footer
  * Elements:
@@ -407,7 +523,7 @@ body {
  * */
 .footer__content {
 	color: gray;
-	font: 12px/1.5 MicrosoftYahei;
+	font: 12px/1.5 MicrosoftYahei, serif;
 	margin: 0 auto;
 	overflow: hidden;
 	text-align: center;
@@ -466,4 +582,27 @@ body {
 
 .footer__copyright {
 	margin: 10px 0 40px;
+}
+
+/*
+ * Block:	mask
+ * */
+
+/*
+ * z-index:		WeUI Compatible <https://weui.io>
+ * */
+.mask {
+	background: #000;
+	bottom: 0;
+	filter: alpha(opacity=15);
+	left: 0;
+	opacity: 0.15;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+.mask--hidden {
+	display: none;
 }

@@ -1,0 +1,26 @@
+{
+  "name": "jd",
+  "version": "1.0.0",
+  "description": "Web Frontend Projects for itmsw.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aquajerry/itmsw.git"
+  },
+  "author": "AquaJerry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aquajerry/itmsw/issues"
+  },
+  "homepage": "https://github.com/aquajerry/itmsw#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "stylelint-config-standard": "^18.2.0"
+  }
+}
