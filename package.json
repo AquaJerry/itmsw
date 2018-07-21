@@ -4,7 +4,7 @@
   "description": "Web Frontend Projects for itmsw.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint --fix jd/js"
   },
   "repository": {
     "type": "git",
