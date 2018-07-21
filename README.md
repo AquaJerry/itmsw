@@ -37,8 +37,11 @@ Jingdong register page consists of:
 - Footer
   - Jingdong Menu
   - Copyright
+- Mask
+- Popup
+  - Terms & Conditions
 
-Well, I guess about 90% of webpages around the world these days is like that!
+Popup shows as the page loads. Agree to continue, otherwise to login.
 
 
 ## Jingdong Login Page
