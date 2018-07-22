@@ -107,7 +107,13 @@ function cancelPopup() {
  * @returns {boolean} Whether the submit is OK
  */
 function validate() {
-  return false;
+  const userName = $userName.value;
+
+  if (userName === '') {
+    alert('User name should not be empty.');
+    return false;
+  }
+  return true;
 }
 
 /* Initial Script Below */
