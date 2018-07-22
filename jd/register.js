@@ -107,7 +107,7 @@ function cancelPopup() {
  * @returns {boolean} Whether the submit is OK
  */
 function validate() {
-  return true;
+  return false;
 }
 
 /* Initial Script Below */
