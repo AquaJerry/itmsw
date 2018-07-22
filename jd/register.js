@@ -109,16 +109,21 @@ function cancelPopup() {
 function validate() {
   const userName = $userName.value;
 
+  const isUserNameANum = !isNaN(userName);
   const lenUserName = userName.length;
 
   if (userName === '') {
     alert('User name should not be empty.');
     return false;
-  } if (lenUserName < 4 || lenUserName > 20) {
+  } else if (lenUserName < 4 || lenUserName > 20) {
     alert('User name should have 4 to 20 characters.');
     return false;
+  } else if (isUserNameANum) {
+    alert('User name should not only contain number.');
+    return false;
+  } else {
+    return true;
   }
-  return true;
 }
 
 /* Initial Script Below */
