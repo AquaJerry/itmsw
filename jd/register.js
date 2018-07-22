@@ -109,8 +109,13 @@ function cancelPopup() {
 function validate() {
   const userName = $userName.value;
 
+  const lenUserName = userName.length;
+
   if (userName === '') {
     alert('User name should not be empty.');
+    return false;
+  } if (lenUserName < 4 || lenUserName > 20) {
+    alert('User name should have 4 to 20 characters.');
     return false;
   }
   return true;
