@@ -4,11 +4,19 @@
 		<meta charset="utf-8">
 		<title>Demo</title>
 		<script>
+			function test(num) {
+				alert('num=' + num)
+				if (num > 3) {
+					return true
+				} else {
+					return false
+				}
+			}
 		</script>
 		<script src="js/demo.js"></script>
 	</head>
 	<body>
-		<form action="login.html" onsubmit="return false">
+		<form action="login.html" onsubmit="return test(5)">
 			<input type="submit" value="Submit">
 		</form>
 	</body>
