@@ -4,7 +4,7 @@
   "description": "Web Frontend Projects for itmsw.com",
   "main": "index.js",
   "scripts": {
-    "test": "eslint --fix jd/js; stylelint --fix jd/common/css"
+    "test": "eslint --fix jd; stylelint --fix jd/common/css"
   },
   "repository": {
     "type": "git",
