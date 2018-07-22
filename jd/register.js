@@ -48,6 +48,13 @@ const $mask = $('mask');
 const cssMask = $mask.style;
 
 /**
+ * The form where a user register.
+ *
+ * @type {HTMLElement}
+ */
+const $registerForm = $('registerForm');
+
+/**
  * The terms & conditions that popups when register page loads.
  *
  * @type {HTMLElement}
@@ -94,6 +101,15 @@ function cancelPopup() {
   window.location = 'login.html';
 }
 
+/**
+ * Validate register form before submit.
+ *
+ * @returns {boolean} Whether the submit is OK
+ */
+function validate() {
+  return true;
+}
+
 /* Initial Script Below */
 
 /* Load the popup */
@@ -105,3 +121,6 @@ $agreePopup.onclick = agreePopup;
 /* Listen cancel buttons */
 $cancelPopup.onclick = cancelPopup;
 $exitPopup.onclick = cancelPopup;
+
+/* Listen submit of form */
+$registerForm.onsubmit = validate;
