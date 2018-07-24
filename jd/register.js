@@ -41,13 +41,6 @@ let $exitPopup = $('exitPopup');
 let $mask = $('mask');
 
 /**
- * The style of the mask layer.
- *
- * @type {CSS2Properties}
- */
-let cssMask = $mask.style;
-
-/**
  * The form where a user register.
  *
  * @type {HTMLElement}
@@ -62,18 +55,25 @@ let $registerForm = $('registerForm');
 let $termPopup = $('termPopup');
 
 /**
- * The style of the popup of terms & conditions.
- *
- * @type {CSS2Properties}
- */
-let cssTermPopup = $termPopup.style;
-
-/**
  * The input for a user name to be used.
  *
  * @type {HTMLElement}
  */
 let $userName = $('userName');
+
+/**
+ * The style of the mask layer.
+ *
+ * @type {CSS2Properties}
+ */
+let cssMask = $mask.style;
+
+/**
+ * The style of the popup of terms & conditions.
+ *
+ * @type {CSS2Properties}
+ */
+let cssTermPopup = $termPopup.style;
 
 /**
  * Set the display css property
