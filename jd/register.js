@@ -48,6 +48,13 @@ let $mask = $('mask');
 let $password = $('password');
 
 /**
+ * The input for the phone number to be used.
+ *
+ * @type {HTMLElement}
+ */
+let $phone = $('phone');
+
+/**
  * The form where a user register.
  *
  * @type {HTMLElement}
@@ -121,11 +128,14 @@ function cancelPopup() {
  */
 function validate() {
   let password = $password.value;
+  let phone = $phone.value;
   let repassword = $repassword.value;
   let userName = $userName.value;
 
+  let isPhoneNaN = isNaN(phone);
   let isUserNameANum = !isNaN(userName);
   let lenPassword = password.length;
+  let lenPhone = phone.length;
   let lenUserName = userName.length;
 
   if ('' == userName) {
@@ -135,7 +145,7 @@ function validate() {
     alert('User name should have 4 to 20 characters.');
     return false;
   } else if (isUserNameANum) {
-    alert('User name should not only contain number.');
+    alert('User name should not only contain numbers.');
     return false;
   } else {
     alert('User name is correct.');
@@ -159,6 +169,19 @@ function validate() {
     return false;
   } else {
     alert('Password is confirmed.');
+  }
+
+  if ('' == phone) {
+    alert('Phone number should not be empty.');
+    return false;
+  } else if (11 != lenPhone) {
+    alert('Phone number should have 11 digits.');
+    return false;
+  } else if (isPhoneNaN) {
+    alert('Phone number should only contain numbers.');
+    return false;
+  } else {
+    alert('Phone number is correct.');
   }
 }
 
