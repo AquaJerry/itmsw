@@ -83,6 +83,13 @@ let $termPopup = $('termPopup');
 let $userName = $('userName');
 
 /**
+ * The input for the valification code user got.
+ *
+ * @type {HTMLElement}
+ */
+let $validateCode = $('validateCode');
+
+/**
  * The style of the mask layer.
  *
  * @type {CSS2Properties}
@@ -131,12 +138,15 @@ function validate() {
   let phone = $phone.value;
   let repassword = $repassword.value;
   let userName = $userName.value;
+  let validateCode = $validateCode.value;
 
   let isPhoneNaN = isNaN(phone);
   let isUserNameANum = !isNaN(userName);
+  let isValidateCodeNaN = isNaN(validateCode);
   let lenPassword = password.length;
   let lenPhone = phone.length;
   let lenUserName = userName.length;
+  let lenValidateCode = validateCode.length;
 
   if ('' == userName) {
     alert('User name should not be empty.');
@@ -182,6 +192,19 @@ function validate() {
     return false;
   } else {
     alert('Phone number is correct.');
+  }
+
+  if ('' == validateCode) {
+    alert('Verification code should not be empty.');
+    return false;
+  } else if (6 != lenValidateCode) {
+    alert('Verification code should have 6 digits.');
+    return false;
+  } else if (isValidateCodeNaN) {
+    alert('Verification code should only contain numbers.');
+    return false;
+  } else {
+    alert('Verification code is correct.');
   }
 }
 
