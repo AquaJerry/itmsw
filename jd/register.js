@@ -104,7 +104,7 @@ function agreePopup() {
  * Redirect to the login page.
  */
 function cancelPopup() {
-  location = 'login.html';
+  window.location = 'login.html';
 }
 
 /**
@@ -129,12 +129,12 @@ function validate() {
     alert('User name should not only contain number.');
     return false;
   } else {
-    alert('User name is correct.')
+    alert('User name is correct.');
   }
 
   if ('' == password) {
     alert('Password should not be empty.');
-    return false
+    return false;
   } else {
     return true;
   }

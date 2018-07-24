@@ -1,2 +1,4 @@
-extends: google
+env:
+        browser: true
+extends: ['eslint:recommended', google]
 parser: babel-eslint
