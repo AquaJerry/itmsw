@@ -326,8 +326,14 @@ body {
 	width: 50%;
 }
 
-.form__cell {
+.form__cell--login,
+.form__cell--register {
 	border: 1px solid #ccc;
+}
+
+.form__cell--register,
+.form__cell--tip {
+	margin: 0 0 10px;
 }
 
 .form__cell--login {
@@ -337,7 +343,13 @@ body {
 
 .form__cell--register {
 	color: #767676;
-	margin: 0 0 30px;
+}
+
+.form__cell--tip {
+	color: #ff8801;
+	font-size: 14px;
+	height: 1em;
+	line-height: 1em;
 }
 
 .form__icon--in-title-bar {
