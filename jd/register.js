@@ -41,6 +41,13 @@ let $exitPopup = $('exitPopup');
 let $mask = $('mask');
 
 /**
+ * The input for a password to be used.
+ *
+ * @type {HTMLElement}
+ */
+let $password = $('password');
+
+/**
  * The form where a user register.
  *
  * @type {HTMLElement}
@@ -106,6 +113,7 @@ function cancelPopup() {
  * @return {boolean} Whether the submit is OK
  */
 function validate() {
+  let password = $password.value;
   let userName = $userName.value;
 
   let isUserNameANum = !isNaN(userName);
@@ -120,6 +128,13 @@ function validate() {
   } else if (isUserNameANum) {
     alert('User name should not only contain number.');
     return false;
+  } else {
+    alert('User name is correct.')
+  }
+
+  if ('' == password) {
+    alert('Password should not be empty.');
+    return false
   } else {
     return true;
   }
