@@ -17,10 +17,9 @@
   },
   "homepage": "https://github.com/aquajerry/itmsw#readme",
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint-config-google": "^0.9.1",
     "stylelint-config-standard": "^18.2.0"
   }
 }

@@ -8,72 +8,72 @@
  * Get an element by its ID.
  *
  * @param {string} i - The ID
- * @returns {HTMLElement|null} The element, or null if not found
+ * @return {HTMLElement|null} The element, or null if not found
  */
-function $(i) { return document.getElementById(i); }
+let $ = (i) => document.getElementById(i);
 
 /**
  * The button to agree with terms & conditions.
  *
  * @type {HTMLElement}
  */
-const $agreePopup = $('agreePopup');
+let $agreePopup = $('agreePopup');
 
 /**
  * The button to disagree against terms & conditions.
  *
  * @type {HTMLElement}
  */
-const $cancelPopup = $('cancelPopup');
+let $cancelPopup = $('cancelPopup');
 
 /**
  * The icon in the title bar to disagree against terms & conditions.
  *
  * @type {HTMLElement}
  */
-const $exitPopup = $('exitPopup');
+let $exitPopup = $('exitPopup');
 
 /**
  * The mask layer valid when register page loads.
  *
  * @type {HTMLElement}
  */
-const $mask = $('mask');
+let $mask = $('mask');
 
 /**
  * The style of the mask layer.
  *
  * @type {CSS2Properties}
  */
-const cssMask = $mask.style;
+let cssMask = $mask.style;
 
 /**
  * The form where a user register.
  *
  * @type {HTMLElement}
  */
-const $registerForm = $('registerForm');
+let $registerForm = $('registerForm');
 
 /**
  * The terms & conditions that popups when register page loads.
  *
  * @type {HTMLElement}
  */
-const $termPopup = $('termPopup');
+let $termPopup = $('termPopup');
 
 /**
  * The style of the popup of terms & conditions.
  *
  * @type {CSS2Properties}
  */
-const cssTermPopup = $termPopup.style;
+let cssTermPopup = $termPopup.style;
 
 /**
  * The input for a user name to be used.
  *
  * @type {HTMLElement}
  */
-const $userName = $('userName');
+let $userName = $('userName');
 
 /**
  * Set the display css property
@@ -82,8 +82,7 @@ const $userName = $('userName');
  * @param {'none'|'block'} display - hide if 'none', or show if 'block'
  */
 function setDisplay(display) {
-  cssTermPopup.display = display;
-  cssMask.display = display;
+  cssTermPopup.display = cssMask.display = display;
 }
 
 /**
@@ -98,21 +97,21 @@ function agreePopup() {
  * Redirect to the login page.
  */
 function cancelPopup() {
-  window.location = 'login.html';
+  location = 'login.html';
 }
 
 /**
  * Validate register form before submit.
  *
- * @returns {boolean} Whether the submit is OK
+ * @return {boolean} Whether the submit is OK
  */
 function validate() {
-  const userName = $userName.value;
+  let userName = $userName.value;
 
-  const isUserNameANum = !isNaN(userName);
-  const lenUserName = userName.length;
+  let isUserNameANum = !isNaN(userName);
+  let lenUserName = userName.length;
 
-  if (userName === '') {
+  if ('' == userName) {
     alert('User name should not be empty.');
     return false;
   } else if (lenUserName < 4 || lenUserName > 20) {
