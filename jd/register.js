@@ -117,6 +117,7 @@ function validate() {
   let userName = $userName.value;
 
   let isUserNameANum = !isNaN(userName);
+  let lenPassword = password.length;
   let lenUserName = userName.length;
 
   if ('' == userName) {
@@ -134,6 +135,9 @@ function validate() {
 
   if ('' == password) {
     alert('Password should not be empty.');
+    return false;
+  } else if (lenPassword < 6 || lenPassword > 20) {
+    alert('Password should have 6 to 20 characters.');
     return false;
   } else {
     return true;
