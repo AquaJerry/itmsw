@@ -55,6 +55,13 @@ let $password = $('password');
 let $registerForm = $('registerForm');
 
 /**
+ * The input for confirming a password to be used.
+ *
+ * @type {HTMLElement}
+ */
+let $repassword = $('repassword');
+
+/**
  * The terms & conditions that popups when register page loads.
  *
  * @type {HTMLElement}
@@ -114,6 +121,7 @@ function cancelPopup() {
  */
 function validate() {
   let password = $password.value;
+  let repassword = $repassword.value;
   let userName = $userName.value;
 
   let isUserNameANum = !isNaN(userName);
@@ -140,7 +148,17 @@ function validate() {
     alert('Password should have 6 to 20 characters.');
     return false;
   } else {
-    return true;
+    alert('Password is correct.');
+  }
+
+  if ('' == repassword) {
+    alert('Please confirm your password.');
+    return false;
+  } else if (repassword != password) {
+    alert('The two passwords you typed do not match.');
+    return false;
+  } else {
+    alert('Password is confirmed.');
   }
 }
 
