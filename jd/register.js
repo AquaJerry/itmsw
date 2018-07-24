@@ -41,11 +41,18 @@ let $exitPopup = $('exitPopup');
 let $mask = $('mask');
 
 /**
- * The input for a password to be used.
+ * The input for the password to be used.
  *
  * @type {HTMLElement}
  */
 let $password = $('password');
+
+/**
+ * The tip for the password to be used.
+ *
+ * @type {HTMLElement}
+ */
+let $passwordTip = $('passwordTip');
 
 /**
  * The input for the phone number to be used.
@@ -53,6 +60,13 @@ let $password = $('password');
  * @type {HTMLElement}
  */
 let $phone = $('phone');
+
+/**
+ * The tip for the phone number to be used.
+ *
+ * @type {HTMLElement}
+ */
+let $phoneTip = $('phoneTip');
 
 /**
  * The form where a user register.
@@ -69,6 +83,13 @@ let $registerForm = $('registerForm');
 let $repassword = $('repassword');
 
 /**
+ * The tip for confirming a password to be used.
+ *
+ * @type {HTMLElement}
+ */
+let $repasswordTip = $('repasswordTip');
+
+/**
  * The terms & conditions that popups when register page loads.
  *
  * @type {HTMLElement}
@@ -76,11 +97,18 @@ let $repassword = $('repassword');
 let $termPopup = $('termPopup');
 
 /**
- * The input for a user name to be used.
+ * The input for the user name to be used.
  *
  * @type {HTMLElement}
  */
 let $userName = $('userName');
+
+/**
+ * The tip for the user name to be used.
+ *
+ * @type {HTMLElement}
+ */
+let $userNameTip = $('userNameTip');
 
 /**
  * The input for the valification code user got.
@@ -88,6 +116,13 @@ let $userName = $('userName');
  * @type {HTMLElement}
  */
 let $validateCode = $('validateCode');
+
+/**
+ * The tip for the valification code user got.
+ *
+ * @type {HTMLElement}
+ */
+let $validateCodeTip = $('validateCodeTip');
 
 /**
  * The style of the mask layer.
@@ -149,62 +184,62 @@ function validate() {
   let lenValidateCode = validateCode.length;
 
   if ('' == userName) {
-    alert('User name should not be empty.');
+    $userNameTip.innerHTML = 'User name should not be empty.';
     return false;
   } else if (lenUserName < 4 || lenUserName > 20) {
-    alert('User name should have 4 to 20 characters.');
+    $userNameTip.innerHTML = 'User name should have 4 to 20 characters.';
     return false;
   } else if (isUserNameANum) {
-    alert('User name should not only contain numbers.');
+    $userNameTip.innerHTML = 'User name should not only contain numbers.';
     return false;
   } else {
-    alert('User name is correct.');
+    $userNameTip.innerHTML = 'User name is correct.';
   }
 
   if ('' == password) {
-    alert('Password should not be empty.');
+    $passwordTip.innerHTML = 'Password should not be empty.';
     return false;
   } else if (lenPassword < 6 || lenPassword > 20) {
-    alert('Password should have 6 to 20 characters.');
+    $passwordTip.innerHTML = 'Password should have 6 to 20 characters.';
     return false;
   } else {
-    alert('Password is correct.');
+    $passwordTip.innerHTML = 'Password is correct.';
   }
 
   if ('' == repassword) {
-    alert('Please confirm your password.');
+    $repasswordTip.innerHTML = 'Please confirm your password.';
     return false;
   } else if (repassword != password) {
-    alert('The two passwords you typed do not match.');
+    $repasswordTip.innerHTML = 'The two passwords you typed do not match.';
     return false;
   } else {
-    alert('Password is confirmed.');
+    $repasswordTip.innerHTML = 'Password is confirmed.';
   }
 
   if ('' == phone) {
-    alert('Phone number should not be empty.');
+    $phoneTip.innerHTML = 'Phone number should not be empty.';
     return false;
   } else if (11 != lenPhone) {
-    alert('Phone number should have 11 digits.');
+    $phoneTip.innerHTML = 'Phone number should have 11 digits.';
     return false;
   } else if (isPhoneNaN) {
-    alert('Phone number should only contain numbers.');
+    $phoneTip.innerHTML = 'Phone number should only contain numbers.';
     return false;
   } else {
-    alert('Phone number is correct.');
+    $phoneTip.innerHTML = 'Phone number is correct.';
   }
 
   if ('' == validateCode) {
-    alert('Verification code should not be empty.');
+    $validateCodeTip.innerHTML = 'Verification code should not be empty.';
     return false;
   } else if (6 != lenValidateCode) {
-    alert('Verification code should have 6 digits.');
+    $validateCodeTip.innerHTML = 'Verification code should have 6 digits.';
     return false;
   } else if (isValidateCodeNaN) {
-    alert('Verification code should only contain numbers.');
+    $validateCodeTip.innerHTML = 'Verification code should only be numbers.';
     return false;
   } else {
-    alert('Verification code is correct.');
+    $validateCodeTip.innerHTML = 'Verification code is correct.';
   }
 }
 
