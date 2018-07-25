@@ -223,6 +223,7 @@ body {
  * 		label
  * 		input-box
  * 		input
+ * 		tip
  * 		button
  * 		textarea
  * 		text
@@ -302,6 +303,7 @@ body {
 .form__icon,
 .form__label,
 .form__input-box,
+.form__tip,
 .form__button {
 	display: inline-block;
 	vertical-align: middle;
@@ -346,10 +348,7 @@ body {
 }
 
 .form__cell--tip {
-	color: #ff8801;
-	font-size: 14px;
-	height: 1em;
-	line-height: 1em;
+	visibility: hidden;
 }
 
 .form__icon--in-title-bar {
@@ -358,6 +357,10 @@ body {
 
 .form__icon--left {
 	border-right: 1px solid #ccc;
+}
+
+.form__icon--tip-left {
+	margin: 0 10px 0 0;
 }
 
 /* fake flexbox */
@@ -377,7 +380,7 @@ body {
 	height: 48px;
 	line-height: 48px;
 	margin: 0 20px;
-	width: 5em;
+	width: 6em;
 }
 
 .form__input {
@@ -398,6 +401,12 @@ body {
 .form__input--code {
 	height: 28px;
 	width: 172px;
+}
+
+.form__tip--register {
+	color: #ff8801;
+	font-size: 14px;
+	line-height: 1;
 }
 
 .form__button {

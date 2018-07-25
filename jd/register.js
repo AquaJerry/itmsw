@@ -48,25 +48,11 @@ let $mask = $('mask');
 let $password = $('password');
 
 /**
- * The tip for the password to be used.
- *
- * @type {HTMLElement}
- */
-let $passwordTip = $('passwordTip');
-
-/**
  * The input for the phone number to be used.
  *
  * @type {HTMLElement}
  */
 let $phone = $('phone');
-
-/**
- * The tip for the phone number to be used.
- *
- * @type {HTMLElement}
- */
-let $phoneTip = $('phoneTip');
 
 /**
  * The form where a user register.
@@ -83,13 +69,6 @@ let $registerForm = $('registerForm');
 let $repassword = $('repassword');
 
 /**
- * The tip for confirming a password to be used.
- *
- * @type {HTMLElement}
- */
-let $repasswordTip = $('repasswordTip');
-
-/**
  * The terms & conditions that popups when register page loads.
  *
  * @type {HTMLElement}
@@ -104,25 +83,11 @@ let $termPopup = $('termPopup');
 let $userName = $('userName');
 
 /**
- * The tip for the user name to be used.
- *
- * @type {HTMLElement}
- */
-let $userNameTip = $('userNameTip');
-
-/**
  * The input for the valification code user got.
  *
  * @type {HTMLElement}
  */
 let $validateCode = $('validateCode');
-
-/**
- * The tip for the valification code user got.
- *
- * @type {HTMLElement}
- */
-let $validateCodeTip = $('validateCodeTip');
 
 /**
  * The style of the mask layer.
@@ -149,6 +114,22 @@ function setDisplay(display) {
 }
 
 /**
+ * Whether the validation of register form is success
+ *
+ * @type {boolean}
+ */
+let success;
+
+/**
+ * The latest tip from the controller.
+ *
+ * It usually is an error message sent to user.
+ *
+ * @type {string}
+ */
+let tip;
+
+/**
  * Close the popup and stay in the register page.
  */
 function agreePopup() {
@@ -161,6 +142,29 @@ function agreePopup() {
  */
 function cancelPopup() {
   window.location = 'login.html';
+}
+
+/**
+ * Update a tip on the view for registering.
+ *
+ * If a tip is updated (not empty), redraw and show it on the view,
+ * clear it in the model, and fail the validation of register form.
+ *
+ * Otherwise reset (hide by default) parts of the view
+ * where it is redrawn and showed.
+ *
+ * @param {string} tipId - The ID about parts of the view where the tip is
+ */
+function updateTip(tipId) {
+  let cssCell = $(tipId + 'TipCell').style;
+
+  if (tip) {
+    $(tipId + 'Tip').innerHTML = tip;
+    cssCell.visibility = 'visible';
+    success = tip = false;
+  } else {
+    cssCell.visibility = '';
+  }
 }
 
 /**
@@ -183,64 +187,55 @@ function validate() {
   let lenUserName = userName.length;
   let lenValidateCode = validateCode.length;
 
+  success = true;
+
   if ('' == userName) {
-    $userNameTip.innerHTML = 'User name should not be empty.';
-    return false;
+    tip = 'User name should not be empty.';
   } else if (lenUserName < 4 || lenUserName > 20) {
-    $userNameTip.innerHTML = 'User name should have 4 to 20 characters.';
-    return false;
+    tip = 'User name should have 4 to 20 characters.';
   } else if (isUserNameANum) {
-    $userNameTip.innerHTML = 'User name should not only contain numbers.';
-    return false;
-  } else {
-    $userNameTip.innerHTML = 'User name is correct.';
+    tip = 'User name should not only contain numbers.';
   }
+
+  updateTip('userName');
 
   if ('' == password) {
-    $passwordTip.innerHTML = 'Password should not be empty.';
-    return false;
+    tip = 'Password should not be empty.';
   } else if (lenPassword < 6 || lenPassword > 20) {
-    $passwordTip.innerHTML = 'Password should have 6 to 20 characters.';
-    return false;
-  } else {
-    $passwordTip.innerHTML = 'Password is correct.';
+    tip = 'Password should have 6 to 20 characters.';
   }
+
+  updateTip('password');
 
   if ('' == repassword) {
-    $repasswordTip.innerHTML = 'Please confirm your password.';
-    return false;
+    tip = 'Please confirm your password.';
   } else if (repassword != password) {
-    $repasswordTip.innerHTML = 'The two passwords you typed do not match.';
-    return false;
-  } else {
-    $repasswordTip.innerHTML = 'Password is confirmed.';
+    tip = 'The two passwords you typed do not match.';
   }
+
+  updateTip('repassword');
 
   if ('' == phone) {
-    $phoneTip.innerHTML = 'Phone number should not be empty.';
-    return false;
+    tip = 'Phone number should not be empty.';
   } else if (11 != lenPhone) {
-    $phoneTip.innerHTML = 'Phone number should have 11 digits.';
-    return false;
+    tip = 'Phone number should have 11 digits.';
   } else if (isPhoneNaN) {
-    $phoneTip.innerHTML = 'Phone number should only contain numbers.';
-    return false;
-  } else {
-    $phoneTip.innerHTML = 'Phone number is correct.';
+    tip = 'Phone number should only contain numbers.';
   }
 
+  updateTip('phone');
+
   if ('' == validateCode) {
-    $validateCodeTip.innerHTML = 'Verification code should not be empty.';
-    return false;
+    tip = 'Verification code should not be empty.';
   } else if (6 != lenValidateCode) {
-    $validateCodeTip.innerHTML = 'Verification code should have 6 digits.';
-    return false;
+    tip = 'Verification code should have 6 digits.';
   } else if (isValidateCodeNaN) {
-    $validateCodeTip.innerHTML = 'Verification code should only be numbers.';
-    return false;
-  } else {
-    $validateCodeTip.innerHTML = 'Verification code is correct.';
+    tip = 'Verification code should only be numbers.';
   }
+
+  updateTip('validateCode');
+
+  return success;
 }
 
 /* Initial Script Below */
