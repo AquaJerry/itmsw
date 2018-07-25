@@ -83,11 +83,25 @@ let $termPopup = $('termPopup');
 let $userName = $('userName');
 
 /**
- * The input for the valification code user got.
+ * The input for the valification code.
  *
  * @type {HTMLElement}
  */
 let $validateCode = $('validateCode');
+
+/**
+ * The icon of status about the valification code user typed.
+ *
+ * @type {HTMLElement}
+ */
+let $vcStatus = $('validateCodeStatus');
+
+/**
+ * The tip about valification code.
+ *
+ * @type {HTMLElement}
+ */
+let $vcTip = $('validateCodeTip');
 
 /**
  * The style of the mask layer.
@@ -102,6 +116,13 @@ let cssMask = $mask.style;
  * @type {CSS2Properties}
  */
 let cssTermPopup = $termPopup.style;
+
+/**
+ * The style of the tip about the validation code.
+ *
+ * @type {CSS2Properties}
+ */
+let cssVcTip = $vcTip.style;
 
 /**
  * Set the display css property
@@ -153,22 +174,43 @@ function cancelPopup() {
  * Otherwise reset (hide by default) parts of the view
  * where it is redrawn and showed.
  *
+ * During above cases, the message of success resets (hides by default) and
+ * shows respectively.
+ *
  * @param {string} tipId - The ID about parts of the view where the tip is
  */
 function updateTip(tipId) {
   let cssCell = $(tipId + 'TipCell').style;
+  let cssIcon = $(tipId + 'Correct').style;
 
   if (tip) {
     $(tipId + 'Tip').innerHTML = tip;
     cssCell.visibility = 'visible';
+    cssIcon.visibility = '';
     success = tip = false;
   } else {
     cssCell.visibility = '';
+    cssIcon.visibility = 'visible';
   }
 }
 
 /**
+ * Update the tip of the validation of the valification code.
+ *
+ * @param {string} color - The tip color to be set
+ * @param {string} status - The code status to be set
+ * @param {string} tip - The tip to be set
+ */
+function updateValidateCodeTip(color, status, tip) {
+  $vcStatus.src = 'common/images/jd_icon_'+ status + '.png';
+  $vcTip.innerHTML = tip;
+  cssVcTip.color = color;
+}
+
+/**
  * Validate register form before submit.
+ *
+ * First, assume the validation is success. Then do all validations in series.
  *
  * @return {boolean} Whether the submit is OK
  */
@@ -233,7 +275,14 @@ function validate() {
     tip = 'Verification code should only be numbers.';
   }
 
-  updateTip('validateCode');
+  // updateValidateCodeTip(color, status, tip)
+  if (tip) {
+    updateValidateCodeTip('', 'error', tip);
+    success = tip = false;
+  } else {
+    updateValidateCodeTip('#43c75a', 'correct',
+      'Verification code is correct.');
+  }
 
   return success;
 }

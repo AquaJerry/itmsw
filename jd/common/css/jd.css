@@ -338,6 +338,10 @@ body {
 	margin: 0 0 10px;
 }
 
+.form__cell--invisible {
+	visibility: hidden;
+}
+
 .form__cell--login {
 	margin: 20px;
 	overflow: hidden;
@@ -345,10 +349,6 @@ body {
 
 .form__cell--register {
 	color: #767676;
-}
-
-.form__cell--tip {
-	visibility: hidden;
 }
 
 .form__icon--in-title-bar {
@@ -359,7 +359,13 @@ body {
 	border-right: 1px solid #ccc;
 }
 
+.form__icon--right {
+	margin: 16px;
+	visibility: hidden;
+}
+
 .form__icon--tip-left {
+	height: 16px;
 	margin: 0 10px 0 0;
 }
 
@@ -395,7 +401,7 @@ body {
 
 .form__input--register {
 	height: 28px;
-	width: 294px;
+	width: 246px;
 }
 
 .form__input--code {
