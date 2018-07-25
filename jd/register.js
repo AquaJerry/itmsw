@@ -151,6 +151,14 @@ let success;
 let tip;
 
 /**
+ * The prefix and suffix of image source of the status of verification code.
+ *
+ * @type {string}
+ */
+let vcStatusImgSrcPre = 'common/images/jd_icon_';
+let vcStatusImgSrcSuf = '.png';
+
+/**
  * Close the popup and stay in the register page.
  */
 function agreePopup() {
@@ -185,26 +193,16 @@ function updateTip(tipId) {
 
   if (tip) {
     $(tipId + 'Tip').innerHTML = tip;
-    cssCell.visibility = 'visible';
     cssIcon.visibility = '';
+    if (success) {
+      $(tipId).focus();
+      cssCell.visibility = 'visible';
+    }
     success = tip = false;
   } else {
     cssCell.visibility = '';
     cssIcon.visibility = 'visible';
   }
-}
-
-/**
- * Update the tip of the validation of the valification code.
- *
- * @param {string} color - The tip color to be set
- * @param {string} status - The code status to be set
- * @param {string} tip - The tip to be set
- */
-function updateValidateCodeTip(color, status, tip) {
-  $vcStatus.src = 'common/images/jd_icon_'+ status + '.png';
-  $vcTip.innerHTML = tip;
-  cssVcTip.color = color;
 }
 
 /**
@@ -275,13 +273,22 @@ function validate() {
     tip = 'Verification code should only be numbers.';
   }
 
-  // updateValidateCodeTip(color, status, tip)
+  /* update tip of verification code */
   if (tip) {
-    updateValidateCodeTip('', 'error', tip);
+    cssVcTip.color = '';
+    if (success) {
+      $validateCode.focus();
+      $vcStatus.src = vcStatusImgSrcPre+ 'error' +vcStatusImgSrcSuf;
+      $vcTip.innerHTML = tip;
+    } else {
+      $vcStatus.src = '';
+      $vcTip.innerHTML = '';
+    }
     success = tip = false;
   } else {
-    updateValidateCodeTip('#43c75a', 'correct',
-      'Verification code is correct.');
+    $vcStatus.src = vcStatusImgSrcPre +'correct' + vcStatusImgSrcSuf;
+    $vcTip.innerHTML = 'Verification code is correct.';
+    cssVcTip.color = '#43c75a';
   }
 
   return success;
