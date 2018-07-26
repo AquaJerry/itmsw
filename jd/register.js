@@ -142,6 +142,8 @@ function updateTip(tipId) {
     if (success) {
       $(tipId).focus();
       cssCell.visibility = 'visible';
+    } else {
+      cssCell.visibility = ''
     }
     success = tip = false;
   } else {
@@ -199,22 +201,26 @@ window.validate = () => {
   let userName = $userName.value;
   let validateCode = $validateCode.value;
 
+  var hasUserNameInvalidChar = /[^\u4e00-\u9fa5a-zA-Z0-9-_]/.test(userName)
   let isPhoneNaN = isNaN(phone);
-  let isUserNameANum = !isNaN(userName);
+  let isUserNameANum = !/[^0-9]/.test(userName)
+  var isUserNameEmpty = /^$/.test(userName)
+  var isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName)
   let isValidateCodeNaN = isNaN(validateCode);
   let lenPassword = password.length;
   let lenPhone = phone.length;
-  let lenUserName = userName.length;
   let lenValidateCode = validateCode.length;
 
   success = true;
 
-  if ('' == userName) {
+  if (isUserNameEmpty) {
     tip = 'User name should not be empty.';
-  } else if (lenUserName < 4 || lenUserName > 20) {
+  } else if (isUserNameTooShortOrLong) {
     tip = 'User name should have 4 to 20 characters.';
   } else if (isUserNameANum) {
     tip = 'User name should not only contain numbers.';
+  } else if (hasUserNameInvalidChar) {
+    tip = 'User name can only contain Chinese, letters, numbers, - or _.'
   }
 
   updateTip('userName');
