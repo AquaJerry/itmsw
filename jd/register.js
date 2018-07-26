@@ -13,27 +13,6 @@
 let $ = (i) => document.getElementById(i);
 
 /**
- * The button to agree with terms & conditions.
- *
- * @type {HTMLElement}
- */
-let $agreePopup = $('agreePopup');
-
-/**
- * The button to disagree against terms & conditions.
- *
- * @type {HTMLElement}
- */
-let $cancelPopup = $('cancelPopup');
-
-/**
- * The icon in the title bar to disagree against terms & conditions.
- *
- * @type {HTMLElement}
- */
-let $exitPopup = $('exitPopup');
-
-/**
  * The mask layer valid when register page loads.
  *
  * @type {HTMLElement}
@@ -53,13 +32,6 @@ let $password = $('password');
  * @type {HTMLElement}
  */
 let $phone = $('phone');
-
-/**
- * The form where a user register.
- *
- * @type {HTMLElement}
- */
-let $registerForm = $('registerForm');
 
 /**
  * The input for confirming a password to be used.
@@ -125,67 +97,40 @@ let cssTermPopup = $termPopup.style;
 let cssVcTip = $vcTip.style;
 
 /**
- * Set the display css property
- * of the mask layer and the popup terms & conditions.
+ * Set the display css property of the mask layer and
+ *     the popup terms & conditions.
  *
- * @param {'none'|'block'} display - hide if 'none', or show if 'block'
+ * @param {'none'|'block'} display - Hide if 'none', or show if 'block'
  */
 function setDisplay(display) {
   cssTermPopup.display = cssMask.display = display;
 }
 
 /**
- * Whether the validation of register form is success
+ * Whether the validation of register form is success.
  *
  * @type {boolean}
  */
 let success;
 
 /**
- * The latest tip from the controller.
- *
- * It usually is an error message sent to user.
- *
+ * @summary The latest tip from the controller.
  * @type {string}
+ * @description It usually is an error message sent to user.
  */
 let tip;
 
 /**
- * The prefix and suffix of image source of the status of verification code.
- *
- * @type {string}
- */
-let vcStatusImgSrcPre = 'common/images/jd_icon_';
-let vcStatusImgSrcSuf = '.png';
-
-/**
- * Close the popup and stay in the register page.
- */
-function agreePopup() {
-  setDisplay('none');
-  $userName.focus();
-}
-
-/**
- * Redirect to the login page.
- */
-function cancelPopup() {
-  window.location = 'login.html';
-}
-
-/**
- * Update a tip on the view for registering.
- *
- * If a tip is updated (not empty), redraw and show it on the view,
- * clear it in the model, and fail the validation of register form.
- *
- * Otherwise reset (hide by default) parts of the view
- * where it is redrawn and showed.
- *
- * During above cases, the message of success resets (hides by default) and
- * shows respectively.
- *
+ * @summary Update a tip on the view for registering.
  * @param {string} tipId - The ID about parts of the view where the tip is
+ * @description If a tip is updated (not empty), redraw it, show it on the view
+ *     if it is the first tip of the whole register form, clear it in the model,
+ *     and fail the validation of register form.<br>
+ *     Otherwise reset (hide by default) parts of the view where it is redrawn
+ *     and showed.<br>
+ *     During above cases, the message of success resets (hides by default) and
+ *     shows respectively.<br>
+ *     Focus on the input from which the first tip comes.
  */
 function updateTip(tipId) {
   let cssCell = $(tipId + 'TipCell').style;
@@ -206,13 +151,48 @@ function updateTip(tipId) {
 }
 
 /**
- * Validate register form before submit.
+ * The prefix of image source of the status of verification code.
  *
- * First, assume the validation is success. Then do all validations in series.
- *
- * @return {boolean} Whether the submit is OK
+ * @type {string}
  */
-function validate() {
+let vcStatusImgSrcPre = 'common/images/jd_icon_';
+
+/**
+ * The suffix of image source of the status of verification code.
+ *
+ * @type {string}
+ */
+let vcStatusImgSrcSuf = '.png';
+
+/* Initial Script Below */
+
+/**
+ * Close the popup and stay in the register page.
+ *
+ * @global
+ */
+window.agreePopup = () => {
+  setDisplay('none');
+  $userName.focus();
+};
+
+/**
+ * Redirect to the login page.
+ *
+ * @global
+ */
+window.cancelPopup = () => {
+  window.location = 'login.html';
+};
+
+/**
+ * @summary Validate register form before submit.
+ * @global
+ * @return {boolean} Whether the submit is OK
+ * @description First, assume the validation is success. Then do all validations
+ *     in series.
+ */
+window.validate = () => {
   let password = $password.value;
   let phone = $phone.value;
   let repassword = $repassword.value;
@@ -273,16 +253,23 @@ function validate() {
     tip = 'Verification code should only be numbers.';
   }
 
-  /* update tip of verification code */
+  /**
+   * @summary Update tip of verification code.
+   * @see updateTip
+   * @description If the tip is both updated and the first of the whole register
+   *     form, draw it (in warning color by default). If this tip is not the
+   *     first, clear what has been drawn.<br>
+   *     If the tip is not updated, draw a tip of success in green.<br>
+   *     In above two cases, a relevant status icon is also drawn.
+   */
   if (tip) {
-    cssVcTip.color = '';
     if (success) {
       $validateCode.focus();
       $vcStatus.src = vcStatusImgSrcPre+ 'error' +vcStatusImgSrcSuf;
       $vcTip.innerHTML = tip;
+      cssVcTip.color = '';
     } else {
-      $vcStatus.src = '';
-      $vcTip.innerHTML = '';
+      $vcStatus.src = $vcTip.innerHTML = '';
     }
     success = tip = false;
   } else {
@@ -292,19 +279,7 @@ function validate() {
   }
 
   return success;
-}
+};
 
-/* Initial Script Below */
-
-/* Load the popup */
+// Load the popup
 setDisplay('block');
-
-/* Listen agree button */
-$agreePopup.onclick = agreePopup;
-
-/* Listen cancel buttons */
-$cancelPopup.onclick = cancelPopup;
-$exitPopup.onclick = cancelPopup;
-
-/* Listen submit of form */
-$registerForm.onsubmit = validate;

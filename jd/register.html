@@ -21,7 +21,7 @@
 			<div class="main">
 				<div class="main__content main__content--register">
 					<div class="main__form-box main__form-box--register">
-						<form action="register_success.html" class="form form--register" id="registerForm" method="post">
+						<form action="register_success.html" class="form form--register" method="post" onsubmit="return validate()">
 							<ul class="form__list form__list--register">
 								<li class="form__cell form__cell--register">
 									<div class="form__label form__label--register">用 户 名</div>
@@ -129,7 +129,7 @@
 		<div class="form form--dialog form--hidden form--term" id="termPopup">
 			<div class="form__title-bar form__title-bar--term">
 				<span class="form__title form__title--term">京东用户注册协议和隐私政策</span>
-				<img class="form__icon form__icon--in-title-bar" id="exitPopup" src="common/images/jd_icon_exit.png">
+				<img class="form__icon form__icon--in-title-bar" onclick="cancelPopup()" src="common/images/jd_icon_exit.png">
 			</div>
 			<div class="form__textarea form__textarea--term">
 				<div class="form__text form__text--term">在您注册成为京东用户的过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，请您务必仔细阅读、充分理解协议中的条款内容后再点击同意（尤其是以粗体并下划线标识的条款，因为这些条款可能会明确您应履行的义务或对您的权利有所限制）：</div>
@@ -179,8 +179,8 @@
 				<br class="form__text">
 			</div>
 			<div class="form__submit-box form__submit-box--term">
-				<button class="form__submit form__submit--cancel" id="cancelPopup">Cancel</button>
-				<button class="form__submit form__submit--agree" id="agreePopup">Agree</button>
+				<button class="form__submit form__submit--cancel" onclick="cancelPopup()">Cancel</button>
+				<button class="form__submit form__submit--agree" onclick="agreePopup()">Agree</button>
 			</div>
 		</div>
 		<div class="mask mask--hidden" id="mask"></div>
