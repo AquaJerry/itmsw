@@ -28,10 +28,10 @@
 									<div class="form__input-box form__input-box--register">
 										<input class="form__input form__input--register" id="userName" name="userName" placeholder="您的账户名和登录名">
 									</div>
-									<img class="form__icon form__icon--right" id="userNameCorrect" src="common/images/jd_icon_correct.png">
+									<img class="form__icon form__icon--right" id="userNamePass" src="common/images/jd_icon_pass.png">
 								</li>
-								<li class="form__cell form__cell--invisible form__cell--tip" id="userNameTipCell">
-									<img class="form__icon form__icon--tip-left" src="common/images/jd_icon_error.png">
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="userNameState">
 									<span class="form__tip form__tip--register" id="userNameTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
@@ -39,10 +39,10 @@
 									<div class="form__input-box form__input-box--register">
 										<input class="form__input form__input--register" id="password" type="password" name="password" placeholder="建议至少使用两种字符组合">
 									</div>
-									<img class="form__icon form__icon--right" id="passwordCorrect" src="common/images/jd_icon_correct.png">
+									<img class="form__icon form__icon--right" id="passwordPass" src="common/images/jd_icon_pass.png">
 								</li>
-								<li class="form__cell form__cell--invisible form__cell--tip" id="passwordTipCell">
-									<img class="form__icon form__icon--tip-left" src="common/images/jd_icon_error.png">
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="passwordState">
 									<span class="form__tip form__tip--register" id="passwordTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
@@ -50,10 +50,10 @@
 									<div class="form__input-box form__input-box--register">
 										<input class="form__input form__input--register" id="repassword" type="password" name="repassword" placeholder="请再次输入密码">
 									</div>
-									<img class="form__icon form__icon--right" id="repasswordCorrect" src="common/images/jd_icon_correct.png">
+									<img class="form__icon form__icon--right" id="repasswordPass" src="common/images/jd_icon_pass.png">
 								</li>
-								<li class="form__cell form__cell--invisible form__cell--tip" id="repasswordTipCell">
-									<img class="form__icon form__icon--tip-left" src="common/images/jd_icon_error.png">
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="repasswordState">
 									<span class="form__tip form__tip--register" id="repasswordTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
@@ -61,10 +61,10 @@
 									<div class="form__input-box form__input-box--register">
 										<input class="form__input form__input--register" id="phone" name="phone" placeholder="建议使用常用手机">
 									</div>
-									<img class="form__icon form__icon--right" id="phoneCorrect" src="common/images/jd_icon_correct.png">
+									<img class="form__icon form__icon--right" id="phonePass" src="common/images/jd_icon_pass.png">
 								</li>
-								<li class="form__cell form__cell--invisible form__cell--tip" id="phoneTipCell">
-									<img class="form__icon form__icon--tip-left" src="common/images/jd_icon_error.png">
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="phoneState">
 									<span class="form__tip form__tip--register" id="phoneTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
@@ -75,7 +75,7 @@
 									<input class="form__button form__button--register" type="button" value="获取验证码">
 								</li>
 								<li class="form__cell form__cell--tip">
-									<img class="form__icon form__icon--tip-left" id="validateCodeStatus">
+									<img class="form__icon form__icon--tip-left" id="validateCodeState">
 									<span class="form__tip form__tip--register" id="validateCodeTip"></span>
 								</li>
 								<li class="form__submit-box form__submit-box--register">

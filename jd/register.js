@@ -62,20 +62,6 @@ let $userName = $('userName');
 let $validateCode = $('validateCode');
 
 /**
- * The icon of status about the valification code user typed.
- *
- * @type {HTMLElement}
- */
-let $vcStatus = $('validateCodeStatus');
-
-/**
- * The tip about valification code.
- *
- * @type {HTMLElement}
- */
-let $vcTip = $('validateCodeTip');
-
-/**
  * The style of the mask layer.
  *
  * @type {CSS2Properties}
@@ -90,11 +76,18 @@ let cssMask = $mask.style;
 let cssTermPopup = $termPopup.style;
 
 /**
- * The style of the tip about the validation code.
+ * The latest review for what the user inputs.
  *
- * @type {CSS2Properties}
+ * @type {string}
  */
-let cssVcTip = $vcTip.style;
+let review;
+
+/**
+ * The latest tip color.
+ *
+ * @type {string}
+ */
+let tipColor;
 
 /**
  * Set the display css property of the mask layer and
@@ -105,6 +98,14 @@ let cssVcTip = $vcTip.style;
 function setDisplay(display) {
   cssTermPopup.display = cssMask.display = display;
 }
+
+/**
+ * @summary Describe how user's input is.
+ * @type {string}
+ * @description E.g: 'weak': The user typed a quite simple password.<br>
+ *     'correct': The user typed the validation code as the page wants.
+ */
+let state;
 
 /**
  * Whether the validation of register form is success.
@@ -121,50 +122,41 @@ let success;
 let tip;
 
 /**
- * @summary Update a tip on the view for registering.
- * @param {string} tipId - The ID about parts of the view where the tip is
- * @description If a tip is updated (not empty), redraw it, show it on the view
- *     if it is the first tip of the whole register form, clear it in the model,
- *     and fail the validation of register form.<br>
- *     Otherwise reset (hide by default) parts of the view where it is redrawn
- *     and showed.<br>
- *     During above cases, the message of success resets (hides by default) and
- *     shows respectively.<br>
- *     Focus on the input from which the first tip comes.
+ * @summary Redraw a tip.
+ * @param {string} id - The ID of where the tip is
+ * @description If the tip is the first tip of the whole register form,
+ *     redraw and show it, focus on the input where this tip comes.<br>
+ *     If not the first, clear the view where it could be.<br>
+ *     Any tip fails the validation of register form.<br>
+ *     If that validation is success, redraw the view with review.<br>
+ *     The pass and status icon also update relatively.
  */
-function updateTip(tipId) {
-  let cssCell = $(tipId + 'TipCell').style;
-  let cssIcon = $(tipId + 'Correct').style;
+function updateTip(id) {
+  let $pass = $(id + 'Pass');
+  let $tip = $(id + 'Tip');
+  let cssTip = $tip.style;
+
+  if ($pass) $pass.style.visibility = tip ? '' : 'visible';
+
+  if (success && tip) state = state || 'error';
+  $(id + 'State').src = state ? 'common/images/jd_icon_' + state + '.png' : '';
+  state = false;
 
   if (tip) {
-    cssIcon.visibility = '';
     if (success) {
-      $(tipId).focus();
-      $(tipId + 'Tip').innerHTML = tip;
-      cssCell.visibility = 'visible';
+      $(id).focus();
+      $tip.innerHTML = tip;
+      cssTip.color = '';
     } else {
-      cssCell.visibility = ''
+      $tip.innerHTML = '';
     }
     success = tip = false;
   } else {
-    cssCell.visibility = '';
-    cssIcon.visibility = 'visible';
+    $tip.innerHTML = review || '';
+    cssTip.color = tipColor || '#43c75a';
+    review = tipColor = false;
   }
 }
-
-/**
- * The prefix of image source of the status of verification code.
- *
- * @type {string}
- */
-let vcStatusImgSrcPre = 'common/images/jd_icon_';
-
-/**
- * The suffix of image source of the status of verification code.
- *
- * @type {string}
- */
-let vcStatusImgSrcSuf = '.png';
 
 /* Initial Script Below */
 
@@ -201,13 +193,16 @@ window.validate = () => {
   let userName = $userName.value;
   let validateCode = $validateCode.value;
 
-  var hasUserNameInvalidChar = /[^\u4e00-\u9fa5a-zA-Z0-9-_]/.test(userName)
+  let hasUserNameInvalidChar = /[^\u4e00-\u9fa5a-zA-Z0-9-_]/.test(userName);
+  let isPasswordSafe = /^(?![^0-9]+$)(?![^a-zA-Z]+$)(?![0-9a-zA-Z]+$)/
+    .test(password);
+  let isPasswordTooShortOrLong = !/^.{6,20}$/.test(password);
+  let isPasswordWeak = /^([0-9]+|[a-zA-Z]+|[^0-9a-zA-Z]+)$/.test(password);
   let isPhoneNaN = isNaN(phone);
-  let isUserNameANum = !/[^0-9]/.test(userName)
-  var isUserNameEmpty = /^$/.test(userName)
-  var isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName)
+  let isUserNameANum = !/[^0-9]/.test(userName);
+  let isUserNameEmpty = /^$/.test(userName);
+  let isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName);
   let isValidateCodeNaN = isNaN(validateCode);
-  let lenPassword = password.length;
   let lenPhone = phone.length;
   let lenValidateCode = validateCode.length;
 
@@ -220,15 +215,25 @@ window.validate = () => {
   } else if (isUserNameANum) {
     tip = 'User name should not only contain numbers.';
   } else if (hasUserNameInvalidChar) {
-    tip = 'User name can only contain Chinese, letters, numbers, - or _.'
+    tip = 'User name can only contain Chinese, letters, numbers, - or _.';
   }
 
   updateTip('userName');
 
   if ('' == password) {
     tip = 'Password should not be empty.';
-  } else if (lenPassword < 6 || lenPassword > 20) {
+  } else if (isPasswordTooShortOrLong) {
     tip = 'Password should have 6 to 20 characters.';
+  } else if (isPasswordWeak) {
+    state = 'weak';
+    tip = 'Weak password. Please use letter, number, or symbol together.';
+  } else if (isPasswordSafe) {
+    review = 'Your password is safe.';
+    state = 'safe';
+  } else {
+    review = 'Your password is OK. Combine letter, digit, and symbol is safer.';
+    state = 'medium';
+    tipColor = '#cfdaed';
   }
 
   updateTip('password');
@@ -257,32 +262,12 @@ window.validate = () => {
     tip = 'Verification code should have 6 digits.';
   } else if (isValidateCodeNaN) {
     tip = 'Verification code should only be numbers.';
+  } else {
+    review = 'Verification code is correct.';
+    state = 'pass';
   }
 
-  /**
-   * @summary Update tip of verification code.
-   * @see updateTip
-   * @description If the tip is both updated and the first of the whole register
-   *     form, draw it (in warning color by default). If this tip is not the
-   *     first, clear what has been drawn.<br>
-   *     If the tip is not updated, draw a tip of success in green.<br>
-   *     In above two cases, a relevant status icon is also drawn.
-   */
-  if (tip) {
-    if (success) {
-      $validateCode.focus();
-      $vcStatus.src = vcStatusImgSrcPre+ 'error' +vcStatusImgSrcSuf;
-      $vcTip.innerHTML = tip;
-      cssVcTip.color = '';
-    } else {
-      $vcStatus.src = $vcTip.innerHTML = '';
-    }
-    success = tip = false;
-  } else {
-    $vcStatus.src = vcStatusImgSrcPre +'correct' + vcStatusImgSrcSuf;
-    $vcTip.innerHTML = 'Verification code is correct.';
-    cssVcTip.color = '#43c75a';
-  }
+  updateTip('validateCode');
 
   return success;
 };

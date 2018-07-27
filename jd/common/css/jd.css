@@ -338,10 +338,6 @@ body {
 	margin: 0 0 10px;
 }
 
-.form__cell--invisible {
-	visibility: hidden;
-}
-
 .form__cell--login {
 	margin: 20px;
 	overflow: hidden;
