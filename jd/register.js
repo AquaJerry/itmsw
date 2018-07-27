@@ -137,10 +137,10 @@ function updateTip(tipId) {
   let cssIcon = $(tipId + 'Correct').style;
 
   if (tip) {
-    $(tipId + 'Tip').innerHTML = tip;
     cssIcon.visibility = '';
     if (success) {
       $(tipId).focus();
+      $(tipId + 'Tip').innerHTML = tip;
       cssCell.visibility = 'visible';
     } else {
       cssCell.visibility = ''
