@@ -193,28 +193,26 @@ window.validate = () => {
   let userName = $userName.value;
   let validateCode = $validateCode.value;
 
-  let hasUserNameInvalidChar = /[^\u4e00-\u9fa5a-zA-Z0-9-_]/.test(userName);
   let isPasswordSafe = /^(?![^0-9]+$)(?![^a-zA-Z]+$)(?![0-9a-zA-Z]+$)/
     .test(password);
   let isPasswordTooShortOrLong = !/^.{6,20}$/.test(password);
   let isPasswordWeak = /^([0-9]+|[a-zA-Z]+|[^0-9a-zA-Z]+)$/.test(password);
+  let isPhoneMalformed = !/^1([38]|5[^4]|4[57]|7[678])/.test(phone);
   let isPhoneNaN = isNaN(phone);
   let isUserNameANum = !/[^0-9]/.test(userName);
-  let isUserNameEmpty = /^$/.test(userName);
+  let isUserNameMalformed = /[^\u4e00-\u9fa5a-zA-Z0-9-_]/.test(userName);
   let isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName);
   let isValidateCodeNaN = isNaN(validateCode);
-  let lenPhone = phone.length;
-  let lenValidateCode = validateCode.length;
 
   success = true;
 
-  if (isUserNameEmpty) {
+  if ('' == userName) {
     tip = 'User name should not be empty.';
   } else if (isUserNameTooShortOrLong) {
     tip = 'User name should have 4 to 20 characters.';
   } else if (isUserNameANum) {
     tip = 'User name should not only contain numbers.';
-  } else if (hasUserNameInvalidChar) {
+  } else if (isUserNameMalformed) {
     tip = 'User name can only contain Chinese, letters, numbers, - or _.';
   }
 
@@ -248,17 +246,19 @@ window.validate = () => {
 
   if ('' == phone) {
     tip = 'Phone number should not be empty.';
-  } else if (11 != lenPhone) {
+  } else if (11 != phone.length) {
     tip = 'Phone number should have 11 digits.';
   } else if (isPhoneNaN) {
     tip = 'Phone number should only contain numbers.';
+  } else if (isPhoneMalformed) {
+    tip = 'Phone number is malformed.';
   }
 
   updateTip('phone');
 
   if ('' == validateCode) {
     tip = 'Verification code should not be empty.';
-  } else if (6 != lenValidateCode) {
+  } else if (6 != validateCode.length) {
     tip = 'Verification code should have 6 digits.';
   } else if (isValidateCodeNaN) {
     tip = 'Verification code should only be numbers.';
