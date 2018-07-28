@@ -17,8 +17,8 @@ insert_final_newline = true
 tab_width = 4
 trim_trailing_whitespace = true
 
-# styleguide from Airbnb
-[**.js]
+# styleguide from Google
+[**.{java,js}]
 charset = utf-8
 end_of_file = lf
 indent_size = 2
