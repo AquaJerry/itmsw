@@ -43,6 +43,14 @@ Jingdong register page consists of:
 
 Popup shows as the page loads. Agree to continue, otherwise to login.
 
+### Note of Registering
+
+| Field        | Description                                                   |
+|--------------|---------------------------------------------------------------|
+| User Name    | It should have 4 to 20 Chinese characters, letters, numbers, `-` or `_`. It should not only have numbers. |
+| Password     | It should have 6 to 20 characters.                            |
+| Phone Number | It should have 11 numbers in China mainland.                  |
+
 
 ## Jingdong Login Page
 

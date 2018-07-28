@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Person Register</title>
-		<link rel="stylesheet" href="css/jd.css">
+		<link rel="stylesheet" href="common/css/jd.css">
 	</head>
 	<body>
 		<div class="page">
 			<div class="header header--register">
 				<div class="header__content header__content--register header__content--flex">
 					<div class="header__title-bar">
-						<img class="header__logo header__logo--register" src="images/jd_logo_160x50.png">
+						<img class="header__logo header__logo--register" src="common/images/jd_logo_160x50.png">
 						<div class="header__title header__title--register">Welcome Sign Up</div>
 					</div>
 					<div class="header__menu">Already a Member?
@@ -21,38 +21,62 @@
 			<div class="main">
 				<div class="main__content main__content--register">
 					<div class="main__form-box main__form-box--register">
-						<form class="form form--register" action="register_success.html" target="_blank">
+						<form action="register_success.html" class="form form--register" method="post" onsubmit="return validate()">
 							<ul class="form__list form__list--register">
 								<li class="form__cell form__cell--register">
 									<div class="form__label form__label--register">用 户 名</div>
 									<div class="form__input-box form__input-box--register">
-										<input class="form__input form__input--register" autofocus name="userName" placeholder="您的账户名和登录名">
+										<input class="form__input form__input--register" id="userName" name="userName" placeholder="您的账户名和登录名">
 									</div>
+									<img class="form__icon form__icon--right" id="userNamePass" src="common/images/jd_icon_pass.png">
+								</li>
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="userNameState">
+									<span class="form__tip form__tip--register" id="userNameTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
 									<div class="form__label form__label--register">设 置 密 码</div>
 									<div class="form__input-box form__input-box--register">
-										<input class="form__input form__input--register" type="password" name="password" placeholder="建议至少使用两种字符组合">
+										<input class="form__input form__input--register" id="password" type="password" name="password" placeholder="建议至少使用两种字符组合">
 									</div>
+									<img class="form__icon form__icon--right" id="passwordPass" src="common/images/jd_icon_pass.png">
+								</li>
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="passwordState">
+									<span class="form__tip form__tip--register" id="passwordTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
 									<div class="form__label form__label--register">确 认 密 码</div>
 									<div class="form__input-box form__input-box--register">
-										<input class="form__input form__input--register" type="password" name="repassword" placeholder="请再次输入密码">
+										<input class="form__input form__input--register" id="repassword" type="password" name="repassword" placeholder="请再次输入密码">
 									</div>
+									<img class="form__icon form__icon--right" id="repasswordPass" src="common/images/jd_icon_pass.png">
+								</li>
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="repasswordState">
+									<span class="form__tip form__tip--register" id="repasswordTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
 									<div class="form__label form__label--register">中 国 0086</div>
 									<div class="form__input-box form__input-box--register">
-										<input class="form__input form__input--register" name="phone" placeholder="建议使用常用手机">
+										<input class="form__input form__input--register" id="phone" name="phone" placeholder="建议使用常用手机">
 									</div>
+									<img class="form__icon form__icon--right" id="phonePass" src="common/images/jd_icon_pass.png">
+								</li>
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="phoneState">
+									<span class="form__tip form__tip--register" id="phoneTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
-									<div class="form__label form__label--register">手机验证码</div>
+									<div class="form__label form__label--register">手 机 验 证 码</div>
 									<div class="form__input-box form__input-box--code">
-										<input class="form__input form__input--code" name="validateCode" placeholder="手机验证码">
+										<input class="form__input form__input--code" id="validateCode" name="validateCode" placeholder="手机验证码">
 									</div>
 									<input class="form__button form__button--register" type="button" value="获取验证码">
+								</li>
+								<li class="form__cell form__cell--tip">
+									<img class="form__icon form__icon--tip-left" id="validateCodeState">
+									<span class="form__tip form__tip--register" id="validateCodeTip"></span>
 								</li>
 								<li class="form__submit-box form__submit-box--register">
 									<input class="form__submit form__submit--register" type="submit" value="立即注册">
@@ -62,12 +86,12 @@
 					</div>
 					<ul class="main__menu-bar main__menu-bar--register">
 						<li>
-							<img class="main__icon" src="images/jd_icon_enterprise.png">
+							<img class="main__icon" src="common/images/jd_icon_enterprise.png">
 							<a class="main__link main__link--register" href="#">ENTERPRISE</a>
 						</li>
 						<li class="main__separator"></li>
 						<li>
-							<img class="main__icon" src="images/jd_icon_global-customer.png">
+							<img class="main__icon" src="common/images/jd_icon_global-customer.png">
 							<a class="main__link main__link--register" href="#">INTERNATIONAL<br>CUSTOMER</a>
 						</li>
 					</ul>
@@ -105,7 +129,7 @@
 		<div class="form form--dialog form--hidden form--term" id="termPopup">
 			<div class="form__title-bar form__title-bar--term">
 				<span class="form__title form__title--term">京东用户注册协议和隐私政策</span>
-				<img class="form__icon form__icon--in-title-bar" id="exitPopup" src="images/jd_icon_exit.png">
+				<img class="form__icon form__icon--in-title-bar" onclick="cancelPopup()" src="common/images/jd_icon_exit.png">
 			</div>
 			<div class="form__textarea form__textarea--term">
 				<div class="form__text form__text--term">在您注册成为京东用户的过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，请您务必仔细阅读、充分理解协议中的条款内容后再点击同意（尤其是以粗体并下划线标识的条款，因为这些条款可能会明确您应履行的义务或对您的权利有所限制）：</div>
@@ -155,11 +179,11 @@
 				<br class="form__text">
 			</div>
 			<div class="form__submit-box form__submit-box--term">
-				<button class="form__submit form__submit--cancel" id="cancelPopup">Cancel</button>
-				<button class="form__submit form__submit--agree" id="agreePopup">Agree</button>
+				<button class="form__submit form__submit--cancel" onclick="cancelPopup()">Cancel</button>
+				<button class="form__submit form__submit--agree" onclick="agreePopup()">Agree</button>
 			</div>
 		</div>
 		<div class="mask mask--hidden" id="mask"></div>
-		<script src="js/register.js"></script>
+		<script src="register.js"></script>
 	</body>
 </html>

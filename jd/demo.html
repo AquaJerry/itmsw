@@ -4,9 +4,12 @@
 		<meta charset="utf-8">
 		<title>Demo</title>
 		<script>
+			var reg = /\W/
+			// var reg = new RegExp('\\d')
+			alert(reg.test("%"))
 		</script>
-		<script src="js/demo.js"></script>
+		<script src="demo.js"></script>
 	</head>
-	<body onload="alert('Load')" onresize="alert('Resize')" onunload="alert('Unload')">
+	<body>
 	</body>
 </html>
