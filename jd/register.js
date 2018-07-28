@@ -83,13 +83,6 @@ let cssTermPopup = $termPopup.style;
 let review;
 
 /**
- * The latest tip color.
- *
- * @type {string}
- */
-let tipColor;
-
-/**
  * Set the display css property of the mask layer and
  *     the popup terms & conditions.
  *
@@ -120,6 +113,13 @@ let success;
  * @description It usually is an error message sent to user.
  */
 let tip;
+
+/**
+ * The latest tip color.
+ *
+ * @type {string}
+ */
+let tipColor;
 
 /**
  * @summary Redraw a tip.
@@ -193,14 +193,14 @@ window.validate = () => {
   let userName = $userName.value;
   let validateCode = $validateCode.value;
 
-  let isPasswordSafe = /^(?![^0-9]+$)(?![^a-zA-Z]+$)(?![0-9a-zA-Z]+$)/
+  let isPasswordSafe = /^(?!\D+$)(?![^a-zA-Z]+$)(?![0-9a-zA-Z]+$)/
     .test(password);
   let isPasswordTooShortOrLong = !/^.{6,20}$/.test(password);
-  let isPasswordWeak = /^([0-9]+|[a-zA-Z]+|[^0-9a-zA-Z]+)$/.test(password);
+  let isPasswordWeak = /^(\d+|[a-zA-Z]+|[^0-9a-zA-Z]+)$/.test(password);
   let isPhoneMalformed = !/^1([38]|5[^4]|4[57]|7[678])/.test(phone);
   let isPhoneNaN = isNaN(phone);
-  let isUserNameANum = !/[^0-9]/.test(userName);
-  let isUserNameMalformed = /[^\u4e00-\u9fa5a-zA-Z0-9-_]/.test(userName);
+  let isUserNameANum = !/\D/.test(userName);
+  let isUserNameMalformed = /[^\u4e00-\u9fa5\w-]/.test(userName);
   let isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName);
   let isValidateCodeNaN = isNaN(validateCode);
 
