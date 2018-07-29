@@ -377,12 +377,16 @@ body {
 	width: 100%;
 }
 
+/*
+ * word-spacing:	remove whitespace, about -0.25em
+ * */
 .form__label--register {
 	font-size: 14px;
 	height: 48px;
 	line-height: 48px;
 	margin: 0 20px;
-	width: 6em;
+	width: 5em;
+	word-spacing: -4px;
 }
 
 .form__input {
