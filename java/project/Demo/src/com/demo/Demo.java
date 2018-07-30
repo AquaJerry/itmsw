@@ -20,6 +20,10 @@ public class Demo {
     System.out.println("d=" + d);
     boolean bl = true;
     System.out.println("bl=" + bl);
+    String str = "hello";
+    String str2 = new String("hello");
+    System.out.println("str=" + str);
+    System.out.println("str2=" + str2);
   }
 
 }
