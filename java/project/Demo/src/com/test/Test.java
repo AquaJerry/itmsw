@@ -1,5 +1,6 @@
 package com.test;
 
+import com.demo.Shape;
 import com.demo.Student;
 
 public class Test {
@@ -8,6 +9,8 @@ public class Test {
     // TODO Auto-generated method stub
     Student s = new Student();
     s.printName("tom");
+    Shape shape = new Shape();
+    shape.print();
   }
 
 }
