@@ -13,11 +13,16 @@ public class Student {
     name = userName;
   }
 
+  public void printName() {
+    System.out.println("name=" + name);
+  }
+
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     String str = new String("hello");
     Student s1 = new Student("tom");
     System.out.println("s1.name=" + s1.name);
+    s1.printName();
   }
 
 }
