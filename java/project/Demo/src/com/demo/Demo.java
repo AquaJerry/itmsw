@@ -18,8 +18,10 @@ public class Demo {
     int num = 65;
     char ch = (char)num;
 
-    double d2 = 5.123456789;
+    double d2 = 5.123_456_789;
     System.out.println("d2=" + d2);
+    float fl = (float)d2;
+    System.out.println("fl=" + fl);
   }
 
 }
