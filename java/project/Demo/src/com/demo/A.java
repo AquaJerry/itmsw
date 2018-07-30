@@ -5,7 +5,11 @@ public class A {
 
   }
 
-  public void sum(int a, int b) {
+  public void sum(int a, int b, int c) {
+
+  }
+
+  public void sum(float a, float b) {
 
   }
 
