@@ -16,6 +16,8 @@ public class Demo {
     System.out.println("l=" + l);
     float f = 5.6f;
     System.out.println("f=" + f);
+    double d = 5.6;
+    System.out.println("d=" + d);
   }
 
 }
