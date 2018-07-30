@@ -5,6 +5,11 @@ public class A {
 
   }
 
+  public int sum(int a, int b) {
+
+    return 0;
+  }
+
   public void sum(int a, int b, int c) {
 
   }
