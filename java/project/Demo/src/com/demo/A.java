@@ -22,3 +22,9 @@ public class A {
   }
 
 }
+
+class B extends A {
+  public void sum(int a, int b, int c, int d) {
+    System.out.println("int a+b+c+d=" + (a+b+c+d));
+  }
+}
