@@ -1,7 +1,7 @@
 package com.demo;
 
 public class Demo {
-  static void sum(int a, int b) {
+  static void sum(int a, double b) {
     System.out.println("a=" + a);
     System.out.println("b=" + b);
     //return a + b;
@@ -10,7 +10,7 @@ public class Demo {
 
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    sum(5, 6);
+    sum(5, 6.5);
     //System.out.println("s=" + s);
   }
 
