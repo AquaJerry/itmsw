@@ -6,6 +6,8 @@ public class Demo {
     // TODO Auto-generated method stub
     byte b = 'a';
     System.out.println("b=" + b);
+    char c = 'a';
+    System.out.println("c=" + c);
 
   }
 
