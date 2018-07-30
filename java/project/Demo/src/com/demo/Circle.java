@@ -1,6 +1,6 @@
 package com.demo;
 
-public class Circle {
+public class Circle extends Shape {
   public Circle() {
     System.out.println("Child class");
   }
