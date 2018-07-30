@@ -7,7 +7,8 @@ public class Demo {
     short s = b;
     //char c = b;
     char c = '中';
-    s = c;
+    //s = c;
+    c = s;
   }
 
 }
