@@ -6,7 +6,7 @@ public class Demo {
     // TODO Auto-generated method stub
     byte b = 'a';
     System.out.println("b=" + b);
-    char c = 65;
+    char c = '中';
     System.out.println("c=" + c);
 
   }
