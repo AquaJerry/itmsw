@@ -11,6 +11,8 @@ public class Test {
     s.printName("tom");
     Shape shape = new Shape();
     shape.print();
+    com.Student s2 = new com.Student();
+    s2.sayHello();
   }
 
 }
