@@ -1,9 +1,9 @@
 package com.demo;
 
 public class A {
-  public void sum(int a, int b) {
+  /*public void sum(int a, int b) {
     System.out.println("int a+b=" + (a+b));
-  }
+  }*/
 
   public void sum(int a, int b, int c) {
     System.out.println("int a+b+c=" + (a+b+c));
