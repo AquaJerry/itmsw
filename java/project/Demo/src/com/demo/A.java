@@ -17,6 +17,7 @@ public class A {
     // TODO Auto-generated method stub
     A a = new A();
     a.sum(5, 6);
+    a.sum(5.6f, 6.1f);
   }
 
 }
