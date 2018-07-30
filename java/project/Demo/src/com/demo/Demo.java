@@ -7,7 +7,7 @@ public class Demo {
     byte b = 'a';
     System.out.println("b=" + b);
     char c = '中';
-    System.out.println("c=" + c);
+    System.out.println("c=" + (int)c);
 
   }
 
