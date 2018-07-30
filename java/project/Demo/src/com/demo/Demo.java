@@ -8,7 +8,8 @@ public class Demo {
     System.out.println("b=" + b);
     char c = '\u4e2d';
     System.out.println("c=" + (int)c);
-
+    short s = 100;
+    System.out.println("s=" + s);
   }
 
 }
