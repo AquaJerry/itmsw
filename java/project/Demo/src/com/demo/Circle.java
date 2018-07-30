@@ -13,5 +13,6 @@ public class Circle extends Shape {
     Circle c = new Circle();
     c.print();
     c.test();
+    System.out.println(c.getClass());
   }
 }

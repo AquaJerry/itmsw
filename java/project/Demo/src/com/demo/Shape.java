@@ -12,5 +12,6 @@ public class Shape {
   public static void main(String[] args) {
     Shape s = new Shape();
     s.print();
+    System.out.println(s.getClass());
   }
 }
