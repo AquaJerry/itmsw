@@ -4,7 +4,7 @@ public class Demo {
   static int num;
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    int Age5 = 30;
+    int Age5 = 0;
     int age5 = 20;
     {
       float price = 5.6f;
