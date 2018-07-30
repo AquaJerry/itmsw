@@ -21,6 +21,7 @@ public class A {
     a.sum(3, 4, 5);*/
     B b = new B();
     b.sum(10, 20);
+    b.sum(3, 4, 5, 6);
   }
 
 }
