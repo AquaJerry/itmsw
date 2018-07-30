@@ -13,5 +13,7 @@ public class Circle extends Shape {
     //c.print1(100);
     Shape s = new Shape();
     s.print1(200);
+    s = new Circle();
+    s.print1(200);
   }
 }
