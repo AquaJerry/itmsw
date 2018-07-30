@@ -7,10 +7,10 @@ public class Demo {
     int age5 = 20;
     {
       float price = 5.6f;
-      System.out.println("price=" + price);
     }
     System.out.println("Age5=" + Age5);
     System.out.println("age5=" + age5);
+    System.out.println("price=" + price);
   }
 
 }
