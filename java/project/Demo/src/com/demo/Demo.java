@@ -14,6 +14,8 @@ public class Demo {
     System.out.println("i=" + i);
     long l = 1000000000000L;
     System.out.println("l=" + l);
+    float f = 5.6f;
+    System.out.println("f=" + f);
   }
 
 }
