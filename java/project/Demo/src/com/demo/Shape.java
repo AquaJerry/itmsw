@@ -1,7 +1,7 @@
 package com.demo;
 
 public class Shape {
-  public String print(String str) {
+  public String print1(String str) {
     System.out.println(str + " in shape");
     return "";
   }
