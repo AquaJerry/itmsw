@@ -2,13 +2,13 @@ package com.demo;
 
 public class Circle extends Shape {
 
-  public String print1(int str) {
+  public String print(int str) {
     System.out.println(str + " in circle");
     return "hello";
   }
 
   public static void main(String[] args) {
     Circle c = new Circle();
-    c.print1(100);
+    c.print(100);
   }
 }
