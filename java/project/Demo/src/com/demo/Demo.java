@@ -10,7 +10,7 @@ public class Demo {
 
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    sum(5, 6.5);
+    sum(5, 6.5f);
     //System.out.println("s=" + s);
   }
 
