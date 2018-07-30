@@ -5,7 +5,12 @@ public class Shape {
     System.out.println("Parent class");
   }
 
-  public void print() {
+  private void print() {
     System.out.println("Shape");
+  }
+
+  public static void main(String[] args) {
+    Shape s = new Shape();
+    s.print();
   }
 }
