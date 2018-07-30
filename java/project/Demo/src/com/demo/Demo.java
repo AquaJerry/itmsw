@@ -25,7 +25,9 @@ public class Demo {
     int i2 = (int)d2;
     System.out.println("i2=" + i2);
     boolean bl2 = true;
-    i2 = (int)bl2;
+    //i2 = (int)bl2;
+    String str = "hello";
+    i2 = (int)str;
   }
 
 }
