@@ -1,7 +1,7 @@
 package com.demo;
 
 public class Demo {
-  int num = 10;
+  static int num = 10;
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     int Age5 = 30;
