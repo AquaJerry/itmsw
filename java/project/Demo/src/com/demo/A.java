@@ -18,6 +18,7 @@ public class A {
     A a = new A();
     a.sum(5, 6);
     a.sum(5.6f, 6.1f);
+    a.sum(3, 4, 5);
   }
 
 }
