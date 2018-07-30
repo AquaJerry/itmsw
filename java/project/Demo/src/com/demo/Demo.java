@@ -27,7 +27,7 @@ public class Demo {
     boolean bl2 = true;
     //i2 = (int)bl2;
     String str = "hello";
-    i2 = (int)str;
+    //i2 = (int)str;
   }
 
 }
