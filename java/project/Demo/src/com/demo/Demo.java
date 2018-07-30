@@ -1,6 +1,7 @@
 package com.demo;
 
 public class Demo {
+  int num = 10;
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     int Age5 = 30;
@@ -11,6 +12,7 @@ public class Demo {
     }
     System.out.println("Age5=" + Age5);
     System.out.println("age5=" + age5);
+    System.out.println("num=" + num);
   }
 
 }
