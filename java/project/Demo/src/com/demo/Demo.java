@@ -10,8 +10,10 @@ public class Demo {
     System.out.println("c=" + (int)c);
     short s = 30000;
     System.out.println("s=" + s);
-    int i = 100000;
+    int i = 100000000;
     System.out.println("i=" + i);
+    long l = 1000000000000L;
+    System.out.println("l=" + l);
   }
 
 }
