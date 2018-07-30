@@ -5,7 +5,9 @@ public class Demo {
     // TODO Auto-generated method stub
     byte b = 65;
     short s = b;
-    char c = b;
+    //char c = b;
+    char c = '中';
+    s = c;
   }
 
 }
