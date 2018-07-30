@@ -23,6 +23,8 @@ public class Student {
     Student s1 = new Student("tom");
     System.out.println("s1.name=" + s1.name);
     s1.printName();
+    Student s2 = new Student("andy");
+    s2.printName();
   }
 
 }
