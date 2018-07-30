@@ -18,6 +18,8 @@ public class Demo {
     System.out.println("f=" + f);
     double d = 5.6;
     System.out.println("d=" + d);
+    boolean bl = true;
+    System.out.println("bl=" + bl);
   }
 
 }
