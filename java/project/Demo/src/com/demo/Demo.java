@@ -24,6 +24,8 @@ public class Demo {
     System.out.println("fl=" + fl);
     int i2 = (int)d2;
     System.out.println("i2=" + i2);
+    boolean bl2 = true;
+    i2 = (int)bl2;
   }
 
 }
