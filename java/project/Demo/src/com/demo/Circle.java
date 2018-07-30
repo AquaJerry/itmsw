@@ -5,8 +5,13 @@ public class Circle extends Shape {
     System.out.println("Child class");
   }
 
+  public void test() {
+    System.out.println("test in circle");
+  }
+
   public static void main(String[] args) {
     Circle c = new Circle();
-    //c.print();
+    c.print();
+    c.test();
   }
 }

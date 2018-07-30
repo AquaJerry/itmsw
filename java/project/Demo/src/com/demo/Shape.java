@@ -5,7 +5,7 @@ public class Shape {
     System.out.println("Parent class");
   }
 
-  private void print() {
+  public void print() {
     System.out.println("Shape");
   }
 
