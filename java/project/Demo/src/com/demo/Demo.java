@@ -1,7 +1,7 @@
 package com.demo;
 
 public class Demo {
-  int sum(int a, int b) {
+  static int sum(int a, int b) {
     System.out.println("a=" + a);
     System.out.println("b=" + b);
     return a + b;
