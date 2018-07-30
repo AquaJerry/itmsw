@@ -22,6 +22,8 @@ public class Demo {
     System.out.println("d2=" + d2);
     float fl = (float)d2;
     System.out.println("fl=" + fl);
+    int i2 = (int)d2;
+    System.out.println("i2=" + i2);
   }
 
 }
