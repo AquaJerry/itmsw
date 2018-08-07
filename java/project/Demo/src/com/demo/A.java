@@ -3,6 +3,12 @@ package com.demo;
 public class A {
   private static B b = new B();
 
+  public A() {
+    System.out.println("A()");
+  }
+
+
+
   public static void main(String[] args) {
     A a1 = new A();
     System.out.println(a1);
