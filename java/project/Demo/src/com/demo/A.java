@@ -36,6 +36,7 @@ public class A {
   public static void main(String[] args) {
     A a = new A("tom", 12);
     a.print();
+    this.sayHello();
   }
 
 }
