@@ -12,12 +12,13 @@ public class A {
 
 
   public A(String userName) {
+    System.out.println("A(userName)");
     this.userName = userName;
   }
 
 
   public A(String userName, int age) {
-    this();
+    this(userName);
     this.userName = userName;
     this.age = age;
   }
