@@ -1,6 +1,12 @@
 package com.demo;
 
 public class A {
+
+  public A() {
+    super();
+    System.out.println("A()");
+    // TODO Auto-generated constructor stub
+  }
   public void print() {
     System.out.println("print() in A");
   }
@@ -16,14 +22,19 @@ public class A {
 
 class B extends A {
 
+  public B() {
+    super();
+    // TODO Auto-generated constructor stub
+  }
+
   @Override
   public void print() {
     // TODO Auto-generated method stub
-    this.sayHello();
+    super.sayHello();
     System.out.println("print() in B");
   }
 
-  /*public void sayHello() {
+  public void sayHello() {
     System.out.println("sayHello() in B");
-  }*/
+  }
 }
