@@ -11,7 +11,7 @@ public class A {
     A a = new A();
     //a.age = 10;
     //a.name = "andy";
-    a.demo = new Demo();
+    //a.demo = new Demo();
   }
 
 }
