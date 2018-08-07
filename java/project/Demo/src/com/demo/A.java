@@ -1,7 +1,7 @@
 package com.demo;
 
 public class A {
-  void sayHello() {
+  protected void sayHello() {
     System.out.println("hello");
   }
 
