@@ -6,7 +6,8 @@ public class A {
       throw new Exception();
     } catch (Exception e) {
       // TODO Auto-generated catch block
-      e.printStackTrace();
+      //e.printStackTrace();
+      System.out.println("Oops! Something goes wrong.");
     }
   }
 
