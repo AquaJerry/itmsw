@@ -1,14 +1,7 @@
 package com.demo;
 
-public class B extends A {
+public class B {
+  public static void main(String[] args) {
 
-  public B() {
-    System.out.println("B()");
-  }
-
-  public static void print() {
-    System.out.println("print()");
-    //super.sayHello();
-    //this.sayHello();
   }
 }
