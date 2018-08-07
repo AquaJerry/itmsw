@@ -16,7 +16,7 @@ class B extends A {
   @Override
   public void print() {
     // TODO Auto-generated method stub
-    //super.print();
+    super.print();
     System.out.println("print() in B");
   }
 
