@@ -23,7 +23,7 @@ class B extends A {
     System.out.println("print() in B");
   }
 
-  public void sayHello() {
+  /*public void sayHello() {
     System.out.println("sayHello() in B");
-  }
+  }*/
 }
