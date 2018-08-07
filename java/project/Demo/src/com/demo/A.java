@@ -4,9 +4,9 @@ public class A {
   String userName;
   int age;
 
-  public A(String userName, int age) {
-    userName = userName;
-    age = age;
+  public A(String userName2, int age2) {
+    userName = userName2;
+    age = age2;
   }
 
   public void sayHello() {
