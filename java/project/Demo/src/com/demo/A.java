@@ -1,7 +1,7 @@
 package com.demo;
 
 public class A {
-  private void sayHello() {
+  void sayHello() {
     System.out.println("hello");
   }
 
@@ -13,12 +13,5 @@ public class A {
     A a = new A();
     a.print();
     a.sayHello();
-  }
-}
-
-class B {
-  public void print() {
-    A a = new A();
-    //a.sayHello();
   }
 }
