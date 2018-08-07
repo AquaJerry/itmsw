@@ -1,12 +1,14 @@
 package com.demo;
 
-public class B {
+public class B extends A {
 
   public B() {
     System.out.println("B()");
   }
 
-  public void print() {
+  public static void print() {
     System.out.println("print()");
+    //super.sayHello();
+    //this.sayHello();
   }
 }
