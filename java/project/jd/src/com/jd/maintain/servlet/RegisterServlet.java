@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
     System.out.println("Pasword: " + password);
     System.out.println("Phone: " + phone);
     System.out.println("Validate Code: " + validateCode);
-    RequestDispatcher rd = request.getRequestDispatcher("registerSuccess.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("../registerSuccess.jsp");
     rd.forward(request, response);
   }
 
