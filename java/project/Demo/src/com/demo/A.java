@@ -6,11 +6,19 @@ public class A {
   }
 
   public void print() {
-    sayHello();
+    this.sayHello();
   }
 
   public static void main(String[] args) {
     A a = new A();
     a.print();
+    a.sayHello();
+  }
+}
+
+class B {
+  public void print() {
+    A a = new A();
+    //a.sayHello();
   }
 }
