@@ -22,5 +22,7 @@ public class A {
     System.out.println("b=" + A.b);
     System.out.println(a1.b == a2.b);
     A.sayHello();
+    sayHello();
+    System.out.println(b);
   }
 }
