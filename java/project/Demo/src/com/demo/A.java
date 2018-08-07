@@ -1,7 +1,7 @@
 package com.demo;
 
 public class A {
-  private B b = new B();
+  private static B b = new B();
 
   public static void main(String[] args) {
     A a1 = new A();
