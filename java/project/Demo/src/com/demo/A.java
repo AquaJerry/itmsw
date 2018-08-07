@@ -4,10 +4,23 @@ public class A {
   String userName;
   int age;
 
+
+
+  public A() {
+    System.out.println("A()");
+  }
+
+
+  public A(String userName) {
+    this.userName = userName;
+  }
+
+
   public A(String userName, int age) {
     this.userName = userName;
     this.age = age;
   }
+
 
   public void sayHello() {
     System.out.println("Hello");
