@@ -17,6 +17,7 @@ public class A {
 
 
   public A(String userName, int age) {
+    this();
     this.userName = userName;
     this.age = age;
   }
