@@ -19,7 +19,7 @@ class B extends A {
   @Override
   public void print() {
     // TODO Auto-generated method stub
-    super.sayHello();
+    this.sayHello();
     System.out.println("print() in B");
   }
 
