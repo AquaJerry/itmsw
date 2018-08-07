@@ -1,6 +1,8 @@
 package com.jd.maintain.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +39,8 @@ public class RegisterServlet extends HttpServlet {
     System.out.println("Pasword: " + password);
     System.out.println("Phone: " + phone);
     System.out.println("Validate Code: " + validateCode);
+    RequestDispatcher rd = request.getRequestDispatcher("registerSuccess.jsp");
+    rd.forward(request, response);
   }
 
   /**
