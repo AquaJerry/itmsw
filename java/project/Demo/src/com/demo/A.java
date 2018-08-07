@@ -5,7 +5,7 @@ public class A {
   private final String name = "tom";
   private final Demo demo = new Demo();
   public void sayHello() {
-    final int num = 10;
+    final int num;
     System.out.println("num=" + num);
     num = 20;
     System.out.println("hello");
