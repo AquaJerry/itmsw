@@ -1,7 +1,11 @@
 package com.demo;
 
 public class A {
-
+  String userName;
+  public A(String userName) {
+    this.userName = userName;
+    System.out.println("userName=" + userName);
+  }
   public A() {
 
     System.out.println("A()");
@@ -23,6 +27,7 @@ public class A {
 class B extends A {
 
   public B() {
+    super("tom");
     System.out.println("B()");
     // TODO Auto-generated constructor stub
   }
