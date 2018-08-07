@@ -3,7 +3,7 @@ package com.demo;
 public class A {
 
   public A() {
-    super();
+
     System.out.println("A()");
     // TODO Auto-generated constructor stub
   }
@@ -23,7 +23,7 @@ public class A {
 class B extends A {
 
   public B() {
-    super();
+    System.out.println("B()");
     // TODO Auto-generated constructor stub
   }
 
