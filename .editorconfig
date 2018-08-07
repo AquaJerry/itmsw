@@ -9,7 +9,7 @@ end_of_file = lf
 insert_final_newline = true
 
 # styleguide from itmsw.com
-[**.{html,css}]
+[**.{html,css,jsp}]
 charset = utf-8
 end_of_file = lf
 indent_style = tab
