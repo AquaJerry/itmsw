@@ -4,6 +4,11 @@ public class A {
   String userName;
   int age;
 
+  public A(String userName, int age) {
+    userName = userName;
+    age = age;
+  }
+
   public void sayHello() {
     System.out.println("Hello");
   }
@@ -16,7 +21,7 @@ public class A {
   }
 
   public static void main(String[] args) {
-    A a = new A();
+    A a = new A("tom", 12);
     a.print();
   }
 
