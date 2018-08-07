@@ -11,5 +11,6 @@ public class A {
     System.out.println(a1 == a2);
     System.out.println("a1.b=" + a1.b);
     System.out.println("a2.b=" + a2.b);
+    System.out.println(a1.b == a2.b);
   }
 }
