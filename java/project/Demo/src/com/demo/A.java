@@ -6,7 +6,7 @@ public class A {
   private final Demo demo = new Demo();
   public void sayHello() {
     final int num;
-    System.out.println("num=" + num);
+    //System.out.println("num=" + num);
     num = 20;
     System.out.println("hello");
   }
