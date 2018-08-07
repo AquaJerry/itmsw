@@ -1,5 +1,5 @@
 package com.demo;
 
-public class B {
+public class B extends A {
 
 }
