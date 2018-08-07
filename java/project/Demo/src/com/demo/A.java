@@ -8,6 +8,7 @@ public class A {
     final int num;
     //System.out.println("num=" + num);
     num = 20;
+    num = 30;
     System.out.println("hello");
   }
   public static void main(String[] args) {
