@@ -7,6 +7,7 @@ public class A {
   public void sayHello() {
     final int num = 10;
     System.out.println("num=" + num);
+    num = 20;
     System.out.println("hello");
   }
   public static void main(String[] args) {
