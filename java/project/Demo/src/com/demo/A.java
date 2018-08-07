@@ -7,7 +7,9 @@ public class A {
     System.out.println("A()");
   }
 
-
+  public static void sayHello() {
+    System.out.println("hello");
+  }
 
   public static void main(String[] args) {
     A a1 = new A();
@@ -19,5 +21,6 @@ public class A {
     System.out.println("a2.b=" + a2.b);
     System.out.println("b=" + A.b);
     System.out.println(a1.b == a2.b);
+    A.sayHello();
   }
 }
