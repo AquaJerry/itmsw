@@ -13,5 +13,7 @@ public class B {
     B b = new B();
     b.print();
     //b.sayHello();
+    A a = new A();
+    a.sayHello();
   }
 }
