@@ -7,8 +7,14 @@ public class A {
 
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     A a = new A();
-    a.test();
+    try {
+      a.test();
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      //e.printStackTrace();
+      System.out.println("Exception Found");
+    }
   }
 }
