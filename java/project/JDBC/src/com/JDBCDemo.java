@@ -13,7 +13,6 @@ public class JDBCDemo {
       String user = "root";
       String password = "root";
       conn = DriverManager.getConnection(url, user, password);
-      System.out.println("conn=" + conn);
     } catch (ClassNotFoundException e) {
       // TODO Auto-generated catch block
       //e.printStackTrace();
@@ -27,7 +26,9 @@ public class JDBCDemo {
 
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-
+    JDBCDemo jdbc = new JDBCDemo();
+    Connection conn = jdbc.getConnection();
+    System.out.println("conn=" + conn);
   }
 
 }
