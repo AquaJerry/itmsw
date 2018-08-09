@@ -6,6 +6,8 @@ public class Demo {
     int grade = 58;
     if (grade >= 0 && grade < 60) {
       System.out.println("grade=" + grade + "Failed");
+    } else if (grade >= 60 && grade < 70) {
+      System.out.println("grade=" + grade + "Passed");
     }
 
   }
