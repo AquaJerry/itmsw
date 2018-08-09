@@ -8,7 +8,8 @@ public class JDBCDemo {
       Class.forName("com.mysql.cj.jdbc.Driver");
     } catch (ClassNotFoundException e) {
       // TODO Auto-generated catch block
-      e.printStackTrace();
+      //e.printStackTrace();
+      System.out.println("Database Driver Error");
     }
   }
 
