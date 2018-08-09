@@ -10,7 +10,7 @@ public class JDBCDemo {
     // TODO Auto-generated method stub
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
-      String url = "jdbc:mysql://localhost:3306/jd?useSSL=false";
+      String url = "jdbc:mysql://localhost:3306/jd?useSSL=false&serverTimetone=UTC";
       String user = "root";
       String password = "root";
       Connection conn = DriverManager.getConnection(url, user, password);
