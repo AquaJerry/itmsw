@@ -3,12 +3,9 @@ package com.demo;
 public class Demo {
 
   public static void main(String[] args) {
-    int num = 2;
-    if (num > 3) {
-      System.out.println("ok");
-    } else {
-      System.out.println("hello");
-
+    int grade = 58;
+    if (grade >= 0 && grade < 60) {
+      System.out.println("grade=" + grade + "Failed");
     }
 
   }
