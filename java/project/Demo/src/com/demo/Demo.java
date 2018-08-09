@@ -14,7 +14,7 @@ public class Demo {
       i++;
     }*/
 
-    int i = 1;
+    int i = 11;
     do {
       System.out.println("i=" + i);
       i++;
