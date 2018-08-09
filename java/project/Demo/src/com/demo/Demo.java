@@ -8,17 +8,17 @@ public class Demo {
       sum = sum + i;
     }
     System.out.println("sum=" + sum);*/
-    /*int i = 1;
+    int i = 11;
     while (i <= 10) {
       System.out.println("i=" + i);
       i++;
-    }*/
+    }
 
-    int i = 11;
+    /*int i = 11;
     do {
       System.out.println("i=" + i);
       i++;
-    } while (i <= 10);
+    } while (i <= 10);*/
 
 
 
