@@ -12,6 +12,8 @@ public class Demo {
       System.out.println("grade=" + grade + "Good");
     } else if (grade >= 90 && grade <= 100) {
       System.out.println("grade=" + grade + "Excellent");
+    } else {
+      System.out.println("The grade is illegal.");
     }
 
   }
