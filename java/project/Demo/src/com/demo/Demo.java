@@ -6,8 +6,10 @@ public class Demo {
     int num = 2;
     if (num > 3) {
       System.out.println("ok");
+    } else {
+      System.out.println("hello");
+
     }
-    System.out.println("hello");
 
   }
 
