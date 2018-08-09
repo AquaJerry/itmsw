@@ -31,7 +31,7 @@ public class JDBCDemo {
     try {
       String sql = "insert user_info(user_name,password,phone)value(?,?,?)";
       ps = conn.prepareStatement(sql);
-      ps.setString(1, "用户009");
+      ps.setString(1, "用户0010");
       ps.setString(2, "333***");
       ps.setString(3, "13712345678");
       ps.executeUpdate();
