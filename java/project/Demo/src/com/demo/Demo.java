@@ -8,8 +8,11 @@ public class Demo {
       sum = sum + i;
     }
     System.out.println("sum=" + sum);*/
-    int i = 11;
+    int i = 1;
     while (i <= 10) {
+      if (i > 5) {
+        break;
+      }
       System.out.println("i=" + i);
       i++;
     }
