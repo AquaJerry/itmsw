@@ -5,15 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCDemo {
-
-  public static void main(String[] args) {
-    // TODO Auto-generated method stub
+  public Connection getConnection() {
+    Connection conn = null;
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
       String url = "jdbc:mysql://localhost:3306/jd?useSSL=false&serverTimetone=UTC";
       String user = "root";
       String password = "root";
-      Connection conn = DriverManager.getConnection(url, user, password);
+      conn = DriverManager.getConnection(url, user, password);
       System.out.println("conn=" + conn);
     } catch (ClassNotFoundException e) {
       // TODO Auto-generated catch block
@@ -23,6 +22,12 @@ public class JDBCDemo {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
+    return conn;
+  }
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
   }
 
 }
