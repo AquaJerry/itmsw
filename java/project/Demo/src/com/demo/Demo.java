@@ -11,7 +11,9 @@ public class Demo {
     int i = 1;
     while (i <= 10) {
       if (i < 5) {
-        break;
+        System.out.println("hello");
+        i++;
+        continue;
       }
       System.out.println("i=" + i);
       i++;
