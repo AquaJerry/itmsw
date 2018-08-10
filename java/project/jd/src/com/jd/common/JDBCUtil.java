@@ -11,7 +11,8 @@ public class JDBCUtil {
     Connection conn = null;
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
-      String url = "jdbc:mysql://localhost:3306/jd?useSSL=false&serverTimetone=UTC";
+      String url =
+          "jdbc:mysql://localhost:3306/jd?useSSL=false&serverTimetone=UTC&characterEncoding=utf-8";
       String user = "root";
       String password = "root";
       conn = DriverManager.getConnection(url, user, password);
