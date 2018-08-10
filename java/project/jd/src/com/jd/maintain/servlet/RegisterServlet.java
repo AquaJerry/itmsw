@@ -1,5 +1,6 @@
 package com.jd.maintain.servlet;
 
+import com.jd.maintain.dao.UserInfoDao;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,13 +28,18 @@ public class RegisterServlet extends HttpServlet {
     String password = request.getParameter("password");
     String phone = request.getParameter("phone");
     String validateCode = request.getParameter("validateCode");
-    System.out.println("User Register Infomation:");
-    System.out.println("User Name: " + userName);
-    System.out.println("Pasword: " + password);
-    System.out.println("Phone: " + phone);
-    System.out.println("Validate Code: " + validateCode);
-    RequestDispatcher rd = request.getRequestDispatcher("../registerSuccess.jsp");
-    rd.forward(request, response);
+    UserInfoDao userInfoDao = new UserInfoDao();
+    if (userInfoDao.queryByUserName(userName)) {
+      System.out.println("User Already Exists");
+    } else {
+      System.out.println("User Register Infomation:");
+      System.out.println("User Name: " + userName);
+      System.out.println("Pasword: " + password);
+      System.out.println("Phone: " + phone);
+      System.out.println("Validate Code: " + validateCode);
+      RequestDispatcher rd = request.getRequestDispatcher("../registerSuccess.jsp");
+      rd.forward(request, response);
+    }
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
