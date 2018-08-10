@@ -34,11 +34,8 @@ public class RegisterServlet extends HttpServlet {
       RequestDispatcher rd = request.getRequestDispatcher("../alreadyRegister.jsp");
       rd.forward(request, response);
     } else {
-      System.out.println("User Register Infomation:");
-      System.out.println("User Name: " + userName);
-      System.out.println("Pasword: " + password);
-      System.out.println("Phone: " + phone);
-      System.out.println("Validate Code: " + validateCode);
+      userInfoDao.saveUserInfo(userName, password, phone);
+      System.out.println("User Information Saved in Database");
       RequestDispatcher rd = request.getRequestDispatcher("../registerSuccess.jsp");
       rd.forward(request, response);
     }
