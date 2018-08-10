@@ -31,6 +31,8 @@ public class RegisterServlet extends HttpServlet {
     UserInfoDao userInfoDao = new UserInfoDao();
     if (userInfoDao.queryByUserName(userName)) {
       System.out.println("User Already Exists");
+      RequestDispatcher rd = request.getRequestDispatcher("../alreadyRegister.jsp");
+      rd.forward(request, response);
     } else {
       System.out.println("User Register Infomation:");
       System.out.println("User Name: " + userName);
