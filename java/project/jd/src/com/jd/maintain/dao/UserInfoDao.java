@@ -29,15 +29,15 @@ public class UserInfoDao {
     return flag;
   }
 
-  public void saveUserInfo() {
+  public void saveUserInfo(String userName, String password, String phone) {
     Connection conn = JDBCUtil.getConnection();
     PreparedStatement ps = null;
     try {
       String sql = "insert user_info(user_name,password,phone)value(?,?,?)";
       ps = conn.prepareStatement(sql);
-      ps.setString(1, "用户999");
-      ps.setString(2, "333***");
-      ps.setString(3, "13712345678");
+      ps.setString(1, userName);
+      ps.setString(2, password);
+      ps.setString(3, phone);
       ps.executeUpdate();
     } catch (SQLException e) {
       // TODO Auto-generated catch block
@@ -52,6 +52,6 @@ public class UserInfoDao {
     UserInfoDao userInfoDao = new UserInfoDao();
     boolean flag = userInfoDao.queryByUserName("user0xx");
     System.out.println("flag=" + flag);
-    userInfoDao.saveUserInfo();
+    userInfoDao.saveUserInfo("user005", "aaa555", "13512341234");
   }
 }
