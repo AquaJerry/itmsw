@@ -2,6 +2,8 @@ package com.jd.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JDBCUtil {
@@ -23,6 +25,33 @@ public class JDBCUtil {
       System.out.println("Database Connection Error");
     }
     return conn;
+  }
+
+  public static void clear(Connection conn, PreparedStatement ps, ResultSet rs) {
+    if (rs != null) {
+      try {
+        rs.close();
+      } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+    if (ps != null) {
+      try {
+        ps.close();
+      } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+    if (conn != null) {
+      try {
+        conn.close();
+      } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
   }
 
   public static void main(String[] args) {
