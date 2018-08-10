@@ -64,8 +64,9 @@ public class JDBCDemo {
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
-      String sql = "select * from user_info";
+      String sql = "select*from user_info where id=?";
       ps = conn.prepareStatement(sql);
+      ps.setInt(1, 4);
       rs = ps.executeQuery();
       System.out.println("id\tuser_name\tpassword\tphone");
       while (rs.next()) {
