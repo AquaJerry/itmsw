@@ -52,5 +52,6 @@ public class UserInfoDao {
     UserInfoDao userInfoDao = new UserInfoDao();
     boolean flag = userInfoDao.queryByUserName("user0xx");
     System.out.println("flag=" + flag);
+    userInfoDao.saveUserInfo();
   }
 }
