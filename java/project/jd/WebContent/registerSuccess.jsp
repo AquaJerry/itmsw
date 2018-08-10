@@ -4,9 +4,10 @@ pageEncoding="UTF-8"%>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Sign Up Success</title>
 	</head>
 	<body>
+		<img src="../common/images/jd_logo_160x50.png">
 		<h1>${param.userName} Sign Up Success</h1>
 		<h1>User Name: ${param.userName}</h1>
 		<h1>Phone: ${param.phone}</h1>
