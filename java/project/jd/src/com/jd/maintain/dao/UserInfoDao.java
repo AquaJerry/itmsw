@@ -51,7 +51,7 @@ public class UserInfoDao {
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     UserInfoDao userInfoDao = new UserInfoDao();
-    boolean flag = userInfoDao.queryByUserName("user0xx");
+    boolean flag = userInfoDao.queryByUserName("用户009");
     System.out.println("flag=" + flag);
     userInfoDao.saveUserInfo("user005", "aaa555", "13512341234");
   }
