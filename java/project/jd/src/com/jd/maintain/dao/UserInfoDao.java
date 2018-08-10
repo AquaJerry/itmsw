@@ -7,10 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserInfoDao {
+  private Connection conn;
+  private PreparedStatement ps;
+  private ResultSet rs;
+
   public boolean queryByUserName(String userName) {
-    Connection conn = JDBCUtil.getConnection();
-    PreparedStatement ps = null;
-    ResultSet rs = null;
+    conn = JDBCUtil.getConnection();
     boolean flag = false;
     try {
       String sql = "select*from user_info where user_name=?";
@@ -30,8 +32,7 @@ public class UserInfoDao {
   }
 
   public void saveUserInfo(String userName, String password, String phone) {
-    Connection conn = JDBCUtil.getConnection();
-    PreparedStatement ps = null;
+    conn = JDBCUtil.getConnection();
     try {
       String sql = "insert user_info(user_name,password,phone)value(?,?,?)";
       ps = conn.prepareStatement(sql);
