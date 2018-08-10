@@ -25,8 +25,5 @@ public class Demo {
       i++;
     } while (i <= 10);*/
 
-
-
   }
-
 }

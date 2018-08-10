@@ -8,4 +8,8 @@
 **.class
 
 # Package Files
-**.jar
+java/**/*.jar
+
+# Gradle
+.gradle
+/build/
