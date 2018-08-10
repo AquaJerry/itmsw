@@ -32,7 +32,7 @@ public class UserInfoDao {
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     UserInfoDao userInfoDao = new UserInfoDao();
-    boolean flag = userInfoDao.queryByUserName("user02");
+    boolean flag = userInfoDao.queryByUserName("user0xx");
     System.out.println("flag=" + flag);
   }
 }
