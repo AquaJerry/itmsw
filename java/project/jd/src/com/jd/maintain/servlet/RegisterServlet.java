@@ -29,16 +29,17 @@ public class RegisterServlet extends HttpServlet {
     String phone = request.getParameter("phone");
     String validateCode = request.getParameter("validateCode");
     UserInfoDao userInfoDao = new UserInfoDao();
+    String baseName = null;
     if (userInfoDao.queryByUserName(userName)) {
       System.out.println("User Already Exists");
-      RequestDispatcher rd = request.getRequestDispatcher("../alreadyRegister.jsp");
-      rd.forward(request, response);
+      baseName = "alreadyRegister";
     } else {
       userInfoDao.saveUserInfo(userName, password, phone);
       System.out.println("User Information Saved in Database");
-      RequestDispatcher rd = request.getRequestDispatcher("../registerSuccess.jsp");
-      rd.forward(request, response);
+      baseName = "registerSuccess";
     }
+    RequestDispatcher rd = request.getRequestDispatcher("../" + baseName + ".jsp");
+    rd.forward(request, response);
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
