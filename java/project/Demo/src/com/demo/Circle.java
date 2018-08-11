@@ -2,7 +2,7 @@ package com.demo;
 
 public class Circle extends Shape {
 
-  @override
+  @Override
   public String print1(int str) {
     System.out.println(str + " in circle");
     return "hello";
