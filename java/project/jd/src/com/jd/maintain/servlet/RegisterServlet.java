@@ -1,6 +1,7 @@
 package com.jd.maintain.servlet;
 
 import com.jd.maintain.dao.UserInfoDao;
+import com.jd.maintain.dto.UserInfoDto;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,14 +28,14 @@ public class RegisterServlet extends HttpServlet {
     String userName = request.getParameter("userName");
     String password = request.getParameter("password");
     String phone = request.getParameter("phone");
-    String validateCode = request.getParameter("validateCode");
     UserInfoDao userInfoDao = new UserInfoDao();
     String baseName = null;
     if (userInfoDao.queryByUserName(userName)) {
       System.out.println("User Already Exists");
       baseName = "alreadyRegister";
     } else {
-      userInfoDao.saveUserInfo(userName, password, phone);
+      UserInfoDto userInfoDto = new UserInfoDto(/*id*/ 0, userName, password, phone);
+      userInfoDao.saveUserInfo(userInfoDto);
       System.out.println("User Information Saved in Database");
       baseName = "registerSuccess";
     }

@@ -1,6 +1,7 @@
 package com.jd.maintain.dao;
 
 import com.jd.common.JDBCUtil;
+import com.jd.maintain.dto.UserInfoDto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,14 +32,14 @@ public class UserInfoDao {
     return flag;
   }
 
-  public void saveUserInfo(String userName, String password, String phone) {
+  public void saveUserInfo(UserInfoDto userInfoDto) {
     conn = JDBCUtil.getConnection();
     try {
       String sql = "insert user_info(user_name,password,phone)value(?,?,?)";
       ps = conn.prepareStatement(sql);
-      ps.setString(1, userName);
-      ps.setString(2, password);
-      ps.setString(3, phone);
+      ps.setString(1, userInfoDto.getUserName());
+      ps.setString(2, userInfoDto.getPassword());
+      ps.setString(3, userInfoDto.getPhone());
       ps.executeUpdate();
     } catch (SQLException e) {
       // TODO Auto-generated catch block
@@ -53,6 +54,5 @@ public class UserInfoDao {
     UserInfoDao userInfoDao = new UserInfoDao();
     boolean flag = userInfoDao.queryByUserName("用户009");
     System.out.println("flag=" + flag);
-    userInfoDao.saveUserInfo("user005", "aaa555", "13512341234");
   }
 }
