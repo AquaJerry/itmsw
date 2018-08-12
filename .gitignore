@@ -6,3 +6,10 @@
 
 # Compiled class file
 **.class
+
+# Package Files
+java/**/*.jar
+
+# Gradle
+.gradle
+/build/

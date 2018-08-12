@@ -62,6 +62,21 @@ let $userName = $('userName');
 let $validateCode = $('validateCode');
 
 /**
+ * Close the popup and stay in the register page.
+ */
+function agreePopup() {
+  setDisplay('none');
+  $userName.focus();
+}
+
+/**
+ * Redirect to the login page.
+ */
+function cancelPopup() {
+  window.location = 'login.html';
+}
+
+/**
  * The style of the mask layer.
  *
  * @type {CSS2Properties}
@@ -74,6 +89,15 @@ let cssMask = $mask.style;
  * @type {CSS2Properties}
  */
 let cssTermPopup = $termPopup.style;
+
+/**
+ * Page element identified by id listens to click to redirect to the login page.
+ *
+ * @param {string} id - The id
+ */
+function listenCancelPopup(id) {
+  $(id).onclick = cancelPopup;
+}
 
 /**
  * The latest review for what the user inputs.
@@ -158,27 +182,6 @@ function updateTip(id) {
   }
 }
 
-/* Initial Script Below */
-
-/**
- * Close the popup and stay in the register page.
- *
- * @global
- */
-window.agreePopup = () => {
-  setDisplay('none');
-  $userName.focus();
-};
-
-/**
- * Redirect to the login page.
- *
- * @global
- */
-window.cancelPopup = () => {
-  window.location = 'login.html';
-};
-
 /**
  * @summary Validate register form before submit.
  * @global
@@ -186,7 +189,7 @@ window.cancelPopup = () => {
  * @description First, assume the validation is success. Then do all validations
  *     in series.
  */
-window.validate = () => {
+function validate() {
   let password = $password.value;
   let phone = $phone.value;
   let repassword = $repassword.value;
@@ -270,7 +273,18 @@ window.validate = () => {
   updateTip('validateCode');
 
   return success;
-};
+}
+
+/* Initial Script Below */
 
 // Load the popup
 setDisplay('block');
+
+// listen to register
+$('agreePopup').onclick = agreePopup;
+
+// listen to login
+['cancelPopup', 'exitPopup'].forEach(listenCancelPopup);
+
+// listen to submit
+$('registerForm').onsubmit = validate;

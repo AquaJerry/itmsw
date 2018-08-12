@@ -14,5 +14,4 @@ public class Test {
     com.Student s2 = new com.Student();
     s2.sayHello();
   }
-
 }
