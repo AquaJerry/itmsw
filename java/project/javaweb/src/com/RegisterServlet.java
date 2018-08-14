@@ -23,7 +23,8 @@ public class RegisterServlet extends HttpServlet {
     System.out.println("queryString=" + request.getQueryString());
     System.out.println("uri=" + request.getRequestURI());
     System.out.println("url=" + request.getRequestURL());
-    response.setCharacterEncoding("utf-8");
+    // response.setCharacterEncoding("utf-8");
+    response.setContentType("text/html;charset=utf-8");
     PrintWriter out = response.getWriter();
     out.print("<h1 style='color:red' onclick='alert(100)'>Hello中国</h1>");
   }
