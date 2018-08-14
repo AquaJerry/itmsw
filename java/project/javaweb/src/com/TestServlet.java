@@ -24,6 +24,13 @@ public class TestServlet extends HttpServlet {
     super.service(request, response);
   }
 
+  @Override
+  public void destroy() {
+    // TODO Auto-generated method stub
+    super.destroy();
+    System.out.println("destroy");
+  }
+
   /** @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response) */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
