@@ -7,7 +7,6 @@ pageEncoding="UTF-8"%>
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<h1>ok.jsp</h1>
-		${param.userName}
+		<h1>index.jsp</h1>
 	</body>
 </html>
