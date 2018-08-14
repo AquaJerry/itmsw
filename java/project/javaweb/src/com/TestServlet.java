@@ -16,6 +16,14 @@ public class TestServlet extends HttpServlet {
     System.out.println("initialize");
   }
 
+  @Override
+  public void service(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+    // TODO Auto-generated method stub
+    // super.service(request, response);
+    System.out.println("process request");
+  }
+
   /** @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response) */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
