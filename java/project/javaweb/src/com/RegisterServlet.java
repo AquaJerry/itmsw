@@ -24,7 +24,7 @@ public class RegisterServlet extends HttpServlet {
     System.out.println("uri=" + request.getRequestURI());
     System.out.println("url=" + request.getRequestURL());
     PrintWriter out = response.getWriter();
-    out.print("Hello");
+    out.print("<h1 style='color:red'>Hello</h1>");
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
