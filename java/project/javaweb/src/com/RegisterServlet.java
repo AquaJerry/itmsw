@@ -18,6 +18,8 @@ public class RegisterServlet extends HttpServlet {
     // TODO Auto-generated method stub
     request.setCharacterEncoding("utf-8");
     System.out.println("userName=" + request.getParameter("userName"));
+    System.out.println("method=" + request.getMethod());
+    System.out.println("queryString=" + request.getQueryString());
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
