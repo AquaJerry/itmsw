@@ -1,6 +1,7 @@
 package com;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +23,8 @@ public class RegisterServlet extends HttpServlet {
     System.out.println("queryString=" + request.getQueryString());
     System.out.println("uri=" + request.getRequestURI());
     System.out.println("url=" + request.getRequestURL());
+    PrintWriter out = response.getWriter();
+    out.print("Hello");
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
