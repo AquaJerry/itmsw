@@ -20,6 +20,8 @@ public class RegisterServlet extends HttpServlet {
     System.out.println("userName=" + request.getParameter("userName"));
     System.out.println("method=" + request.getMethod());
     System.out.println("queryString=" + request.getQueryString());
+    System.out.println("uri=" + request.getRequestURI());
+    System.out.println("url=" + request.getRequestURL());
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
