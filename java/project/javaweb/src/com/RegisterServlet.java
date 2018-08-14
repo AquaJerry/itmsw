@@ -27,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
     response.setContentType("text/html;charset=utf-8");
     PrintWriter out = response.getWriter();
     out.print("<h1 style='color:red' onclick='alert(100)'>Hello中国</h1>");
-    response.sendRedirect("NewFile.jsp");
+    response.sendRedirect("../NewFile.jsp");
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
