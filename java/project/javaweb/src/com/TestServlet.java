@@ -20,8 +20,8 @@ public class TestServlet extends HttpServlet {
   public void service(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     // TODO Auto-generated method stub
-    super.service(request, response);
     System.out.println("process request");
+    super.service(request, response);
   }
 
   /** @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response) */
