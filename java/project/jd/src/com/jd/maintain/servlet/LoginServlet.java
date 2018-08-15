@@ -32,6 +32,8 @@ public class LoginServlet extends HttpServlet {
     if (flag) {
       RequestDispatcher rd = request.getRequestDispatcher("../loginSuccess.jsp");
       rd.forward(request, response);
+    } else {
+      response.sendRedirect("../login.html");
     }
   }
 
