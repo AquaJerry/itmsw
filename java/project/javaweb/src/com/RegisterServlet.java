@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
     PrintWriter out = response.getWriter();
     out.print("<h1 style='color:red' onclick='alert(100)'>Hello中国</h1>");
     // response.sendRedirect("/javaweb/NewFile.jsp");
-    RequestDispatcher rd = request.getRequestDispatcher("/javaweb/NewFile.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("/NewFile.jsp");
     rd.forward(request, response);
   }
 
