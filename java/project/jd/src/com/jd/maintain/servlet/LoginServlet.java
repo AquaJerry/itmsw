@@ -2,7 +2,6 @@ package com.jd.maintain.servlet;
 
 import com.jd.maintain.dao.UserInfoDao;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,8 +29,9 @@ public class LoginServlet extends HttpServlet {
     UserInfoDao userInfoDao = new UserInfoDao();
     boolean flag = userInfoDao.queryUserInfo(userName, password);
     if (flag) {
-      RequestDispatcher rd = request.getRequestDispatcher("../loginSuccess.jsp");
-      rd.forward(request, response);
+      // RequestDispatcher rd = request.getRequestDispatcher("../loginSuccess.jsp");
+      // rd.forward(request, response);
+      response.sendRedirect("../loginSuccess.jsp");
     }
   }
 
