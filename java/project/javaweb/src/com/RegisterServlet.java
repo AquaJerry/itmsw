@@ -2,6 +2,7 @@ package com;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +28,9 @@ public class RegisterServlet extends HttpServlet {
     response.setContentType("text/html;charset=utf-8");
     PrintWriter out = response.getWriter();
     out.print("<h1 style='color:red' onclick='alert(100)'>Hello中国</h1>");
-    response.sendRedirect("/javaweb/NewFile.jsp");
+    // response.sendRedirect("/javaweb/NewFile.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("/javaweb/NewFile.jsp");
+    rd.forward(request, response);
   }
 
   /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
