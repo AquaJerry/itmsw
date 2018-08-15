@@ -73,7 +73,7 @@ public class UserInfoDao {
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     UserInfoDao userInfoDao = new UserInfoDao();
-    boolean flag = userInfoDao.queryUserInfo("user01", "123aaax");
+    boolean flag = userInfoDao.queryUserInfo("user012", "123aaa");
     System.out.println("flag=" + flag);
   }
 }
