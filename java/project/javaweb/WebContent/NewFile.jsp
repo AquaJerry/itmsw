@@ -8,6 +8,6 @@ pageEncoding="UTF-8"%>
 	</head>
 	<body>
 		file
-		<img src="images/jd_logo_160x50.png">
+		<img src="/javaweb/images/jd_logo_160x50.png">
 	</body>
 </html>
