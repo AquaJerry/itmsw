@@ -1,3 +1,5 @@
+/* Copyright (c) 2018, https://github.com/AquaJerry/itmsw. ISC License. */
+
 package com;
 
 import java.io.IOException;
@@ -9,12 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet implementation class TestServlet */
+/** Servlet implementation for Jingdong/Joybuy register page. */
 @WebServlet("/maintain/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
-  /** @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response) */
+  /**
+   * Print request details, render response messages, dispatch to another location.
+   *
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     // TODO Auto-generated method stub
@@ -33,7 +39,11 @@ public class RegisterServlet extends HttpServlet {
     rd.forward(request, response);
   }
 
-  /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
+  /**
+   * Do as the same as {@linkplain #doGet doGet}.
+   *
+   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+   */
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     // TODO Auto-generated method stub
