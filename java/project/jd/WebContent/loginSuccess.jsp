@@ -10,4 +10,4 @@ pageEncoding="UTF-8"%>
 		<img src="/jd/common/images/jd_logo_170x60.png">
 		<h1>${param.userName} Log In Success</h1>
 	</body>
-</htmlk
+</html>
