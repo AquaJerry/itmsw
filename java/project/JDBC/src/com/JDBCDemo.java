@@ -18,7 +18,7 @@ public class JDBCDemo {
   /**
    * Get a Jd database connection with root user.
    *
-   * @return the Jd database connection.
+   * @return the Jd database connection
    */
   public Connection getConnection() {
     Connection conn = null;

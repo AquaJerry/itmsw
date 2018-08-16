@@ -40,7 +40,7 @@ public class RegisterServlet extends HttpServlet {
   }
 
   /**
-   * Do as the same as {@linkplain #doGet doGet}.
+   * Do as the same as {@link #doGet doGet}.
    *
    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
    */
