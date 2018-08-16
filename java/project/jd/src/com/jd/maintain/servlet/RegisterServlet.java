@@ -1,3 +1,5 @@
+/* Copyright (c) 2018, https://github.com/AquaJerry/itmsw. ISC License. */
+
 package com.jd.maintain.servlet;
 
 import com.jd.maintain.dao.UserInfoDao;
@@ -10,40 +12,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet implementation class RegisterServlet */
+/** Servlet implementation for Jingdong/Joybuy register page. */
 @WebServlet("/maintain/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
-  private static final long serialVersionUID = 1L;
 
-  /** @see HttpServlet#HttpServlet() */
-  public RegisterServlet() {
-    super();
-    // TODO Auto-generated constructor stub
-  }
-
-  /** @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response) */
+  /**
+   * Manage register request and route to a new page. In database save register information if user
+   * name of which is not occupied.
+   *
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     request.setCharacterEncoding("utf-8");
     String userName = request.getParameter("userName");
-    String password = request.getParameter("password");
-    String phone = request.getParameter("phone");
     UserInfoDao userInfoDao = new UserInfoDao();
     String baseName = null;
     if (userInfoDao.queryByUserName(userName)) {
-      System.out.println("User Already Exists");
       baseName = "alreadyRegister";
     } else {
+      String password = request.getParameter("password");
+      String phone = request.getParameter("phone");
       UserInfoDto userInfoDto = new UserInfoDto(/*id*/ 0, userName, password, phone);
       userInfoDao.saveUserInfo(userInfoDto);
-      System.out.println("User Information Saved in Database");
       baseName = "registerSuccess";
     }
     RequestDispatcher rd = request.getRequestDispatcher("../" + baseName + ".jsp");
     rd.forward(request, response);
   }
 
-  /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
+  /**
+   * Do as the same as {@link #doGet doGet}.
+   *
+   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+   */
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     // TODO Auto-generated method stub
