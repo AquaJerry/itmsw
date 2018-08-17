@@ -21,5 +21,8 @@ public class Demo {
     System.out.println(str.length);
     System.out.println(num.length);
     System.out.println(str[2]);
+
+    String[][] names = {{"张三", "李四", "王五"}, {"u01", "u02", "u03"}};
+    System.out.println(names[0][1]);
   }
 }
