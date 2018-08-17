@@ -20,5 +20,6 @@ public class Demo {
 
     System.out.println(str.length);
     System.out.println(num.length);
+    System.out.println(str[2]);
   }
 }
