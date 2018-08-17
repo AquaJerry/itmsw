@@ -27,5 +27,11 @@ public class Demo {
 
     String[][] names = {{"张三", "李四", "王五"}, {"u01", "u02", "u03"}};
     System.out.println(names[1][2]);
+
+    for (int i = 0; i < names.length; ++i) {
+      for (int j = 0; j < names[i].length; ++j) {
+        System.out.println("names[" + i + "][" + j + "]=" + names[i][j]);
+      }
+    }
   }
 }
