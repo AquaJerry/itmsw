@@ -19,11 +19,16 @@ public class JDBCUtil {
   public static Connection getConnection() {
     Connection conn = null;
     try {
+      Class.forName("com.mysql.cj.jdbc.Driver");
       String url =
           "jdbc:mysql://localhost:3306/jd?useSSL=false&serverTimetone=UTC&characterEncoding=utf-8";
       String user = "root";
       String password = "root";
       conn = DriverManager.getConnection(url, user, password);
+    } catch (ClassNotFoundException e) {
+      // TODO Auto-generated catch block
+      // e.printStackTrace();
+      System.out.println("Database Driver Error");
     } catch (SQLException e) {
       // TODO Auto-generated catch block
       // e.printStackTrace();
