@@ -5,29 +5,17 @@ package com.demo;
 /** This is just a sample. */
 public class Demo {
 
-  /** Use Java loop. */
+  /** Use Java array. */
   public static void main(String[] args) {
-    int sum = 0;
-    /*for (int i = 100; i >= 1; i--) {
-      sum = sum + i;
-    }
-    System.out.println("sum=" + sum);*/
-    int i = 1;
-    while (i <= 10) {
-      if (i < 5) {
-        System.out.println("hello");
-        i++;
-        continue;
-      }
-      System.out.println("i=" + i);
-      i++;
-    }
+    // int[] num = new int[3];
+    String[] str = new String[4];
 
-    /*int i = 11;
-    do {
-      System.out.println("i=" + i);
-      i++;
-    } while (i <= 10);*/
+    int[] num = new int[] {3, 5, 6}; // int[] num = {3, 5, 6};
+    // String[] str = new String[]{"tom", "andy"};
 
+    str[0] = "tom";
+    str[1] = "andy";
+    str[2] = "张三";
+    str[4] = "李四";
   }
 }
