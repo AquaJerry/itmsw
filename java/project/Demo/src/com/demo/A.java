@@ -3,24 +3,15 @@
 package com.demo;
 
 /** This is just a sample. */
-public class A {
+public abstract class A {
 
-  /** Test {@code ClassNotFoundException} and {@code ArithmeticException}. */
-  public void test() {
-    try {
-      System.out.println(5 / 0);
-      System.out.println(Class.forName("com.demo.B2"));
-    } catch (ClassNotFoundException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (ArithmeticException e) {
-      System.out.println("Divide-by-zero Error");
-    }
-  }
+  /** Print something. */
+  public abstract void print();
 
-  /** Fire the {@link #test test}. */
+  /** Try to construct an object of type A. */
   public static void main(String[] args) {
-    A a = new A();
-    a.test();
+    // A a = new A();
+    B b = new B();
+    b.print();
   }
 }

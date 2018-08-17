@@ -3,8 +3,12 @@
 package com.demo;
 
 /** This is just a sample. */
-public class B {
+public class B extends A {
 
-  /** No operation. */
-  public static void main(String[] args) {}
+  /** Print something. */
+  @Override
+  public void print() {
+    // TODO Auto-generated method stub
+    System.out.println("Print in B");
+  }
 }
