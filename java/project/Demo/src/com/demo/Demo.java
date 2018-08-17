@@ -17,5 +17,8 @@ public class Demo {
     str[1] = "andy";
     str[2] = "张三";
     str[3] = "李四";
+
+    System.out.println(str.length);
+    System.out.println(num.length);
   }
 }
