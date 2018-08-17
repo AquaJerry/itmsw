@@ -11,11 +11,11 @@ public class Demo {
     String[] str = new String[4];
 
     int[] num = new int[] {3, 5, 6}; // int[] num = {3, 5, 6};
-    // String[] str = new String[]{"tom", "andy"};
+    // String[] str = new String[] {"tom", "andy"};
 
     str[0] = "tom";
     str[1] = "andy";
     str[2] = "张三";
-    str[4] = "李四";
+    str[3] = "李四";
   }
 }
