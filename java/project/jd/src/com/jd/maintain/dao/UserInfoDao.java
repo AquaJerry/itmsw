@@ -49,34 +49,6 @@ public class UserInfoDao {
   }
 
   /**
-   * Try to login.
-   *
-   * @param userName user name
-   * @param password password
-   * @return if it is successful
-   */
-  public boolean queryUserInfo(String userName, String password) {
-    conn = JDBCUtil.getConnection();
-    boolean flag = false;
-    try {
-      String sql = "select*from user_info where user_name=?&&password=?";
-      ps = conn.prepareStatement(sql);
-      ps.setString(1, userName);
-      ps.setString(2, password);
-      rs = ps.executeQuery();
-      if (rs.next()) {
-        flag = true;
-      }
-    } catch (SQLException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } finally {
-      JDBCUtil.clear(conn, ps, rs);
-    }
-    return flag;
-  }
-
-  /**
    * Save registering information as a record.
    *
    * @param userInfoDto the information
