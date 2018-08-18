@@ -2,6 +2,7 @@
 
 package com.jd.maintain.servlet;
 
+import com.jd.common.MD5Encrypt;
 import com.jd.maintain.dao.UserInfoDao;
 import com.jd.maintain.dto.UserInfoDto;
 import java.io.IOException;
@@ -32,8 +33,9 @@ public class RegisterServlet extends HttpServlet {
       baseName = "alreadyRegister";
     } else {
       String password = request.getParameter("password");
+      byte[] passwordHash = MD5Encrypt.encryptByMD5(password);
       String phone = request.getParameter("phone");
-      UserInfoDto userInfoDto = new UserInfoDto(/*id*/ 0, userName, password, phone);
+      UserInfoDto userInfoDto = new UserInfoDto(/*id*/ 0, userName, passwordHash, phone);
       userInfoDao.saveUserInfo(userInfoDto);
       baseName = "registerSuccess";
     }
