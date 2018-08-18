@@ -42,15 +42,15 @@ public class MD5Encrypt {
   }
 
   /**
-   * Validate if {@code saltHash} includes {@code password}. This could be used in user login.
+   * Validate if {@code validPassword} includes {@code password}. This could be used in user login.
    *
    * @param password the password
-   * @param saltHash the byte array including a valid password from the database
+   * @param validPassword the byte array including a valid password from the database
    * @return if the login is successful
    */
-  public static boolean validatePassword(String password, byte[] saltHash) {
-    byte[] salt = Arrays.copyOfRange(saltHash, 0, LEN_SALT);
-    byte[] hash = Arrays.copyOfRange(saltHash, LEN_SALT, LEN_SALT_HASH);
+  public static boolean validatePassword(String password, byte[] validPassword) {
+    byte[] salt = Arrays.copyOfRange(validPassword, 0, LEN_SALT);
+    byte[] hash = Arrays.copyOfRange(validPassword, LEN_SALT, LEN_SALT_HASH);
     return Arrays.equals(hash, encrypt(password, salt));
   }
 }

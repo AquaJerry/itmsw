@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
     UserInfoDto userInfoDto = userInfoDao.queryByUserName(userName);
     if (null != userInfoDto) {
       String password = request.getParameter("password");
-      byte[] savedHash = userInfoDto.getPassword();
-      boolean isPasswordValid = MD5Encrypt.validatePassword(password, savedHash);
+      byte[] validPassword = userInfoDto.getPassword();
+      boolean isPasswordValid = MD5Encrypt.validatePassword(password, validPassword);
       if (isPasswordValid) {
         RequestDispatcher rd = request.getRequestDispatcher("../loginSuccess.jsp");
         rd.forward(request, response);
