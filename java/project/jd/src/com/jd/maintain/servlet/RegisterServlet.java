@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
     String userName = request.getParameter("userName");
     UserInfoDao userInfoDao = new UserInfoDao();
     String baseName = null;
-    if (userInfoDao.queryByUserName(userName)) {
+    if (null != userInfoDao.queryByUserName(userName)) {
       baseName = "alreadyRegister";
     } else {
       String password = request.getParameter("password");

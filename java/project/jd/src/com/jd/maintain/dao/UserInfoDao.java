@@ -16,21 +16,28 @@ public class UserInfoDao {
   private ResultSet rs;
 
   /**
-   * Query if the user name to be registered is occupied so that the registering fails.
+   * Query user inforamtion by name. This could be used either to see if the user name to be
+   * registered is occupied so that the registering fails or to get enough information of a user and
+   * validate if he logins successfully.
    *
    * @param userName the user name
-   * @return the query
+   * @return an object representing the information of a user
    */
-  public boolean queryByUserName(String userName) {
+  public UserInfoDto queryByUserName(String userName) {
     conn = JDBCUtil.getConnection();
-    boolean flag = false;
+    UserInfoDto userInfoDto = null;
     try {
       String sql = "select*from user_info where user_name=?";
       ps = conn.prepareStatement(sql);
       ps.setString(1, userName);
       rs = ps.executeQuery();
       if (rs.next()) {
-        flag = true;
+        userInfoDto =
+            new UserInfoDto(
+                rs.getInt("id"),
+                rs.getString("user_name"),
+                rs.getBytes("password"),
+                rs.getString("phone"));
       }
     } catch (SQLException e) {
       // TODO Auto-generated catch block
@@ -38,7 +45,7 @@ public class UserInfoDao {
     } finally {
       JDBCUtil.clear(conn, ps, rs);
     }
-    return flag;
+    return userInfoDto;
   }
 
   /**
