@@ -80,7 +80,7 @@ public class UserInfoDao {
       String sql = "insert user_info(user_name,password,phone)value(?,?,?)";
       ps = conn.prepareStatement(sql);
       ps.setString(1, userInfoDto.getUserName());
-      ps.setString(2, userInfoDto.getPassword());
+      ps.setBytes(2, userInfoDto.getPassword());
       ps.setString(3, userInfoDto.getPhone());
       ps.executeUpdate();
     } catch (SQLException e) {
