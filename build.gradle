@@ -8,6 +8,13 @@
 plugins {
   // Reformat Java source code to comply with Google Java Style
   id 'com.github.sherter.google-java-format' version '0.7.1'
+
+  // Extend Java plugin to assemble web application WAR file
+  id 'war'
+}
+
+dependencies {
+  providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -15,4 +22,17 @@ repositories {
   // Use jcenter for resolving your dependencies.
   // You can declare any Maven/Ivy/file repository here.
   jcenter()
+}
+
+sourceSets {
+  main {
+    java {
+      srcDirs = ['java/project/jd/src']
+    }
+  }
+}
+
+war {
+  // add a file-set to the root of the archive
+  from 'java/project/jd/WebContent'
 }

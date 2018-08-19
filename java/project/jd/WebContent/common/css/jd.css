@@ -216,8 +216,6 @@ body {
  * 		sublist
  * 		title-bar
  * 		title
- * 		navbar
- * 		navitem
  * 		cell
  * 		icon
  * 		label
@@ -236,6 +234,21 @@ body {
 
 .form {
 	font: 0/1.5 MicrosoftYahei, serif;
+}
+
+/* csslint: shared font sizes */
+
+.form__title--login-tip,
+.form__title--term,
+.form__label--register,
+.form__tip--register,
+.form__text,
+.form__link {
+	font-size: 14px;
+}
+
+.form__title--login {
+	font-size: 18px;
 }
 
 .form--login,
@@ -283,15 +296,24 @@ body {
 }
 
 /* fake flexbox */
-.form__title-bar {
+.form__title-bar--term,
+.form__label {
 	text-align: justify;
 	text-align-last: justify;
 }
 
-.form__title-bar::after {
+.form__title-bar--term::after,
+.form__label::after {
 	content: '';
 	display: inline-block;
 	width: 100%;
+}
+
+.form__title-bar--login {
+	border-bottom: 1px solid #ccc;
+	color: #e4393c;
+	margin: 0 0 33px;
+	text-align: center;
 }
 
 .form__title-bar--term {
@@ -309,23 +331,18 @@ body {
 	vertical-align: middle;
 }
 
+.form__title--login,
+.form__title--login-tip {
+	line-height: 3em;
+	margin: 0 5px;
+}
+
+.form__title--login-tip {
+	visibility: hidden;
+}
+
 .form__title--term {
-	font-size: 14px;
 	font-weight: 700;
-}
-
-.form__navbar {
-	border-bottom: 1px solid #ccc;
-	color: #e4393c;
-	margin: 0 0 33px;
-	text-align: center;
-}
-
-.form__navitem {
-	font-size: 18px;
-	line-height: 54px;
-	padding: 0;
-	width: 50%;
 }
 
 .form__cell--login,
@@ -341,6 +358,7 @@ body {
 .form__cell--login {
 	margin: 20px;
 	overflow: hidden;
+	text-align: left;
 }
 
 .form__cell--register {
@@ -365,23 +383,10 @@ body {
 	margin: 0 10px 0 0;
 }
 
-/* fake flexbox */
-.form__label {
-	text-align: justify;
-	text-align-last: justify;
-}
-
-.form__label::after {
-	content: '';
-	display: inline-block;
-	width: 100%;
-}
-
 /*
  * word-spacing:	remove whitespace, about -0.25em
  * */
 .form__label--register {
-	font-size: 14px;
 	height: 48px;
 	line-height: 48px;
 	margin: 0 20px;
@@ -411,7 +416,6 @@ body {
 
 .form__tip--register {
 	color: #ff8801;
-	font-size: 14px;
 	line-height: 1;
 }
 
@@ -434,10 +438,6 @@ body {
 .form__textarea--term {
 	height: 426px;
 	margin: 10px;
-}
-
-.form__text {
-	font-size: 14px;
 }
 
 .form__text--policy,
@@ -517,7 +517,6 @@ body {
 
 .form__link {
 	color: #b61d1d;
-	font-size: 14px;
 	margin: 0 20px;
 	text-decoration: none;
 }

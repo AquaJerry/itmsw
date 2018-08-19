@@ -1,7 +1,11 @@
+/* Copyright (c) 2018, https://github.com/AquaJerry/itmsw. ISC License. */
+
 package com.demo;
 
+/** This is just a sample. */
 public class Demo {
 
+  /** Use Java loop. */
   public static void main(String[] args) {
     int sum = 0;
     /*for (int i = 100; i >= 1; i--) {

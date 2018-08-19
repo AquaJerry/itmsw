@@ -1,6 +1,11 @@
+/* Copyright (c) 2018, https://github.com/AquaJerry/itmsw. ISC License. */
+
 package com.demo;
 
+/** This is just a sample. */
 public class A {
+
+  /** Test {@code ClassNotFoundException} and {@code ArithmeticException}. */
   public void test() {
     try {
       System.out.println(5 / 0);
@@ -13,6 +18,7 @@ public class A {
     }
   }
 
+  /** Fire the {@link #test test}. */
   public static void main(String[] args) {
     A a = new A();
     a.test();

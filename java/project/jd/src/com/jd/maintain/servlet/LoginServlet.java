@@ -3,7 +3,6 @@
 package com.jd.maintain.servlet;
 
 import com.jd.maintain.dao.UserInfoDao;
-import com.jd.maintain.dto.UserInfoDto;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,13 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet implementation for Jingdong/Joybuy register page. */
-@WebServlet("/maintain/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+/** Servlet implementation for Jingdong/Joybuy login page. */
+@WebServlet("/maintain/LoginServlet")
+public class LoginServlet extends HttpServlet {
 
   /**
-   * Manage register request and route to a new page. In database save register information if user
-   * name of which is not occupied.
+   * Route on login page. Go to success page if correct user name and password are typed, otherwise
+   * reload this page.
    *
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
    */
@@ -26,19 +25,15 @@ public class RegisterServlet extends HttpServlet {
       throws ServletException, IOException {
     request.setCharacterEncoding("utf-8");
     String userName = request.getParameter("userName");
+    String password = request.getParameter("password");
     UserInfoDao userInfoDao = new UserInfoDao();
-    String baseName = null;
-    if (userInfoDao.queryByUserName(userName)) {
-      baseName = "alreadyRegister";
+    boolean flag = userInfoDao.queryUserInfo(userName, password);
+    if (flag) {
+      RequestDispatcher rd = request.getRequestDispatcher("../loginSuccess.jsp");
+      rd.forward(request, response);
     } else {
-      String password = request.getParameter("password");
-      String phone = request.getParameter("phone");
-      UserInfoDto userInfoDto = new UserInfoDto(/*id*/ 0, userName, password, phone);
-      userInfoDao.saveUserInfo(userInfoDto);
-      baseName = "registerSuccess";
+      response.sendRedirect("../login.html?flag=loginError");
     }
-    RequestDispatcher rd = request.getRequestDispatcher("../" + baseName + ".jsp");
-    rd.forward(request, response);
   }
 
   /**

@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<h1>ok.jsp</h1>
-		${param.userName}
+		file
+		<img src="../images/jd_logo_160x50.png">
 	</body>
 </html>

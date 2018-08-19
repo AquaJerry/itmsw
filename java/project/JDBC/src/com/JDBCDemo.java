@@ -1,3 +1,5 @@
+/* Copyright (c) 2018, https://github.com/AquaJerry/itmsw. ISC License. */
+
 package com;
 
 import java.sql.Connection;
@@ -6,7 +8,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/** Connector to Jingdong/Joybuy MySQL database. */
 public class JDBCDemo {
+  public static final int ID = 4;
+  public static final String PASSWORD = "333***";
+  public static final String PHONE = "13712345678";
+  public static final String USERNAME = "用户0010";
+
+  /**
+   * Get a Jd database connection with root user.
+   *
+   * @return the Jd database connection
+   */
   public Connection getConnection() {
     Connection conn = null;
     try {
@@ -26,15 +39,24 @@ public class JDBCDemo {
     return conn;
   }
 
+  /**
+   * Insert below record into user info table in Jd database.
+   *
+   * <pre>
+   *   User Name {@value USERNAME}
+   *   Password  {@value PASSWORD}
+   *   Phone     {@value PHONE}
+   * </pre>
+   */
   public void saveUser() {
     Connection conn = getConnection();
     PreparedStatement ps = null;
     try {
       String sql = "insert user_info(user_name,password,phone)value(?,?,?)";
       ps = conn.prepareStatement(sql);
-      ps.setString(1, "用户0010");
-      ps.setString(2, "333***");
-      ps.setString(3, "13712345678");
+      ps.setString(1, USERNAME);
+      ps.setString(2, PASSWORD);
+      ps.setString(3, PHONE);
       ps.executeUpdate();
     } catch (SQLException e) {
       // TODO Auto-generated catch block
@@ -59,6 +81,7 @@ public class JDBCDemo {
     }
   }
 
+  /** Print info of the user whose id is {@value ID}. */
   public void queryUser() {
     Connection conn = getConnection();
     PreparedStatement ps = null;
@@ -66,7 +89,7 @@ public class JDBCDemo {
     try {
       String sql = "select*from user_info where id=?";
       ps = conn.prepareStatement(sql);
-      ps.setInt(1, 4);
+      ps.setInt(1, ID);
       rs = ps.executeQuery();
       System.out.println("id\tuser_name\tpassword\tphone");
       while (rs.next()) {
@@ -110,6 +133,7 @@ public class JDBCDemo {
     }
   }
 
+  /** Test {@linkplain #queryUser() printing user info}. */
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     JDBCDemo jdbc = new JDBCDemo();

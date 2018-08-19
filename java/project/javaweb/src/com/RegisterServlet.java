@@ -1,10 +1,9 @@
 /* Copyright (c) 2018, https://github.com/AquaJerry/itmsw. ISC License. */
 
-package com.jd.maintain.servlet;
+package com;
 
-import com.jd.maintain.dao.UserInfoDao;
-import com.jd.maintain.dto.UserInfoDto;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,29 +14,28 @@ import javax.servlet.http.HttpServletResponse;
 /** Servlet implementation for Jingdong/Joybuy register page. */
 @WebServlet("/maintain/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
+  private static final long serialVersionUID = 1L;
 
   /**
-   * Manage register request and route to a new page. In database save register information if user
-   * name of which is not occupied.
+   * Print request details, render response messages, dispatch to another location.
    *
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+    // TODO Auto-generated method stub
     request.setCharacterEncoding("utf-8");
-    String userName = request.getParameter("userName");
-    UserInfoDao userInfoDao = new UserInfoDao();
-    String baseName = null;
-    if (userInfoDao.queryByUserName(userName)) {
-      baseName = "alreadyRegister";
-    } else {
-      String password = request.getParameter("password");
-      String phone = request.getParameter("phone");
-      UserInfoDto userInfoDto = new UserInfoDto(/*id*/ 0, userName, password, phone);
-      userInfoDao.saveUserInfo(userInfoDto);
-      baseName = "registerSuccess";
-    }
-    RequestDispatcher rd = request.getRequestDispatcher("../" + baseName + ".jsp");
+    System.out.println("userName=" + request.getParameter("userName"));
+    System.out.println("method=" + request.getMethod());
+    System.out.println("queryString=" + request.getQueryString());
+    System.out.println("uri=" + request.getRequestURI());
+    System.out.println("url=" + request.getRequestURL());
+    // response.setCharacterEncoding("utf-8");
+    response.setContentType("text/html;charset=utf-8");
+    PrintWriter out = response.getWriter();
+    out.print("<h1 style='color:red' onclick='alert(100)'>Hello中国</h1>");
+    // response.sendRedirect("/javaweb/NewFile.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("/NewFile.jsp");
     rd.forward(request, response);
   }
 
