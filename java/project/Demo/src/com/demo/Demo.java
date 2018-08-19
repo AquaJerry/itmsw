@@ -5,29 +5,33 @@ package com.demo;
 /** This is just a sample. */
 public class Demo {
 
-  /** Use Java loop. */
+  /** Use Java array. */
   public static void main(String[] args) {
-    int sum = 0;
-    /*for (int i = 100; i >= 1; i--) {
-      sum = sum + i;
+    // int[] num = new int[3];
+    String[] str = new String[4];
+
+    int[] num = new int[] {3, 5, 6}; // int[] num = {3, 5, 6};
+    // String[] str = new String[] {"tom", "andy"};
+
+    str[0] = "tom";
+    str[1] = "andy";
+    str[2] = "张三";
+    str[3] = "李四";
+
+    System.out.println(str.length);
+    System.out.println(num.length);
+    System.out.println(str[2]);
+    for (int i = 0; i < str.length; ++i) {
+      System.out.println("str[" + i + "]=" + str[i]);
     }
-    System.out.println("sum=" + sum);*/
-    int i = 1;
-    while (i <= 10) {
-      if (i < 5) {
-        System.out.println("hello");
-        i++;
-        continue;
+
+    String[][] names = {{"张三", "李四", "王五"}, {"u01", "u02", "u03"}};
+    System.out.println(names[1][2]);
+
+    for (int i = 0; i < names.length; ++i) {
+      for (int j = 0; j < names[i].length; ++j) {
+        System.out.println("names[" + i + "][" + j + "]=" + names[i][j]);
       }
-      System.out.println("i=" + i);
-      i++;
     }
-
-    /*int i = 11;
-    do {
-      System.out.println("i=" + i);
-      i++;
-    } while (i <= 10);*/
-
   }
 }

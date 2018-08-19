@@ -6,7 +6,7 @@ package com.jd.maintain.dto;
 public class UserInfoDto {
   private int id;
   private String userName;
-  private String password;
+  private byte[] password;
   private String phone;
 
   /** Initializes minimally required information of a user in register/login. */
@@ -23,7 +23,7 @@ public class UserInfoDto {
    * @param password password
    * @param phone phone number
    */
-  public UserInfoDto(int id, String userName, String password, String phone) {
+  public UserInfoDto(int id, String userName, byte[] password, String phone) {
     super();
     this.id = id;
     this.userName = userName;
@@ -47,11 +47,11 @@ public class UserInfoDto {
     this.userName = userName;
   }
 
-  public String getPassword() {
+  public byte[] getPassword() {
     return password;
   }
 
-  public void setPassword(String password) {
+  public void setPassword(byte[] password) {
     this.password = password;
   }
 

@@ -3,12 +3,12 @@
 package com.demo;
 
 /** This is just a sample. */
-public abstract class B extends A {
+public class C extends B {
 
   /** Print something. */
   @Override
-  public void print() {
+  public void sayHello() {
     // TODO Auto-generated method stub
-    System.out.println("Print in B");
+    System.out.println("Hello");
   }
 }
