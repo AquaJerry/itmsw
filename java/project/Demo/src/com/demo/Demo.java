@@ -2,35 +2,23 @@
 
 package com.demo;
 
+import java.io.File;
+
 /** This is just a sample. */
 public class Demo {
 
-  /** Use Java array. */
+  /** Use Java File Object. */
   public static void main(String[] args) {
-    // int[] num = new int[3];
-    String[] str = new String[4];
-
-    int[] num = new int[] {3, 5, 6}; // int[] num = {3, 5, 6};
-    // String[] str = new String[] {"tom", "andy"};
-
-    str[0] = "tom";
-    str[1] = "andy";
-    str[2] = "张三";
-    str[3] = "李四";
-
-    System.out.println(str.length);
-    System.out.println(num.length);
-    System.out.println(str[2]);
-    for (int i = 0; i < str.length; ++i) {
-      System.out.println("str[" + i + "]=" + str[i]);
-    }
-
-    String[][] names = {{"张三", "李四", "王五"}, {"u01", "u02", "u03"}};
-    System.out.println(names[1][2]);
-
-    for (int i = 0; i < names.length; ++i) {
-      for (int j = 0; j < names[i].length; ++j) {
-        System.out.println("names[" + i + "][" + j + "]=" + names[i][j]);
+    File file = new File(".");
+    System.out.println("Name\t" + file.getName());
+    System.out.println("Path\t" + file.getPath());
+    System.out.println("Exist\t" + file.exists());
+    System.out.println("Size\t" + file.length());
+    if (file.isDirectory()) {
+      System.out.println("List");
+      String[] str = file.list();
+      for (String s : str) {
+        System.out.println("\t" + s);
       }
     }
   }
