@@ -2,24 +2,19 @@
 
 package com.demo;
 
-import java.io.File;
+import java.util.Random;
 
 /** This is just a sample. */
 public class Demo {
 
-  /** Use Java File Object. */
+  /** Generate 4-bit validation code. */
   public static void main(String[] args) {
-    File file = new File(".");
-    System.out.println("Name\t" + file.getName());
-    System.out.println("Path\t" + file.getPath());
-    System.out.println("Exist\t" + file.exists());
-    System.out.println("Size\t" + file.length());
-    if (file.isDirectory()) {
-      System.out.println("List");
-      String[] str = file.list();
-      for (String s : str) {
-        System.out.println("\t" + s);
-      }
+    String vcStr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int vcStrLength = vcStr.length();
+    Random random = new Random();
+    for (int i = 0; i < 4; ++i) {
+      int randomNum = random.nextInt(vcStrLength);
+      System.out.print(vcStr.charAt(randomNum));
     }
   }
 }
