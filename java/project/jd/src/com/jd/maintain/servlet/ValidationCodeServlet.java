@@ -51,7 +51,7 @@ public class ValidationCodeServlet extends HttpServlet {
    */
   public static void drawValidationCode(BufferedImage image, String validationCode) {
     Graphics graphics = image.getGraphics();
-    graphics.setFont(new Font("MicrosoftYahei", Font.BOLD, /*size*/ 20));
+    graphics.setFont(new Font("MicrosoftYahei", Font.PLAIN, /*size*/ 20));
     graphics.drawString(validationCode, /*x*/ 10, /*y*/ 20);
   }
 
