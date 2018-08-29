@@ -14,6 +14,8 @@ pageEncoding="UTF-8"%>
 		<br>
 		sessionAttr= ${sessionScope.sessionAttr} ${sessionAttr}
 		<br>
+		applicationAttr= ${applicationScope.applicationAttr} ${applicationAttr}
+		<br>
 		<a href="jsp3.jsp">JSP 3</a>
 	</body>
 </html>

@@ -13,5 +13,7 @@ pageEncoding="UTF-8"%>
 		requestAttr= ${requestScope.requestAttr} ${requestAttr}
 		<br>
 		sessionAttr= ${sessionScope.sessionAttr} ${sessionAttr}
+		<br>
+		applicationAttr= ${applicationScope.applicationAttr} ${applicationAttr}
 	</body>
 </html>

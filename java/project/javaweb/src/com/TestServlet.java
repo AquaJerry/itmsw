@@ -3,6 +3,7 @@
 package com;
 
 import java.io.IOException;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +28,8 @@ public class TestServlet extends HttpServlet {
     request.setAttribute("requestAttr", "请求属性");
     HttpSession session = request.getSession();
     session.setAttribute("sessionAttr", "会话属性");
+    ServletContext context = request.getServletContext();
+    context.setAttribute("applicationAttr", "用户属性");
     // request.getRequestDispatcher("jsp2.jsp").forward(request, response);
     response.sendRedirect("jsp2.jsp");
   }
