@@ -24,7 +24,8 @@ public class TestServlet extends HttpServlet {
     String userName = request.getParameter("userName");
     System.out.println("userName=" + userName);
     request.setAttribute("requestAttr", "请求属性");
-    request.getRequestDispatcher("jsp2.jsp").forward(request, response);
+    // request.getRequestDispatcher("jsp2.jsp").forward(request, response);
+    response.sendRedirect("jsp2.jsp");
   }
 
   /**
