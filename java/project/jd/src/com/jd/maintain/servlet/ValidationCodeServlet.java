@@ -57,7 +57,7 @@ public class ValidationCodeServlet extends HttpServlet {
     String validationChar;
     for (int i = 0, l = validationCode.length(); i < l; ++i) {
       validationChar = validationCode.substring(i, i + 1);
-      graphics.drawString(validationChar, /*x*/ 10, /*y*/ 25);
+      graphics.drawString(validationChar, /*x*/ 10 * i, /*y*/ 25);
     }
   }
 
