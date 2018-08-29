@@ -219,7 +219,7 @@ function validate() {
   let isUserNameANum = !/\D/.test(userName);
   let isUserNameMalformed = /[^\u4e00-\u9fa5\w-]/.test(userName);
   let isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName);
-  let isValidateCodeNaN = isNaN(validateCode);
+  let isValidateCodeMalformed = /[\W_]/.test(validateCode);
 
   success = true;
 
@@ -274,13 +274,13 @@ function validate() {
   updateTip('phone');
 
   if ('' == validateCode) {
-    tip = 'Verification code should not be empty.';
-  } else if (6 != validateCode.length) {
-    tip = 'Verification code should have 6 digits.';
-  } else if (isValidateCodeNaN) {
-    tip = 'Verification code should only be numbers.';
+    tip = 'Validation code should not be empty.';
+  } else if (4 != validateCode.length) {
+    tip = 'Validation code should have 4 digits.';
+  } else if (isValidateCodeMalformed) {
+    tip = 'Validation code should only be numbers or letters.';
   } else {
-    review = 'Verification code is correct.';
+    review = 'Validation code is correct.';
     state = 'pass';
   }
 
