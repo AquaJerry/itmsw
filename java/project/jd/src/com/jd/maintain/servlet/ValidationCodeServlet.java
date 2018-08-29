@@ -55,9 +55,12 @@ public class ValidationCodeServlet extends HttpServlet {
     graphics.setFont(new Font("MicrosoftYahei", Font.PLAIN, /*size*/ 25));
     graphics.setColor(new Color(/*rgb*/ 0xffffff));
     String validationChar;
+    int x, y;
     for (int i = 0, l = validationCode.length(); i < l; ++i) {
       validationChar = validationCode.substring(i, i + 1);
-      graphics.drawString(validationChar, /*x*/ 12 * (i + 1), /*y*/ 25);
+      x = 12 * (i + 1);
+      y = 25 + RANDOM.nextInt(5);
+      graphics.drawString(validationChar, x, y);
     }
   }
 
