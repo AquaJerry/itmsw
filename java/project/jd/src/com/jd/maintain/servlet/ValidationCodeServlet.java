@@ -2,6 +2,7 @@
 
 package com.jd.maintain.servlet;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -42,21 +43,41 @@ public class ValidationCodeServlet extends HttpServlet {
   }
 
   /**
-   * Send a background image of validation code to the register page.
+   * Draw validation code.
+   *
+   * @param image the background image of validation code
+   * @param validationCode a string of validation code
+   */
+  public static void drawValidationCode(BufferedImage image, String validationCode) {
+    Graphics graphics = image.getGraphics();
+    graphics.drawString(validationCode, /*x*/ 10, /*y*/ 20);
+  }
+
+  /**
+   * Send an image of validation code to the register page.
    *
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    response.setContentType("image/png");
+
+    /* Read request. */
     ServletContext context = request.getServletContext();
+
+    /* Create image. */
     String path = context.getRealPath("common/images/") + "jd_bg_validation-code.png";
     File input = new File(path);
     BufferedImage image = ImageIO.read(input);
+
+    /* Process image. */
+    String validationCode = createValidationCode();
+    drawValidationCode(image, validationCode);
+
+    /* Write response. */
+    response.setContentType("image/png");
     OutputStream out = response.getOutputStream();
     ImageIO.write(image, "png", out);
     out.close();
-    System.out.println(createValidationCode());
   }
 
   /**
