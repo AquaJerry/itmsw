@@ -10,6 +10,6 @@ pageEncoding="UTF-8"%>
 		<h1>JSP 2</h1>
 		userName= ${param.userName}
 		<br>
-		requestAttr= ${requestAttr}
+		requestAttr= ${requestScope.requestAttr}
 	</body>
 </html>
