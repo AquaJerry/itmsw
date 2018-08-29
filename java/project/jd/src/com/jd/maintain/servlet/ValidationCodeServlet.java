@@ -59,7 +59,7 @@ public class ValidationCodeServlet extends HttpServlet {
     for (int i = 0, l = validationCode.length(); i < l; ++i) {
       validationChar = validationCode.substring(i, i + 1);
       x = 12 * (i + 1);
-      y = 25 + RANDOM.nextInt(5);
+      y = 25 + RANDOM.nextInt(8);
       graphics.drawString(validationChar, x, y);
     }
   }
