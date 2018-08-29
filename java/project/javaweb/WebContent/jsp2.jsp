@@ -9,5 +9,7 @@ pageEncoding="UTF-8"%>
 	<body>
 		<h1>JSP 2</h1>
 		userName= ${param.userName}
+		<br>
+		requestAttr= ${requestAttr}
 	</body>
 </html>
