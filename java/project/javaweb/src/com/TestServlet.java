@@ -3,7 +3,6 @@
 package com;
 
 import java.io.IOException;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,16 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 public class TestServlet extends HttpServlet {
 
   /**
-   * Get real path.
+   * Dispatch requests to {@code jsp2.jsp}.
    *
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     // TODO Auto-generated method stub
-    ServletContext context = request.getServletContext();
-    String str = context.getRealPath("");
-    System.out.println("str=" + str);
+    String userName = request.getParameter("userName");
+    System.out.println("userName=" + userName);
+    request.getRequestDispatcher("jsp2.jsp").forward(request, response);
   }
 
   /**

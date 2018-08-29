@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
 		<title>Insert title here</title>
 	</head>
 	<body>
-		file
-		<img src="../images/jd_logo_160x50.png">
+		<h1>JSP 1</h1>
+		<a href="TestServlet?userName=tom">Test Servlet</a>
 	</body>
 </html>
