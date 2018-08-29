@@ -62,6 +62,13 @@ let $userName = $('userName');
 let $validateCode = $('validateCode');
 
 /**
+ * The image of the validation code.
+ *
+ * @type {HTMLElement}
+ */
+let $validationCode = $('validationCode');
+
+/**
  * Close the popup and stay in the register page.
  */
 function agreePopup() {
@@ -89,6 +96,13 @@ let cssMask = $mask.style;
  * @type {CSS2Properties}
  */
 let cssTermPopup = $termPopup.style;
+
+/**
+ * Request another image of validation code.
+ */
+function getValidationCode() {
+  $validationCode.src = 'maintain/ValidationCodeServlet?' + Date.now();
+}
 
 /**
  * Page element identified by id listens to click to redirect to the login page.
@@ -288,3 +302,6 @@ $('agreePopup').onclick = agreePopup;
 
 // listen to submit
 $('registerForm').onsubmit = validate;
+
+// listen to change validation code
+$('changeValidationCode').onclick = getValidationCode;
