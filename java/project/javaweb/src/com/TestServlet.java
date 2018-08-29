@@ -26,7 +26,7 @@ public class TestServlet extends HttpServlet {
     System.out.println("userName=" + userName);
     request.setAttribute("requestAttr", "请求属性");
     HttpSession session = request.getSession();
-    session.setAttribute("requestAttr", "会话属性");
+    session.setAttribute("sessionAttr", "会话属性");
     // request.getRequestDispatcher("jsp2.jsp").forward(request, response);
     response.sendRedirect("jsp2.jsp");
   }
