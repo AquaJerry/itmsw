@@ -52,12 +52,12 @@ public class ValidationCodeServlet extends HttpServlet {
    */
   public static void drawValidationCode(BufferedImage image, String validationCode) {
     Graphics graphics = image.getGraphics();
-    graphics.setFont(new Font("MicrosoftYahei", Font.PLAIN, /*size*/ 20));
+    graphics.setFont(new Font("MicrosoftYahei", Font.PLAIN, /*size*/ 25));
     graphics.setColor(new Color(/*rgb*/ 0xffffff));
     String validationChar;
     for (int i = 0, l = validationCode.length(); i < l; ++i) {
       validationChar = validationCode.substring(i, i + 1);
-      graphics.drawString(validationChar, /*x*/ 10, /*y*/ 20);
+      graphics.drawString(validationChar, /*x*/ 10, /*y*/ 25);
     }
   }
 
