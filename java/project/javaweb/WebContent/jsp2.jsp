@@ -11,5 +11,7 @@ pageEncoding="UTF-8"%>
 		userName= ${param.userName}
 		<br>
 		requestAttr= ${requestScope.requestAttr}
+		<br>
+		requestAttr= ${sessionScope.requestAttr}
 	</body>
 </html>
