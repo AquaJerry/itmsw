@@ -2,6 +2,7 @@
 
 package com.jd.maintain.servlet;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -52,6 +53,7 @@ public class ValidationCodeServlet extends HttpServlet {
   public static void drawValidationCode(BufferedImage image, String validationCode) {
     Graphics graphics = image.getGraphics();
     graphics.setFont(new Font("MicrosoftYahei", Font.PLAIN, /*size*/ 20));
+    graphics.setColor(new Color(255, 0, 0));
     graphics.drawString(validationCode, /*x*/ 10, /*y*/ 20);
   }
 
