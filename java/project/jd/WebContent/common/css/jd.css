@@ -411,7 +411,7 @@ body {
 
 .form__input--code {
 	height: 28px;
-	width: 172px;
+	width: 152px;
 }
 
 .form__tip--register {
@@ -517,8 +517,15 @@ body {
 
 .form__link {
 	color: #b61d1d;
-	margin: 0 20px;
 	text-decoration: none;
+}
+
+.form__link--code {
+	margin: 0 10px;
+}
+
+.form__link--login {
+	margin: 0 20px;
 }
 
 .form__link:hover {
