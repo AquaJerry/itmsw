@@ -3,17 +3,20 @@
 package com.demo;
 
 /** This is just a sample. */
-public class Student {
-
-  /**
-   * Print the name given.
-   *
-   * @param name the name
-   */
-  public void printName(String name) {
-    System.out.println("name=" + name);
+public class Student implements IStudent {
+  public void sayHello() {
+    System.out.println("sayHello()");
   }
 
-  /** No operation. */
-  public static void main(String[] args) {}
+  @Override
+  public void print() {
+    // TODO Auto-generated method stub
+    System.out.println("print()");
+  }
+
+  public static void main(String[] args) {
+    Student s = new Student();
+    s.print();
+    s.sayHello();
+  }
 }
