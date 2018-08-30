@@ -12,6 +12,7 @@ public class Student implements IStudent {
   public void print() {
     // TODO Auto-generated method stub
     System.out.println("print()");
+    System.out.println("num=" + num);
   }
 
   public static void main(String[] args) {
