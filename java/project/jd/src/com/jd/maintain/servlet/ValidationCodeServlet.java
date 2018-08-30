@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /** Servlet implementation for validation code on Jingdong/Joybuy register page. */
 @WebServlet("/maintain/ValidationCodeServlet")
@@ -84,6 +85,10 @@ public class ValidationCodeServlet extends HttpServlet {
     /* Process image. */
     String validationCode = createValidationCode();
     drawValidationCode(image, validationCode);
+
+    /* Save validation code. */
+    HttpSession session = request.getSession();
+    session.setAttribute("correctValidationCode", validationCode);
 
     /* Write response. */
     response.setContentType("image/png");
