@@ -25,5 +25,7 @@ public class Student implements IStudent, ITest {
     IStudent s = new Student();
     s.print();
     s.sayHello();
+    ITest t = new Student();
+    t.printName();
   }
 }
