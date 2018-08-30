@@ -15,7 +15,7 @@ public class Student implements IStudent {
   }
 
   public static void main(String[] args) {
-    Student s = new Student();
+    IStudent s = new Student();
     s.print();
     s.sayHello();
   }
