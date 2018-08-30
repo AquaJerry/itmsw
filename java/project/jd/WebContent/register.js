@@ -59,14 +59,14 @@ let $userName = $('userName');
  *
  * @type {HTMLElement}
  */
-let $validateCode = $('validateCode');
+let $validationCode = $('validationCode');
 
 /**
  * The image of the validation code.
  *
  * @type {HTMLElement}
  */
-let $validationCode = $('validationCode');
+let $correctValidationCode = $('correctValidationCode');
 
 /**
  * Close the popup and stay in the register page.
@@ -101,7 +101,7 @@ let cssTermPopup = $termPopup.style;
  * Request another image of validation code.
  */
 function getValidationCode() {
-  $validationCode.src = 'maintain/ValidationCodeServlet?' + Date.now();
+  $correctValidationCode.src = 'maintain/ValidationCodeServlet?' + Date.now();
 }
 
 /**
@@ -208,7 +208,7 @@ function validate() {
   let phone = $phone.value;
   let repassword = $repassword.value;
   let userName = $userName.value;
-  let validateCode = $validateCode.value;
+  let validationCode = $validationCode.value;
 
   let isPasswordSafe = /^(?!\D+$)(?![^a-zA-Z]+$)(?![0-9a-zA-Z]+$)/
     .test(password);
@@ -219,7 +219,7 @@ function validate() {
   let isUserNameANum = !/\D/.test(userName);
   let isUserNameMalformed = /[^\u4e00-\u9fa5\w-]/.test(userName);
   let isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName);
-  let isValidateCodeMalformed = /[\W_]/.test(validateCode);
+  let isValidationCodeMalformed = /[\W_]/.test(validationCode);
 
   success = true;
 
@@ -273,18 +273,18 @@ function validate() {
 
   updateTip('phone');
 
-  if ('' == validateCode) {
+  if ('' == validationCode) {
     tip = 'Validation code should not be empty.';
-  } else if (4 != validateCode.length) {
+  } else if (4 != validationCode.length) {
     tip = 'Validation code should have 4 digits.';
-  } else if (isValidateCodeMalformed) {
+  } else if (isValidationCodeMalformed) {
     tip = 'Validation code should be numbers or letters.';
   } else {
     review = 'Validation code is correct.';
     state = 'pass';
   }
 
-  updateTip('validateCode');
+  updateTip('validationCode');
 
   return success;
 }
