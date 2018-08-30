@@ -17,7 +17,7 @@ plugins {
 }
 
 // Define the main class for the application
-mainClassName = 'com.demo.Demo'
+mainClassName = 'com.demo.Student'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
