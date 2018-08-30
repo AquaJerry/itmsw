@@ -278,7 +278,7 @@ function validate() {
   } else if (4 != validateCode.length) {
     tip = 'Validation code should have 4 digits.';
   } else if (isValidateCodeMalformed) {
-    tip = 'Validation code should only be numbers or letters.';
+    tip = 'Validation code should be numbers or letters.';
   } else {
     review = 'Validation code is correct.';
     state = 'pass';
