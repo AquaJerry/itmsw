@@ -27,6 +27,7 @@ public class EncodingFilter implements Filter {
     // place your code here
 
     request.setCharacterEncoding("utf-8");
+    response.setContentType("text/html;charset=utf-8");
 
     // pass the request along the filter chain
     chain.doFilter(request, response);
