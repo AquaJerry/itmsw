@@ -32,7 +32,6 @@ public class RegisterServlet extends HttpServlet {
     String correctValidationCode = (String) session.getAttribute("correctValidationCode");
     boolean isValid = correctValidationCode.equalsIgnoreCase(validationCode);
     if (isValid) {
-      request.setCharacterEncoding("utf-8");
       String userName = request.getParameter("userName");
       UserInfoDao userInfoDao = new UserInfoDao();
       if (null != userInfoDao.queryByUserName(userName)) {

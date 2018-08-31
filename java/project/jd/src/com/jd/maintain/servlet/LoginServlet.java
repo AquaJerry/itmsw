@@ -25,7 +25,6 @@ public class LoginServlet extends HttpServlet {
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    request.setCharacterEncoding("utf-8");
     String userName = request.getParameter("userName");
     UserInfoDao userInfoDao = new UserInfoDao();
     UserInfoDto userInfoDto = userInfoDao.queryByUserName(userName);
