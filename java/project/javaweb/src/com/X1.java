@@ -9,10 +9,9 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 
 /** Servlet Filter implementation class X1 */
-@WebFilter("/*")
+// @WebFilter("/*")
 public class X1 implements Filter {
 
   /** @see Filter@destroy() */
