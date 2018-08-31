@@ -23,7 +23,7 @@ public class F2 implements Filter {
   /** @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain) */
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {
-    System.out.println("Enter Filter 2");
+    System.out.println("Enter Filter F2");
 
     // pass the request along the filter chain
     chain.doFilter(request, response);

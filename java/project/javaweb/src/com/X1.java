@@ -11,9 +11,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-/** Servlet Filter implementation class F1 */
+/** Servlet Filter implementation class X1 */
 @WebFilter("/*")
-public class F1 implements Filter {
+public class X1 implements Filter {
 
   /** @see Filter@destroy() */
   public void destroy() {
@@ -23,7 +23,7 @@ public class F1 implements Filter {
   /** @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain) */
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {
-    System.out.println("Enter Filter 1");
+    System.out.println("Enter Filter X1");
 
     // pass the request along the filter chain
     chain.doFilter(request, response);
