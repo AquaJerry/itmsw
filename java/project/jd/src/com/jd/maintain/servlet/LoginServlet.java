@@ -6,7 +6,6 @@ import com.jd.common.MD5Encrypt;
 import com.jd.maintain.dao.UserInfoDao;
 import com.jd.maintain.dto.UserInfoDto;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,8 +32,7 @@ public class LoginServlet extends HttpServlet {
       byte[] validPassword = userInfoDto.getPassword();
       boolean isPasswordValid = MD5Encrypt.validatePassword(password, validPassword);
       if (isPasswordValid) {
-        RequestDispatcher rd = request.getRequestDispatcher("../loginSuccess.jsp");
-        rd.forward(request, response);
+        response.sendRedirect("../manager/main.jsp");
         return;
       }
     }
