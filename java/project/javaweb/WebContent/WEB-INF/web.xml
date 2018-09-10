@@ -4,4 +4,20 @@
   <welcome-file-list>
     <welcome-file>register.html</welcome-file>
   </welcome-file-list>
+  <filter>
+    <filter-name>X1</filter-name>
+    <filter-class>com.X1</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>X1</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>F2</filter-name>
+    <filter-class>com.F2</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>F2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
