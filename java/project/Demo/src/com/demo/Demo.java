@@ -2,36 +2,19 @@
 
 package com.demo;
 
+import java.util.Random;
+
 /** This is just a sample. */
 public class Demo {
 
-  /** Use Java array. */
+  /** Generate 4-bit validation code. */
   public static void main(String[] args) {
-    // int[] num = new int[3];
-    String[] str = new String[4];
-
-    int[] num = new int[] {3, 5, 6}; // int[] num = {3, 5, 6};
-    // String[] str = new String[] {"tom", "andy"};
-
-    str[0] = "tom";
-    str[1] = "andy";
-    str[2] = "张三";
-    str[3] = "李四";
-
-    System.out.println(str.length);
-    System.out.println(num.length);
-    System.out.println(str[2]);
-    for (int i = 0; i < str.length; ++i) {
-      System.out.println("str[" + i + "]=" + str[i]);
-    }
-
-    String[][] names = {{"张三", "李四", "王五"}, {"u01", "u02", "u03"}};
-    System.out.println(names[1][2]);
-
-    for (int i = 0; i < names.length; ++i) {
-      for (int j = 0; j < names[i].length; ++j) {
-        System.out.println("names[" + i + "][" + j + "]=" + names[i][j]);
-      }
+    String vcStr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int vcStrLength = vcStr.length();
+    Random random = new Random();
+    for (int i = 0; i < 4; ++i) {
+      int randomNum = random.nextInt(vcStrLength);
+      System.out.print(vcStr.charAt(randomNum));
     }
   }
 }

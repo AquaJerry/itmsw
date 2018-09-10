@@ -11,6 +11,6 @@ pageEncoding="UTF-8"%>
 		<h1>${param.userName} Sign Up Success</h1>
 		<h1>User Name: ${param.userName}</h1>
 		<h1>Phone: ${param.phone}</h1>
-		<h1>Validate Code: ${param.validateCode}</h1>
+		<h1>Validation Code: ${param.validationCode}</h1>
 	</body>
 </html>

@@ -68,15 +68,16 @@
 									<span class="form__tip form__tip--register" id="phoneTip"></span>
 								</li>
 								<li class="form__cell form__cell--register">
-									<div class="form__label form__label--register">手 机 验 证 码</div>
+									<div class="form__label form__label--register">验 证 码</div>
 									<div class="form__input-box form__input-box--code">
-										<input class="form__input form__input--code" id="validateCode" name="validateCode" placeholder="手机验证码"/>
+										<input class="form__input form__input--code" id="validationCode" name="validationCode" placeholder="验证码"/>
 									</div>
-									<input class="form__button form__button--register" type="button" value="获取验证码"/>
+									<img alt="Validation Code" class="form__icon form__icon--code" id="correctValidationCode" src="maintain/ValidationCodeServlet"/>
+									<a class="form__link form__link--code" href="javascript:;" id="changeValidationCode">看不清</a>
 								</li>
 								<li class="form__cell form__cell--tip">
-									<img alt="code" class="form__icon form__icon--tip-left" id="validateCodeState"/>
-									<span class="form__tip form__tip--register" id="validateCodeTip"></span>
+									<img alt="code" class="form__icon form__icon--tip-left" id="validationCodeState"/>
+									<span class="form__tip form__tip--register" id="validationCodeTip"></span>
 								</li>
 								<li class="form__submit-box form__submit-box--register">
 									<input class="form__submit form__submit--register" type="submit" value="立即注册"/>

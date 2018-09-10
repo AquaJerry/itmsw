@@ -59,7 +59,7 @@ let $userName = $('userName');
  *
  * @type {HTMLElement}
  */
-let $validateCode = $('validateCode');
+let $validationCode = $('validationCode');
 
 /**
  * Close the popup and stay in the register page.
@@ -194,7 +194,7 @@ function validate() {
   let phone = $phone.value;
   let repassword = $repassword.value;
   let userName = $userName.value;
-  let validateCode = $validateCode.value;
+  let validationCode = $validationCode.value;
 
   let isPasswordSafe = /^(?!\D+$)(?![^a-zA-Z]+$)(?![0-9a-zA-Z]+$)/
     .test(password);
@@ -205,7 +205,7 @@ function validate() {
   let isUserNameANum = !/\D/.test(userName);
   let isUserNameMalformed = /[^\u4e00-\u9fa5\w-]/.test(userName);
   let isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName);
-  let isValidateCodeNaN = isNaN(validateCode);
+  let isValidationCodeNaN = isNaN(validationCode);
 
   success = true;
 
@@ -259,18 +259,18 @@ function validate() {
 
   updateTip('phone');
 
-  if ('' == validateCode) {
-    tip = 'Verification code should not be empty.';
-  } else if (6 != validateCode.length) {
-    tip = 'Verification code should have 6 digits.';
-  } else if (isValidateCodeNaN) {
-    tip = 'Verification code should only be numbers.';
+  if ('' == validationCode) {
+    tip = 'Validation code should not be empty.';
+  } else if (6 != validationCode.length) {
+    tip = 'Validation code should have 6 digits.';
+  } else if (isValidationCodeNaN) {
+    tip = 'Validation code should only be numbers.';
   } else {
-    review = 'Verification code is correct.';
+    review = 'Validation code is correct.';
     state = 'pass';
   }
 
-  updateTip('validateCode');
+  updateTip('validationCode');
 
   return success;
 }

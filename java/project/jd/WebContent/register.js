@@ -59,7 +59,14 @@ let $userName = $('userName');
  *
  * @type {HTMLElement}
  */
-let $validateCode = $('validateCode');
+let $validationCode = $('validationCode');
+
+/**
+ * The image of the validation code.
+ *
+ * @type {HTMLElement}
+ */
+let $correctValidationCode = $('correctValidationCode');
 
 /**
  * Close the popup and stay in the register page.
@@ -89,6 +96,13 @@ let cssMask = $mask.style;
  * @type {CSS2Properties}
  */
 let cssTermPopup = $termPopup.style;
+
+/**
+ * Request another image of validation code.
+ */
+function getValidationCode() {
+  $correctValidationCode.src = 'maintain/ValidationCodeServlet?' + Date.now();
+}
 
 /**
  * Page element identified by id listens to click to redirect to the login page.
@@ -194,7 +208,7 @@ function validate() {
   let phone = $phone.value;
   let repassword = $repassword.value;
   let userName = $userName.value;
-  let validateCode = $validateCode.value;
+  let validationCode = $validationCode.value;
 
   let isPasswordSafe = /^(?!\D+$)(?![^a-zA-Z]+$)(?![0-9a-zA-Z]+$)/
     .test(password);
@@ -205,7 +219,7 @@ function validate() {
   let isUserNameANum = !/\D/.test(userName);
   let isUserNameMalformed = /[^\u4e00-\u9fa5\w-]/.test(userName);
   let isUserNameTooShortOrLong = !/^.{4,20}$/.test(userName);
-  let isValidateCodeNaN = isNaN(validateCode);
+  let isValidationCodeMalformed = /[\W_]/.test(validationCode);
 
   success = true;
 
@@ -259,18 +273,18 @@ function validate() {
 
   updateTip('phone');
 
-  if ('' == validateCode) {
-    tip = 'Verification code should not be empty.';
-  } else if (6 != validateCode.length) {
-    tip = 'Verification code should have 6 digits.';
-  } else if (isValidateCodeNaN) {
-    tip = 'Verification code should only be numbers.';
+  if ('' == validationCode) {
+    tip = 'Validation code should not be empty.';
+  } else if (4 != validationCode.length) {
+    tip = 'Validation code should have 4 digits.';
+  } else if (isValidationCodeMalformed) {
+    tip = 'Validation code should be numbers or letters.';
   } else {
-    review = 'Verification code is correct.';
+    review = 'Validation code is correct.';
     state = 'pass';
   }
 
-  updateTip('validateCode');
+  updateTip('validationCode');
 
   return success;
 }
@@ -288,3 +302,6 @@ $('agreePopup').onclick = agreePopup;
 
 // listen to submit
 $('registerForm').onsubmit = validate;
+
+// listen to change validation code
+$('changeValidationCode').onclick = getValidationCode;
