@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>main.jsp</h1>
+	Welcome ${userInfoDto.userName}!
 </body>
 </html>

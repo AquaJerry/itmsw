@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /** Servlet implementation for Jingdong/Joybuy login page. */
 @WebServlet("/maintain/LoginServlet")
@@ -32,6 +33,8 @@ public class LoginServlet extends HttpServlet {
       byte[] validPassword = userInfoDto.getPassword();
       boolean isPasswordValid = MD5Encrypt.validatePassword(password, validPassword);
       if (isPasswordValid) {
+        HttpSession session = request.getSession();
+        session.setAttribute("userInfoDto", userInfoDto);
         response.sendRedirect("../manager/main.jsp");
         return;
       }
