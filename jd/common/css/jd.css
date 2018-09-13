@@ -332,8 +332,7 @@ body {
 
 .form__title--login,
 .form__title--login-tip {
-	line-height: 3em;
-	margin: 0 5px;
+	margin: 13px 5px;
 }
 
 .form__title--login-tip {
