@@ -325,7 +325,8 @@ body {
 .form__label,
 .form__input-box,
 .form__tip,
-.form__button {
+.form__button,
+.form__link {
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -503,19 +504,12 @@ body {
 
 .form__footer {
 	border-top: 1px solid #ccc;
-	overflow: hidden;
 	text-align: right;
-}
-
-.form__link,
-.form__link-body {
-	display: inline;
-	vertical-align: middle;
 }
 
 .form__link {
 	color: #b61d1d;
-	margin: 0 20px;
+	margin: 1em 20px;
 	text-decoration: none;
 }
 
@@ -524,7 +518,7 @@ body {
 }
 
 .form__link-body {
-	line-height: 50px;
+	vertical-align: middle;
 }
 
 /*
