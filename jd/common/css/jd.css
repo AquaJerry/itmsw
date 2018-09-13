@@ -404,12 +404,10 @@ body {
 }
 
 .form__input--register {
-	height: 28px;
 	width: 246px;
 }
 
 .form__input--code {
-	height: 28px;
 	width: 172px;
 }
 
