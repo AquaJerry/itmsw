@@ -118,7 +118,6 @@ body {
  * Block:	main
  * Elements:
  *			content
- *			wrap
  *			photo
  *			form-box
  *			menu-bar
@@ -154,11 +153,8 @@ body {
 	width: 1200px;
 }
 
-.main__wrap {
+.main__content--wrap {
 	overflow: hidden;
-}
-
-.main__wrap--login {
 	white-space: nowrap;
 }
 
