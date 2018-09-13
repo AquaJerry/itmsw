@@ -396,11 +396,10 @@ body {
 
 .form__input {
 	border: none;
-	padding: 10px;
 }
 
 .form__input--login {
-	height: 18px;
+	margin: 9px;
 	width: 245px;
 }
 
