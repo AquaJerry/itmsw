@@ -171,8 +171,7 @@ body {
 }
 
 .main__form-box--login {
-	position: relative;
-	right: 990px;
+	margin-left: -100%;
 	text-align: right;
 }
 
