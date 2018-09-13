@@ -374,7 +374,6 @@ body {
 
 .form__icon--tip-left {
 	height: 16px;
-	margin: 0 10px 0 0;
 }
 
 /*
@@ -409,6 +408,7 @@ body {
 .form__tip--register {
 	color: #ff8801;
 	line-height: 1;
+	margin: 0 1em;
 }
 
 .form__button {
