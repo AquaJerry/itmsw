@@ -218,7 +218,6 @@ body {
  * 		cell
  * 		icon
  * 		label
- * 		input-box
  * 		input
  * 		tip
  * 		button
@@ -323,7 +322,7 @@ body {
 .form__title,
 .form__icon,
 .form__label,
-.form__input-box,
+.form__input,
 .form__tip,
 .form__button,
 .form__link {
