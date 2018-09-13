@@ -383,14 +383,15 @@ body {
 }
 
 /*
- * word-spacing:	remove whitespace, about -0.25em
+ * line-height, margin:	center middle
+ * width:				max character count
+ * word-spacing:		remove whitespace
  * */
 .form__label--register {
-	height: 48px;
-	line-height: 48px;
-	margin: 0 20px;
+	line-height: 1;
+	margin: 0 20px -1em;
 	width: 5em;
-	word-spacing: -4px;
+	word-spacing: -1em;
 }
 
 .form__input {
