@@ -425,8 +425,8 @@ body {
 }
 
 .form__button--register {
-	height: 42px;
-	width: 120px;
+	margin: 2px;
+	padding: .7em 1.4em;
 }
 
 .form__textarea {
