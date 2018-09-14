@@ -216,7 +216,9 @@ body {
 .form__title--login-tip,
 .form__title--term,
 .form__label--register,
+.form__input,
 .form__tip--register,
+.form__button,
 .form__text,
 .form__link {
 	font-size: 14px;
