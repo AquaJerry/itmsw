@@ -153,11 +153,6 @@ body {
 	width: 1200px;
 }
 
-.main__content--wrap {
-	overflow: hidden;
-	white-space: nowrap;
-}
-
 .main__photo,
 .main__icon,
 .main__link,
