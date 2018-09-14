@@ -119,7 +119,6 @@ body {
  * Elements:
  *			content
  *			photo
- *			form-box
  *			menu-bar
  *			icon
  *			link
@@ -143,8 +142,7 @@ body {
 	margin: 0 auto;
 }
 
-.main__content--login,
-.main__form-box--login {
+.main__content--login {
 	width: 990px;
 }
 
@@ -155,21 +153,9 @@ body {
 
 .main__photo,
 .main__icon,
-.main__link,
-.main__form-box--login {
+.main__link {
 	display: inline-block;
 	vertical-align: middle;
-}
-
-.main__form-box--login {
-	margin-left: -100%;
-	text-align: right;
-}
-
-.main__form-box--register {
-	border-right: 1px solid #ccc;
-	display: inline-block;
-	padding: 0 137px;
 }
 
 .main__menu-bar {
@@ -240,8 +226,8 @@ body {
 	font-size: 18px;
 }
 
-.form--login,
-.form--term {
+.form--term,
+.form__list--login {
 	background: #fff;
 }
 
@@ -258,6 +244,15 @@ body {
 
 .form--login {
 	display: inline-block;
+	margin-left: -100%;
+	text-align: right;
+	width: 100%;
+}
+
+.form--register {
+	border-right: 1px solid #ccc;
+	display: inline-block;
+	padding: 0 137px;
 }
 
 .form--term {
@@ -272,6 +267,11 @@ body {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+.form__list--login {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .form__list--register {
