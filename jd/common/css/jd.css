@@ -385,10 +385,10 @@ body {
 
 .form__input {
 	border: none;
+	padding: 9px;
 }
 
 .form__input--login {
-	margin: 9px;
 	width: 245px;
 }
 
