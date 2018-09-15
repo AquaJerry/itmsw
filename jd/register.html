@@ -6,112 +6,110 @@
 		<link rel="stylesheet" href="common/css/jd.css"/>
 	</head>
 	<body>
-		<div class="page">
-			<div class="header header--register">
-				<div class="header__content header__content--register header__content--flex">
-					<div class="header__title-bar">
-						<img alt="logo" class="header__logo header__logo--register" src="common/images/jd_logo_160x50.png"/>
-						<div class="header__title header__title--register">Welcome Sign Up</div>
-					</div>
-					<div class="header__menu">Already a Member?
-						<a class="header__link" href="login.html">Log in &gt;</a>
-					</div>
+		<div class="header header--register">
+			<div class="header__content header__content--register header__content--flex">
+				<div class="header__title-bar">
+					<img alt="logo" class="header__logo header__logo--register" src="common/images/jd_logo_160x50.png"/>
+					<div class="header__title header__title--register">Welcome Sign Up</div>
+				</div>
+				<div class="header__menu">Already a Member?
+					<a class="header__link" href="login.html">Log in &gt;</a>
 				</div>
 			</div>
-			<div class="main">
-				<div class="main__content main__content--register">
-					<form action="register_success.html" class="form form--register" id="registerForm" method="post">
-						<ul class="form__list form__list--register">
-							<li class="form__cell form__cell--register">
-								<div class="form__label form__label--register">用 户 名</div>
-								<input class="form__input form__input--register" id="userName" name="userName" placeholder="您的账户名和登录名"/>
-								<img alt="name" class="form__icon form__icon--right" id="userNamePass" src="common/images/jd_icon_pass.png"/>
-							</li>
-							<li class="form__cell form__cell--tip">
-								<img alt="name" class="form__icon form__icon--tip-left" id="userNameState"/>
-								<span class="form__tip form__tip--register" id="userNameTip"></span>
-							</li>
-							<li class="form__cell form__cell--register">
-								<div class="form__label form__label--register">设 置 密 码</div>
-								<input class="form__input form__input--register" id="password" type="password" name="password" placeholder="建议至少使用两种字符组合"/>
-								<img alt="password" class="form__icon form__icon--right" id="passwordPass" src="common/images/jd_icon_pass.png"/>
-							</li>
-							<li class="form__cell form__cell--tip">
-								<img alt="password" class="form__icon form__icon--tip-left" id="passwordState"/>
-								<span class="form__tip form__tip--register" id="passwordTip"></span>
-							</li>
-							<li class="form__cell form__cell--register">
-								<div class="form__label form__label--register">确 认 密 码</div>
-								<input class="form__input form__input--register" id="repassword" type="password" name="repassword" placeholder="请再次输入密码"/>
-								<img alt="repassword" class="form__icon form__icon--right" id="repasswordPass" src="common/images/jd_icon_pass.png"/>
-							</li>
-							<li class="form__cell form__cell--tip">
-								<img alt="repassword" class="form__icon form__icon--tip-left" id="repasswordState"/>
-								<span class="form__tip form__tip--register" id="repasswordTip"></span>
-							</li>
-							<li class="form__cell form__cell--register">
-								<div class="form__label form__label--register">中 国 0086</div>
-								<input class="form__input form__input--register" id="phone" name="phone" placeholder="建议使用常用手机"/>
-								<img alt="phone" class="form__icon form__icon--right" id="phonePass" src="common/images/jd_icon_pass.png"/>
-							</li>
-							<li class="form__cell form__cell--tip">
-								<img alt="phone" class="form__icon form__icon--tip-left" id="phoneState"/>
-								<span class="form__tip form__tip--register" id="phoneTip"></span>
-							</li>
-							<li class="form__cell form__cell--register">
-								<div class="form__label form__label--register">手 机 验 证 码</div>
-								<input class="form__input form__input--code" id="validationCode" name="validationCode" placeholder="手机验证码"/>
-								<input class="form__button form__button--register" type="button" value="获取验证码"/>
-							</li>
-							<li class="form__cell form__cell--tip">
-								<img alt="code" class="form__icon form__icon--tip-left" id="validationCodeState"/>
-								<span class="form__tip form__tip--register" id="validationCodeTip"></span>
-							</li>
-							<li class="form__submit-box form__submit-box--register">
-								<input class="form__submit form__submit--register" type="submit" value="立即注册"/>
-							</li>
-						</ul>
-					</form>
-					<ul class="main__menu-bar main__menu-bar--register">
-						<li>
-							<img alt="company" class="main__icon" src="common/images/jd_icon_enterprise.png"/>
-							<a class="main__link main__link--register" href="#">ENTERPRISE</a>
+		</div>
+		<div class="main">
+			<div class="main__content main__content--register">
+				<form action="register_success.html" class="form form--register" id="registerForm" method="post">
+					<ul class="form__list form__list--register">
+						<li class="form__cell form__cell--register">
+							<div class="form__label form__label--register">用 户 名</div>
+							<input class="form__input form__input--register" id="userName" name="userName" placeholder="您的账户名和登录名"/>
+							<img alt="name" class="form__icon form__icon--right" id="userNamePass" src="common/images/jd_icon_pass.png"/>
 						</li>
-						<li class="main__separator"></li>
-						<li>
-							<img alt="global" class="main__icon" src="common/images/jd_icon_global-customer.png"/>
-							<a class="main__link main__link--register" href="#">INTERNATIONAL<br/>CUSTOMER</a>
+						<li class="form__cell form__cell--tip">
+							<img alt="name" class="form__icon form__icon--tip-left" id="userNameState"/>
+							<span class="form__tip form__tip--register" id="userNameTip"></span>
+						</li>
+						<li class="form__cell form__cell--register">
+							<div class="form__label form__label--register">设 置 密 码</div>
+							<input class="form__input form__input--register" id="password" type="password" name="password" placeholder="建议至少使用两种字符组合"/>
+							<img alt="password" class="form__icon form__icon--right" id="passwordPass" src="common/images/jd_icon_pass.png"/>
+						</li>
+						<li class="form__cell form__cell--tip">
+							<img alt="password" class="form__icon form__icon--tip-left" id="passwordState"/>
+							<span class="form__tip form__tip--register" id="passwordTip"></span>
+						</li>
+						<li class="form__cell form__cell--register">
+							<div class="form__label form__label--register">确 认 密 码</div>
+							<input class="form__input form__input--register" id="repassword" type="password" name="repassword" placeholder="请再次输入密码"/>
+							<img alt="repassword" class="form__icon form__icon--right" id="repasswordPass" src="common/images/jd_icon_pass.png"/>
+						</li>
+						<li class="form__cell form__cell--tip">
+							<img alt="repassword" class="form__icon form__icon--tip-left" id="repasswordState"/>
+							<span class="form__tip form__tip--register" id="repasswordTip"></span>
+						</li>
+						<li class="form__cell form__cell--register">
+							<div class="form__label form__label--register">中 国 0086</div>
+							<input class="form__input form__input--register" id="phone" name="phone" placeholder="建议使用常用手机"/>
+							<img alt="phone" class="form__icon form__icon--right" id="phonePass" src="common/images/jd_icon_pass.png"/>
+						</li>
+						<li class="form__cell form__cell--tip">
+							<img alt="phone" class="form__icon form__icon--tip-left" id="phoneState"/>
+							<span class="form__tip form__tip--register" id="phoneTip"></span>
+						</li>
+						<li class="form__cell form__cell--register">
+							<div class="form__label form__label--register">手 机 验 证 码</div>
+							<input class="form__input form__input--code" id="validationCode" name="validationCode" placeholder="手机验证码"/>
+							<input class="form__button form__button--register" type="button" value="获取验证码"/>
+						</li>
+						<li class="form__cell form__cell--tip">
+							<img alt="code" class="form__icon form__icon--tip-left" id="validationCodeState"/>
+							<span class="form__tip form__tip--register" id="validationCodeTip"></span>
+						</li>
+						<li class="form__submit-box form__submit-box--register">
+							<input class="form__submit form__submit--register" type="submit" value="立即注册"/>
 						</li>
 					</ul>
-				</div>
+				</form>
+				<ul class="main__menu-bar main__menu-bar--register">
+					<li>
+						<img alt="company" class="main__icon" src="common/images/jd_icon_enterprise.png"/>
+						<a class="main__link main__link--register" href="#">ENTERPRISE</a>
+					</li>
+					<li class="main__separator"></li>
+					<li>
+						<img alt="global" class="main__icon" src="common/images/jd_icon_global-customer.png"/>
+						<a class="main__link main__link--register" href="#">INTERNATIONAL<br/>CUSTOMER</a>
+					</li>
+				</ul>
 			</div>
-			<div class="footer">
-				<div class="footer__content footer__content--register">
-					<ul class="footer__menu-bar footer__menu-bar--register">
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="http://jd.com">关于我们</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">联系我们</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">合作招商</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">商家帮助</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">营销中心</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">手机京东</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">友情链接</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">销售联盟</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">京东社区</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">京东公益</a></li>
-						<li class="footer__menu footer__menu--register">|</li>
-						<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">English Site</a></li>
-					</ul>
-					<div class="footer__copyright">Copyright &copy; 2016-2018 Jd.com, Inc. or its affiliates. All Rights Reserved</div>
-				</div>
+		</div>
+		<div class="footer">
+			<div class="footer__content footer__content--register">
+				<ul class="footer__menu-bar footer__menu-bar--register">
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="http://jd.com">关于我们</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">联系我们</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">合作招商</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">商家帮助</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">营销中心</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">手机京东</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">友情链接</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">销售联盟</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">京东社区</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">京东公益</a></li>
+					<li class="footer__menu footer__menu--register">|</li>
+					<li class="footer__menu footer__menu--register"><a class="footer__link footer__link--register" href="#">English Site</a></li>
+				</ul>
+				<div class="footer__copyright">Copyright &copy; 2016-2018 Jd.com, Inc. or its affiliates. All Rights Reserved</div>
 			</div>
 		</div>
 		<div class="form form--dialog form--hidden form--term" id="termPopup">
